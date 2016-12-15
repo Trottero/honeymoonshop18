@@ -1,0 +1,65 @@
+@model IEnumerable<HoneymoonShop.Models.BruidsJurk>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtikelNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Merk)
+            </th>           
+            <th>
+                @Html.DisplayNameFor(model => model.Omschrijving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stijl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AfbeeldingUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtikelNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Merk)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stijl)
+            </td>
+            <td>
+                <img src="~/images/BruidsJurken/@item.AfbeeldingUrl" alt="@Url.Content(@item.AfbeeldingUrl)" height="60" width="40"/>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

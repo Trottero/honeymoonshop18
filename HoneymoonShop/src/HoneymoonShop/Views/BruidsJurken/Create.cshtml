@@ -1,0 +1,69 @@
+@model HoneymoonShop.Models.BruidsJurk
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-horizontal">
+        <h4>BruidsJurk</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ArtikelNr" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ArtikelNr" class="form-control" />
+                <span asp-validation-for="ArtikelNr" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Merk" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Merk" class="form-control" />
+                <span asp-validation-for="Merk" class="text-danger" />
+            </div>
+        </div>        
+        <div class="form-group">
+            <label asp-for="Omschrijving" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Omschrijving" class="form-control" />
+                <span asp-validation-for="Omschrijving" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Prijs" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Prijs" class="form-control" />
+                <span asp-validation-for="Prijs" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Stijl" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Stijl" class="form-control" />
+                <span asp-validation-for="Stijl" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AfbeeldingUrl" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="file" name="image"/>               
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
