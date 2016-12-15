@@ -22,10 +22,13 @@ namespace HoneymoonShop.Controllers
             return View(jurken);
         }
 
-        public IActionResult Newcollection(int page)
+
+        public IActionResult Newcollection()
         {
-            ViewData["Page"] = page;
-            return View();
+            var jurken = _context.BruidsJurken;
+            return View(jurken);
         }
+
+
     }
 }
