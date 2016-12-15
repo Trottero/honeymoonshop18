@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Data;
 using HoneymoonShop.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace HoneymoonShop.Controllers
 {
     public class BruidsJurkenController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private IHostingEnvironment _environment;
 
-        public BruidsJurkenController(ApplicationDbContext context)
+        public BruidsJurkenController(ApplicationDbContext context, IHostingEnvironment environment)
         {
-            _context = context;    
+            _context = context;
+            _environment = environment;
         }
 
         // GET: DressFinder
@@ -53,8 +58,21 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,ArtikelNr,Merk,Naam,Omschrijving,Prijs,Stijl")] BruidsJurk bruidsJurk)
+        public async Task<IActionResult> Create([Bind("ID,ArtikelNr,Merk,Naam,Omschrijving,Prijs,Stijl")] BruidsJurk bruidsJurk, IFormFile image)
         {
+            if(image.ContentType.Contains("image"))
+            {
+                var imageFolder = Path.Combine(_environment.WebRootPath, "images", "BruidsJurken");
+                if(image.Length > 0)
+                {
+                    var imageUrl = Path.Combine(imageFolder, image.FileName);
+                    using (var fileStream = new FileStream(imageUrl, FileMode.Create))
+                    {
+                        await image.CopyToAsync(fileStream);
+                        bruidsJurk.AfbeeldingUrl = image.FileName;
+                    }
+                }
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(bruidsJurk);

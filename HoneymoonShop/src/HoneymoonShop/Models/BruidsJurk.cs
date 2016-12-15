@@ -34,5 +34,8 @@ namespace HoneymoonShop.Models
         public string[] kenmerken { get; set; }
         */
 
+        [Display(Name = "Afbeelding")]
+        public string AfbeeldingUrl { get; set; }
+
     }
 }
