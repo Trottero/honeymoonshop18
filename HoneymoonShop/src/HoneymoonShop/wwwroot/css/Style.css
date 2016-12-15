@@ -157,6 +157,11 @@ row-suits{
 .dressfinder-pics{
     margin: 20px;
 }
+
+.dressfinder-pic{
+    height: 400px;
+    width: 290px;
+}
 .dressfinderdouble-pic{
     margin-right: 45px;
 }

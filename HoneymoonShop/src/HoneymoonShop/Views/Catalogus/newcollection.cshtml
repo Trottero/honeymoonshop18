@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<HoneymoonShop.Models.BruidsJurk>
     @{
+        ///List < BruidsJurk > list = (List<BruidsJurk>) Model;
         ViewData["Title"] = "Catalogus Page";
     }
     <div class="container">
@@ -27,27 +28,19 @@
 
                     </div>
                     <div class="nexa_bold cat">
-                        @for (int i = 0; i < 24; i++)
+                        @foreach (var item in Model)
                         {
-                              <div class="dressfinder-pics"><img src="https://i.gyazo.com/a76f807bfbce2180360834f48dd8ca39.png" /> <div class="cat-textdescimage"> Beautiful by Enzoani</div></div>
-                            if (i == 8)
+                              <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingUrl" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></div>
+                            if (item.ID == 8)
                             {
                                 <div class="dressfinder-pics dressfinderdouble-pic"> <img src="https://i.gyazo.com/fb6c1eb95de82a821e2db9ec11309447.png" /></div>
                             }
 
-                            if (i == 16)
+                            if (item.ID == 16)
                             {
                                 <div class="dressfinder-pics"><img src="https://i.gyazo.com/591a6599b50c11222d52d7c5b60170ea.png" /></div>
-
-
                             }
                         }
-
-                        <div id="itemContainer" class="row">
-                            <div class="col-md-3 dressfinder-pics"><img src="https://i.gyazo.com/a76f807bfbce2180360834f48dd8ca39.png" /> Beautiful by Enzoani</div>
-                            <div class="col-md-3 dressfinder-pics"><img src="https://i.gyazo.com/a76f807bfbce2180360834f48dd8ca39.png" /> Beautiful by Enzoani</div>
-                            <div class="col-md-3 dressfinder-pics"> <img src="https://i.gyazo.com/a76f807bfbce2180360834f48dd8ca39.png" /> Beautiful by Enzoani</div>
-                        </div>
                     </div>
                     <!--Page selection-->
                     <div class="row">
