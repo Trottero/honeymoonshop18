@@ -58,7 +58,7 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,ArtikelNr,Merk,Naam,Omschrijving,Prijs,Stijl")] BruidsJurk bruidsJurk, IFormFile image)
+        public async Task<IActionResult> Create([Bind("ID,ArtikelNr,Merk,Omschrijving,Prijs,Stijl")] BruidsJurk bruidsJurk, IFormFile image)
         {
             if(image.ContentType.Contains("image"))
             {

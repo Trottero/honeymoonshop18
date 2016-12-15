@@ -12,11 +12,7 @@ namespace HoneymoonShop.Models
 
         [Required]
         [Display(Name = "Artikel Nummer")]
-        public int ArtikelNr { get; set; }
-
-        [Required]
-        [StringLength(60, MinimumLength = 3)]
-        public string Naam { get; set; }
+        public int ArtikelNr { get; set; }        
 
         public string Merk { get; set; }
 
