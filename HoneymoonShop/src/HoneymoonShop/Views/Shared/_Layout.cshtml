@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="~/css/style.css" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/css/jPages.css" media="screen" />
 
     </environment>
     <environment names="Staging,Production">
@@ -139,8 +140,7 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script type="text/javascript" src="~/lib/jquery.fancybox.js"></script>
-        <script type="text/javascript" src="~/lib/jquery.fancybox-media.js"></script>
+        <script type="text/javascript" src="~/lib/jPages.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -159,16 +159,13 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.fancybox-media').fancybox({
-                openEffect: 'none',
-                closeEffect: 'none',
-                helpers: {
-                    media: {}
 
-                }
-
+            $(function () {
+                $(".holder").jPages({
+                    containerID: "itemContainer",
+                    perPage: 1,
+                });
             });
-
         });
     </script>
 </body>
