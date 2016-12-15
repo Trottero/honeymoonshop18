@@ -8,9 +8,10 @@ using HoneymoonShop.Data;
 namespace HoneymoonShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161214151255_BruidsJurk")]
+    partial class BruidsJurk
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -70,15 +71,16 @@ namespace HoneymoonShop.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AfbeeldingUrl");
-
                     b.Property<int>("ArtikelNr");
 
                     b.Property<string>("Merk");
 
-                    b.Property<string>("Omschrijving")
+                    b.Property<string>("Naam")
                         .IsRequired()
-                        .HasAnnotation("MaxLength", 300);
+                        .HasAnnotation("MaxLength", 60);
+
+                    b.Property<string>("Omschrijving")
+                        .IsRequired();
 
                     b.Property<int>("Prijs");
 
