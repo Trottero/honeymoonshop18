@@ -126,33 +126,80 @@ row-suits{
  }
 
 
+/*catalogus styles*/
+.cat-col-md-12-1 {
+    height: 600px;
+    width: 1400px;
+    background-image: url(https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg);
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.dressfinder-pics{
+    margin: 20px;
+}
+.dressfinderdouble-pic{
+    margin-left: 20px;
+    margin-right: 60px;
+}
+
+.cat-line {
+    height: 10px;
+    border-bottom: 3px solid black;
+    width: 84%;
+    margin-left: 35px;
+}
+.cat-textinline {
+
+}
 
 
+@media (min-width: 1500px) {
+  .container {
+    width: 1400px;
+  }
+}
+.cat-searchbarright {
+    margin-left: 170px;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+.cat-h1 {
 
-
+}
+.form-control {
+    max-width: 220px;
+}
 
 
 
 /*-FooterStyles-*/
 .footer {
     background-color: #FCDDDD;
+    padding-bottom: 50px;
 }
 
 /*-- Top row--*/
-.left {
+.footerimages {
     padding-top: 80px;
     margin-bottom: 50px;
+}
+.footerleft {
+    padding-left:10%;
 }
 
-.center {
-    padding-top: 80px;
-    margin-bottom: 50px;
+.footerright{
+    padding-right:10%;
 }
 
-.right {
-    padding-top: 80px;
-    margin-bottom: 50px;
+.footerlefttext{
+    margin-left: 35%;
 }
+
+.footerrighttext{
+    margin-right: 35%;
+}
+
 
 /*-- Midden row--*/
 .midrow {
@@ -182,6 +229,7 @@ row-suits{
     width: 100%;
     padding: 0px;
     margin: 0px;
+    margin-left: 15%;
 }
 
 ul {
@@ -190,13 +238,14 @@ ul {
     font-size: 18px;
     padding: 0px;
     margin: 0px;
+    margin-left: 15%;
 }
 
 a {
     color: black;
 }
 
-    a:hover, a:active {
+ a:hover, a:active {
         text-decoration: none;
         color: black;
-    }
+}
