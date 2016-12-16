@@ -20,15 +20,17 @@
     font-size: 18px;
 }
 
+/*-BruidegomStyles-*/
 
-.col-md-12-1 {
+.top {
     height: 450px;
     background-image: url(http://esq.h-cdn.co/assets/15/50/1600x800/landscape-1449613000-groom.jpg);
+    background-position: center;
     text-align: center;
     background-size: 100% 100%;
 }
 
-.col-md-12-2 {
+.collectie {
     height: 200px;
     width: 100%;
     background-image: url(/images/collection.png);
@@ -36,47 +38,69 @@
     background-position: center;
     background-size: 850px;
 }
-.col-md-12-3 {
+
+.suits {
     height: 200px;
     width: 100%;
     background-image: url(/images/suits.png);
     background-size: 100% 100%;
     background-position: center;
     background-size: 850px;
-   
 }
 
 .text1 {
-        font-family: 'Josefin Sans', sans-serif;
-    position: center;
+    text-align: center;
     font-size: 30px;
+    color: white;
+    left: 400px;
+    position: absolute;
+    top: 200px;
 }
 
 .text2 {
-        font-family: 'Josefin Sans', sans-serif;
+    font-family: sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
+    color: white;
+    left: 200px;
+    position: absolute;
+    top: 230px;
 }
 
-.text3 {
-        font-family: 'Josefin Sans', sans-serif;
+.collectie-text {
+    font-family: sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
+    position: absolute;
     text-align: center;
+    left: 290px;
     vertical-align: middle;
-    line-height: 270px;
+    letter-spacing: -1px;
+    top: 100px;
 }
+
+.suits-text {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    left: 360px;
+    vertical-align: middle;
+    top: 100px;
+}
+
 .text4 {
-        font-family: 'Josefin Sans', sans-serif;
+    font-family: sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
     text-align: center;
     vertical-align: middle;
     line-height: 270px;
-    
 }
 
 .pic-row {
@@ -96,54 +120,385 @@
 }
 
 .DSbtn {
-        font-family: 'Josefin Sans', sans-serif;
-    text-transform:uppercase;
+    font-family: sans-serif;
+    text-transform: uppercase;
     font-size: 20px;
-    letter-spacing:2px;
+    letter-spacing: 2px;
     font-weight: bolder;
     border-radius: 0;
     display: block;
     margin: auto;
-   border-style:none;
-   margin-bottom:30px;
+    border-style: none;
+    margin-bottom: 30px;
 }
 
-.downarrow{
-    text-align:center;
-    margin-bottom:50px;
+.downarrow {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.arrowright{
-   
-    color:royalblue;
-    text-align:center;
- 
+.arrowright {
+    color: royalblue;
+    left: 300px;
+    position: absolute;
+    top: 235px;
 }
-.arrow-right-text{
-    font-size:50px;
-    text-align:center;
-    text-transform:uppercase;
-    color:white;
-    
+
+.arrow-right-text {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    left: 320px;
+    position: absolute;
+    top: 230px;
 }
-row-suits{
-    display:flex;
-    width:100%;
+
+.suits {
+    display: flex;
+    width: 100%;
 }
-.video2{
-   background-image:url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);
-   width:63%;
-   height:480px;
-   display:flex;
+
+.video2 {
+    background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);
+    background-size: auto;
+    width: 63%;
+    height: 480px;
+    display: flex;
+}
+
+.video1 {
+    width: 33%;
+    position: center;
+    font-size: 25px;
+}
+
+ol > li {
+    counter-increment: item;
+    list-style: none inside;
+    margin: 30px 0;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+
+    ol > li:before {
+        content: counter(item);
+        margin-right: 15px;
+        padding: 2px;
+        display: block;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        background-color: royalblue;
+        color: white;
+        text-align: center;
+        float: left;
+    }
+
+.textnr {
+    text-align: center;
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 100px;
+    background-color: royalblue;
+    color: white;
+    left: 110px;
+    position: absolute;
+    top: 420px;
+    font-size: 70px;
+}
+
+.textbox {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    color: black;
+    left: 320px;
+    position: absolute;
+    top: 300px;
+    width: 320px;
+    height: 250px;
+    font-size: 20px;
+    padding: 20px;
+    padding-right: 30px;
+}
+
+.downarrow2 {
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/blog.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-size: 850px;
+    margin-bottom: 80px;
+}
+
+.text-blog {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    left: 300px;
+    vertical-align: middle;
+    letter-spacing: -1px;
+    top: 100px;
   
 }
 
-.video1{
-     width:33%;
-     position: center;
-     font-size: 25px;
- }
+.r-events {
+    display: flex;
+    width: 100%;
+}
 
+.evnt {
+    height: 420px;
+    /*width:585px;*/
+    position: relative; 
+   width: 100%;
+   padding:0px;
+}
+.txtbxhead{
+    
+    
+       
+}
+.txtbx{
+    background-color:white;
+    color:black;
+    font-size:15px;
+
+      position: absolute; 
+   top: 220px; 
+   left: 0; 
+   width: 50%; height:200px;
+}
+.evnt2 {
+    margin-right:0px;
+    padding:0px;
+    height: 420px;
+    width: 585px;
+    position: relative; 
+   width: 100%;
+}
+
+
+
+.textbox1-1 {
+    padding:0px;
+  
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+      font-size: 20px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox1-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+      padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox1-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+      padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+       padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+       padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+      padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+     padding:0px;
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-3 {
+    background-color: white;
+    border: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+       padding:0px;
+    box-shadow: 0px 1px 10px gainsboro;
+
+    color: black;
+    width: 320px;
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.MBbtn {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    border-style: none;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.head{
+    padding-top:20px;
+    padding-right:20px;
+    padding-left:20px;
+}
+.txt{
+    font-size:15px;
+    padding-right:20px;
+    padding-left:20px;
+    padding-bottom:14px;
+}
+
+.bgrnd{
+    background-image:url(http://www.honeymoonshop.nl/uploads/cache/img-8050-1.jpg);
+    background-size:cover;
+    margin:0px;
+    padding:0px;
+    height:66%;
+    width:100%;
+    
+}
+.bgrnd1{
+    background-image:url(http://www.honeymoonshop.nl/uploads/cache/image-20.jpeg);
+    background-size:cover;
+ 
+    margin:0px;
+    padding:0px;
+    height:75%;
+    width:100%;
+    
+}
+.bgrnd2{
+    background-image:url(http://www.honeymoonshop.nl/uploads/cache/17111-66-4.jpg);
+    background-size:cover;
+    margin:0px;
+    padding:0px;
+    height:71%;
+    width:100%;
+    
+}
+
+.downarrow3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.bottom-pic {
+    height: 450px;
+    background-image: url(http://esq.h-cdn.co/assets/15/50/1600x800/landscape-1449613000-groom.jpg);
+    background-position: center;
+    width: 100%;
+}
 
 /*catalogus styles*/
 .cat-col-md-12-1 {
