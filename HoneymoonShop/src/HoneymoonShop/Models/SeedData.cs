@@ -110,7 +110,43 @@ namespace HoneymoonShop.Models
                                                                                     Prijs = 7500,
                                                                                     Stijl = "Princess",
                                                                                     AfbeeldingUrl = "jurk5.jpg"
-                                                                                }
+                                                                                },
+                                                                    new BruidsJurk
+                                                                    {
+                                                                        ArtikelNr = 11,
+                                                                        Merk = "Maggie Sottero",
+                                                                        Omschrijving = "Jurk van Maggie Sottero",
+                                                                        Prijs = 7500,
+                                                                        Stijl = "Princess",
+                                                                        AfbeeldingUrl = "jurk5.jpg"
+                                                                    },
+                                                                    new BruidsJurk
+                                                                    {
+                                                                        ArtikelNr = 12,
+                                                                        Merk = "Maggie Sottero",
+                                                                        Omschrijving = "Jurk van Maggie Sottero",
+                                                                        Prijs = 7500,
+                                                                        Stijl = "Princess",
+                                                                        AfbeeldingUrl = "jurk5.jpg"
+                                                                    },
+                                                                    new BruidsJurk
+                                                                    {
+                                                                        ArtikelNr = 13,
+                                                                        Merk = "Maggie Sottero",
+                                                                        Omschrijving = "Jurk van Maggie Sottero",
+                                                                        Prijs = 7500,
+                                                                        Stijl = "Princess",
+                                                                        AfbeeldingUrl = "jurk5.jpg"
+                                                                    },
+                                                                    new BruidsJurk
+                                                                    {
+                                                                        ArtikelNr = 14,
+                                                                        Merk = "Maggie Sottero",
+                                                                        Omschrijving = "Jurk van Maggie Sottero",
+                                                                        Prijs = 7500,
+                                                                        Stijl = "Princess",
+                                                                        AfbeeldingUrl = "jurk5.jpg"
+                                                                    }
                 );
 
                 context.SaveChanges();
