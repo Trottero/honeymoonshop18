@@ -41,6 +41,13 @@
         <dd>
             @Html.DisplayFor(model => model.Stijl)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AfbeeldingUrl)
+        </dt>
+        <dd>
+           
+            <img src="~/images/BruidsJurken/@Model.AfbeeldingUrl" alt="@Model.AfbeeldingUrl" height="90" width="60" />
+        </dd>
     </dl>
     
     <form asp-action="Delete">
