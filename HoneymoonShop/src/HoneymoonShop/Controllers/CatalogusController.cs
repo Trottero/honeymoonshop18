@@ -29,6 +29,12 @@ namespace HoneymoonShop.Controllers
             return View(jurken);
         }
 
+        public IActionResult Details(int artikelnummer)
+        {
+            ViewData["artikelnummer"] = artikelnummer;
+            var jurken = _context.BruidsJurken;
+            return View(jurken);
+        }
 
     }
 }
