@@ -28,18 +28,20 @@
 
                     </div>
                     <div class="nexa_bold cat">
+                        @{int count = 0; }
                         @foreach (var item in Model)
                         {
                               <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingUrl" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></div>
-                            if (item.ID == 8)
+                            if (count == 8)
                             {
                                 <div class="dressfinder-pics dressfinderdouble-pic"> <img src="https://i.gyazo.com/fb6c1eb95de82a821e2db9ec11309447.png" /></div>
                             }
 
-                            if (item.ID == 16)
+                            if (count == 16)
                             {
                                 <div class="dressfinder-pics"><img src="https://i.gyazo.com/591a6599b50c11222d52d7c5b60170ea.png" /></div>
                             }
+                            count++;
                         }
                     </div>
                     <!--Page selection-->
