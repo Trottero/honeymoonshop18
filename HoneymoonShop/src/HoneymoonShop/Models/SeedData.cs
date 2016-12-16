@@ -14,7 +14,7 @@ namespace HoneymoonShop.Models
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                if (context.BruidsJurken.Any())
+                /*if (context.BruidsJurken.Any())
                 {
                     return;
                 }
@@ -153,6 +153,12 @@ namespace HoneymoonShop.Models
                  
 
                     
+            }
+        }
+    }
+}
+}
+*/
             }
         }
     }
