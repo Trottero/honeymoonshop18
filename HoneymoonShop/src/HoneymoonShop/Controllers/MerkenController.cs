@@ -19,13 +19,13 @@ namespace HoneymoonShop.Controllers
             _context = context;    
         }
 
-        // GET: Merks
+        // GET: Merken
         public async Task<IActionResult> Index()
         {
             return View(await _context.Merken.ToListAsync());
         }
 
-        // GET: Merks/Details/5
+        // GET: Merken/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +42,13 @@ namespace HoneymoonShop.Controllers
             return View(merk);
         }
 
-        // GET: Merks/Create
+        // GET: Merken/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Merks/Create
+        // POST: Merken/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace HoneymoonShop.Controllers
             return View(merk);
         }
 
-        // GET: Merks/Edit/5
+        // GET: Merken/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace HoneymoonShop.Controllers
             return View(merk);
         }
 
-        // POST: Merks/Edit/5
+        // POST: Merken/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace HoneymoonShop.Controllers
             return View(merk);
         }
 
-        // GET: Merks/Delete/5
+        // GET: Merken/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,7 +132,7 @@ namespace HoneymoonShop.Controllers
             return View(merk);
         }
 
-        // POST: Merks/Delete/5
+        // POST: Merken/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -10,8 +10,9 @@ namespace Models
         public int SilhouetteID { get; set; }
 
         [Required]
+        [Display(Name = "Silhouette")]
         public string SilhouetteNaam { get; set; }
 
-        public IList<Jurk> Jurken { get; set; }
+        public virtual IList<Jurk> Jurken { get; set; }
     }
 }

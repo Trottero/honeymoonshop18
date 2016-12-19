@@ -15,8 +15,8 @@ namespace HoneymoonShop.Models
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                     
-
+               
+                //clearJurken(context); //Verwijder alle jurken in Db
                 SeedMerken(context);
                 SeedCategorien(context);
                 SeedStijlen(context);
@@ -26,6 +26,11 @@ namespace HoneymoonShop.Models
 
                 context.SaveChanges();
             }
+        }
+
+        private static void clearJurken(ApplicationDbContext context)
+        {
+            context.Database.ExecuteSqlCommand("delete from Jurken");
         }
 
         private static void SeedMerken(ApplicationDbContext context)
