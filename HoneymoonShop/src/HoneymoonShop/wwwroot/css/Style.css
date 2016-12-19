@@ -19,6 +19,13 @@
         font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
 }
+.backgroundcolor{
+    background-color: white;
+}
+
+.navbarbackground{
+    background-color: white;
+}
 
 
 .col-md-12-1 {
@@ -181,9 +188,15 @@ row-suits{
 
 .cat-textdescimage{
     margin-top: 15px;
+    margin-left: -10px;
 }
 
-
+.det-sideimg{
+    margin-top: 20px;
+}
+.cat-background {
+    background-color: white;
+}
 
 @media (min-width: 1500px) {
   .container {
@@ -203,7 +216,7 @@ row-suits{
 
 /*-FooterStyles-*/
 .footer {
-    background-color: #FCDDDD;
+    background-color: #fce8e7;
     padding-bottom: 50px;
 }
 
