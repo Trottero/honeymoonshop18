@@ -22,7 +22,7 @@ namespace HoneymoonShop.Controllers
         // GET: Jurken
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Jurk.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl);
+            var applicationDbContext = _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurk.SingleOrDefaultAsync(m => m.ArtikelNr == id);
+            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.ArtikelNr == id);
             if (jurk == null)
             {
                 return NotFound();
@@ -46,12 +46,12 @@ namespace HoneymoonShop.Controllers
         // GET: Jurken/Create
         public IActionResult Create()
         {
-            ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "CategorieNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleur, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merk, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijn, "NeklijnID", "NeklijnID");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouette, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijl, "StijlID", "StijlNaam");
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
+            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnID");
+            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
+            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
             return View();
         }
 
@@ -68,12 +68,12 @@ namespace HoneymoonShop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleur, "KleurID", "KleurNaam", jurk.KleurID);
-            ViewData["MerkID"] = new SelectList(_context.Merk, "MerkID", "MerkNaam", jurk.MerkID);
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijn, "NeklijnID", "NeklijnID", jurk.NeklijnID);
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouette, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
-            ViewData["StijlID"] = new SelectList(_context.Stijl, "StijlID", "StijlNaam", jurk.StijlID);
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
+            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnID", jurk.NeklijnID);
+            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
+            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam", jurk.StijlID);
             return View(jurk);
         }
 
@@ -85,17 +85,17 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurk.SingleOrDefaultAsync(m => m.ArtikelNr == id);
+            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.ArtikelNr == id);
             if (jurk == null)
             {
                 return NotFound();
             }
-            ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleur, "KleurID", "KleurNaam", jurk.KleurID);
-            ViewData["MerkID"] = new SelectList(_context.Merk, "MerkID", "MerkNaam", jurk.MerkID);
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijn, "NeklijnID", "NeklijnID", jurk.NeklijnID);
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouette, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
-            ViewData["StijlID"] = new SelectList(_context.Stijl, "StijlID", "StijlNaam", jurk.StijlID);
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
+            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnID", jurk.NeklijnID);
+            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
+            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam", jurk.StijlID);
             return View(jurk);
         }
 
@@ -131,12 +131,12 @@ namespace HoneymoonShop.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleur, "KleurID", "KleurNaam", jurk.KleurID);
-            ViewData["MerkID"] = new SelectList(_context.Merk, "MerkID", "MerkNaam", jurk.MerkID);
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijn, "NeklijnID", "NeklijnID", jurk.NeklijnID);
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouette, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
-            ViewData["StijlID"] = new SelectList(_context.Stijl, "StijlID", "StijlNaam", jurk.StijlID);
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
+            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnID", jurk.NeklijnID);
+            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
+            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam", jurk.StijlID);
             return View(jurk);
         }
 
@@ -148,7 +148,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurk.SingleOrDefaultAsync(m => m.ArtikelNr == id);
+            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.ArtikelNr == id);
             if (jurk == null)
             {
                 return NotFound();
@@ -162,15 +162,15 @@ namespace HoneymoonShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var jurk = await _context.Jurk.SingleOrDefaultAsync(m => m.ArtikelNr == id);
-            _context.Jurk.Remove(jurk);
+            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.ArtikelNr == id);
+            _context.Jurken.Remove(jurk);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool JurkExists(int id)
         {
-            return _context.Jurk.Any(e => e.ArtikelNr == id);
+            return _context.Jurken.Any(e => e.ArtikelNr == id);
         }
     }
 }

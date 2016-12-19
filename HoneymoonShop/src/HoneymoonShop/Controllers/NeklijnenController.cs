@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Data;
 using Models;
 
-namespace HoneymoonShop.Controllers.DressFinderControllers
+namespace HoneymoonShop.Controllers
 {
     public class NeklijnenController : Controller
     {
@@ -19,13 +19,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             _context = context;    
         }
 
-        // GET: Neklijns
+        // GET: Neklijnen
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Neklijn.ToListAsync());
+            return View(await _context.Neklijnen.ToListAsync());
         }
 
-        // GET: Neklijns/Details/5
+        // GET: Neklijnen/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var neklijn = await _context.Neklijn.SingleOrDefaultAsync(m => m.NeklijnID == id);
+            var neklijn = await _context.Neklijnen.SingleOrDefaultAsync(m => m.NeklijnID == id);
             if (neklijn == null)
             {
                 return NotFound();
@@ -42,13 +42,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(neklijn);
         }
 
-        // GET: Neklijns/Create
+        // GET: Neklijnen/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Neklijns/Create
+        // POST: Neklijnen/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(neklijn);
         }
 
-        // GET: Neklijns/Edit/5
+        // GET: Neklijnen/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,7 +72,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var neklijn = await _context.Neklijn.SingleOrDefaultAsync(m => m.NeklijnID == id);
+            var neklijn = await _context.Neklijnen.SingleOrDefaultAsync(m => m.NeklijnID == id);
             if (neklijn == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(neklijn);
         }
 
-        // POST: Neklijns/Edit/5
+        // POST: Neklijnen/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(neklijn);
         }
 
-        // GET: Neklijns/Delete/5
+        // GET: Neklijnen/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,7 +123,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var neklijn = await _context.Neklijn.SingleOrDefaultAsync(m => m.NeklijnID == id);
+            var neklijn = await _context.Neklijnen.SingleOrDefaultAsync(m => m.NeklijnID == id);
             if (neklijn == null)
             {
                 return NotFound();
@@ -132,20 +132,20 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(neklijn);
         }
 
-        // POST: Neklijns/Delete/5
+        // POST: Neklijnen/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var neklijn = await _context.Neklijn.SingleOrDefaultAsync(m => m.NeklijnID == id);
-            _context.Neklijn.Remove(neklijn);
+            var neklijn = await _context.Neklijnen.SingleOrDefaultAsync(m => m.NeklijnID == id);
+            _context.Neklijnen.Remove(neklijn);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool NeklijnExists(int id)
         {
-            return _context.Neklijn.Any(e => e.NeklijnID == id);
+            return _context.Neklijnen.Any(e => e.NeklijnID == id);
         }
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace HoneymoonShop.Migrations
 {
-    public partial class modelupdate : Migration
+    public partial class newDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -107,7 +107,7 @@ namespace HoneymoonShop.Migrations
                 {
                     NeklijnID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NeklijnNaam = table.Column<string>(nullable: true)
+                    NeklijnNaam = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -230,9 +230,13 @@ namespace HoneymoonShop.Migrations
                 name: "Jurken",
                 columns: table => new
                 {
-                    ArtikelNr = table.Column<int>(nullable: false)
+                    JurkID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AfbeeldingNaam = table.Column<string>(nullable: true),
+                    AfbeeldingNaam1 = table.Column<string>(nullable: true),
+                    AfbeeldingNaam2 = table.Column<string>(nullable: true),
+                    AfbeeldingNaam3 = table.Column<string>(nullable: true),
+                    AfbeeldingNaam4 = table.Column<string>(nullable: true),
+                    ArtikelNr = table.Column<int>(nullable: false),
                     CategorieID = table.Column<int>(nullable: false),
                     KleurID = table.Column<int>(nullable: false),
                     MerkID = table.Column<int>(nullable: false),
@@ -244,7 +248,7 @@ namespace HoneymoonShop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Jurken", x => x.ArtikelNr);
+                    table.PrimaryKey("PK_Jurken", x => x.JurkID);
                     table.ForeignKey(
                         name: "FK_Jurken_Categorien_CategorieID",
                         column: x => x.CategorieID,
