@@ -19,13 +19,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             _context = context;    
         }
 
-        // GET: Stijls
+        // GET: Stijlen
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Stijl.ToListAsync());
+            return View(await _context.Stijlen.ToListAsync());
         }
 
-        // GET: Stijls/Details/5
+        // GET: Stijlen/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var stijl = await _context.Stijl.SingleOrDefaultAsync(m => m.StijlID == id);
+            var stijl = await _context.Stijlen.SingleOrDefaultAsync(m => m.StijlID == id);
             if (stijl == null)
             {
                 return NotFound();
@@ -42,13 +42,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(stijl);
         }
 
-        // GET: Stijls/Create
+        // GET: Stijlen/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Stijls/Create
+        // POST: Stijlen/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(stijl);
         }
 
-        // GET: Stijls/Edit/5
+        // GET: Stijlen/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,7 +72,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var stijl = await _context.Stijl.SingleOrDefaultAsync(m => m.StijlID == id);
+            var stijl = await _context.Stijlen.SingleOrDefaultAsync(m => m.StijlID == id);
             if (stijl == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(stijl);
         }
 
-        // POST: Stijls/Edit/5
+        // POST: Stijlen/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(stijl);
         }
 
-        // GET: Stijls/Delete/5
+        // GET: Stijlen/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,7 +123,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var stijl = await _context.Stijl.SingleOrDefaultAsync(m => m.StijlID == id);
+            var stijl = await _context.Stijlen.SingleOrDefaultAsync(m => m.StijlID == id);
             if (stijl == null)
             {
                 return NotFound();
@@ -132,20 +132,20 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(stijl);
         }
 
-        // POST: Stijls/Delete/5
+        // POST: Stijlen/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var stijl = await _context.Stijl.SingleOrDefaultAsync(m => m.StijlID == id);
-            _context.Stijl.Remove(stijl);
+            var stijl = await _context.Stijlen.SingleOrDefaultAsync(m => m.StijlID == id);
+            _context.Stijlen.Remove(stijl);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool StijlExists(int id)
         {
-            return _context.Stijl.Any(e => e.StijlID == id);
+            return _context.Stijlen.Any(e => e.StijlID == id);
         }
     }
 }

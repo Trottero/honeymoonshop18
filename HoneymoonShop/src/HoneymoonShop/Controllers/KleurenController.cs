@@ -22,7 +22,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
         // GET: Kleurs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Kleur.ToListAsync());
+            return View(await _context.Kleuren.ToListAsync());
         }
 
         // GET: Kleurs/Details/5
@@ -33,7 +33,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var kleur = await _context.Kleur.SingleOrDefaultAsync(m => m.KleurID == id);
+            var kleur = await _context.Kleuren.SingleOrDefaultAsync(m => m.KleurID == id);
             if (kleur == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var kleur = await _context.Kleur.SingleOrDefaultAsync(m => m.KleurID == id);
+            var kleur = await _context.Kleuren.SingleOrDefaultAsync(m => m.KleurID == id);
             if (kleur == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var kleur = await _context.Kleur.SingleOrDefaultAsync(m => m.KleurID == id);
+            var kleur = await _context.Kleuren.SingleOrDefaultAsync(m => m.KleurID == id);
             if (kleur == null)
             {
                 return NotFound();
@@ -137,15 +137,15 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var kleur = await _context.Kleur.SingleOrDefaultAsync(m => m.KleurID == id);
-            _context.Kleur.Remove(kleur);
+            var kleur = await _context.Kleuren.SingleOrDefaultAsync(m => m.KleurID == id);
+            _context.Kleuren.Remove(kleur);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool KleurExists(int id)
         {
-            return _context.Kleur.Any(e => e.KleurID == id);
+            return _context.Kleuren.Any(e => e.KleurID == id);
         }
     }
 }

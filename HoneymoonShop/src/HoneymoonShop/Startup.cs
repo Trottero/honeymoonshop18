@@ -97,7 +97,7 @@ namespace HoneymoonShop
                     );*/
             });
 
-            //SeedData.Initialize(app.ApplicationServices);
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }

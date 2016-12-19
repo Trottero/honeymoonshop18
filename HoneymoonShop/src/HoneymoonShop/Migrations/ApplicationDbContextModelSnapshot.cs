@@ -187,10 +187,18 @@ namespace HoneymoonShop.Migrations
 
             modelBuilder.Entity("Models.Jurk", b =>
                 {
-                    b.Property<int>("ArtikelNr")
+                    b.Property<int>("JurkID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AfbeeldingNaam");
+                    b.Property<string>("AfbeeldingNaam1");
+
+                    b.Property<string>("AfbeeldingNaam2");
+
+                    b.Property<string>("AfbeeldingNaam3");
+
+                    b.Property<string>("AfbeeldingNaam4");
+
+                    b.Property<int>("ArtikelNr");
 
                     b.Property<int>("CategorieID");
 
@@ -209,7 +217,7 @@ namespace HoneymoonShop.Migrations
 
                     b.Property<int>("StijlID");
 
-                    b.HasKey("ArtikelNr");
+                    b.HasKey("JurkID");
 
                     b.HasIndex("CategorieID");
 
@@ -257,7 +265,8 @@ namespace HoneymoonShop.Migrations
                     b.Property<int>("NeklijnID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("NeklijnNaam");
+                    b.Property<string>("NeklijnNaam")
+                        .IsRequired();
 
                     b.HasKey("NeklijnID");
 

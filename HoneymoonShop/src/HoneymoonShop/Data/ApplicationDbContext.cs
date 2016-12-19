@@ -23,19 +23,19 @@ namespace HoneymoonShop.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
-        public DbSet<Jurk> Jurk { get; set; }
+        public DbSet<Jurk> Jurken { get; set; }
 
-        public DbSet<Merk> Merk { get; set; }
+        public DbSet<Merk> Merken { get; set; }
 
-        public DbSet<Categorie> Categorie { get; set; }
+        public DbSet<Categorie> Categorien { get; set; }
 
-        public DbSet<Stijl> Stijl { get; set; }
+        public DbSet<Stijl> Stijlen { get; set; }
 
-        public DbSet<Kleur> Kleur { get; set; }
+        public DbSet<Kleur> Kleuren { get; set; }
 
-        public DbSet<Neklijn> Neklijn { get; set; }
+        public DbSet<Neklijn> Neklijnen { get; set; }
 
-        public DbSet<Silhouette> Silhouette { get; set; }
+        public DbSet<Silhouette> Silhouetten { get; set; }
 
         
 

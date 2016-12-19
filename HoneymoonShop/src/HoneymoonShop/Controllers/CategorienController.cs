@@ -22,7 +22,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categorie.ToListAsync());
+            return View(await _context.Categorien.ToListAsync());
         }
 
         // GET: Categories/Details/5
@@ -33,7 +33,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var categorie = await _context.Categorie.SingleOrDefaultAsync(m => m.CategorieID == id);
+            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
             if (categorie == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var categorie = await _context.Categorie.SingleOrDefaultAsync(m => m.CategorieID == id);
+            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
             if (categorie == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
                 return NotFound();
             }
 
-            var categorie = await _context.Categorie.SingleOrDefaultAsync(m => m.CategorieID == id);
+            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
             if (categorie == null)
             {
                 return NotFound();
@@ -137,15 +137,15 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var categorie = await _context.Categorie.SingleOrDefaultAsync(m => m.CategorieID == id);
-            _context.Categorie.Remove(categorie);
+            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
+            _context.Categorien.Remove(categorie);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool CategorieExists(int id)
         {
-            return _context.Categorie.Any(e => e.CategorieID == id);
+            return _context.Categorien.Any(e => e.CategorieID == id);
         }
     }
 }

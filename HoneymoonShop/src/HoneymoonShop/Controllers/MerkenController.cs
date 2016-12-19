@@ -22,7 +22,7 @@ namespace HoneymoonShop.Controllers
         // GET: Merks
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Merk.ToListAsync());
+            return View(await _context.Merken.ToListAsync());
         }
 
         // GET: Merks/Details/5
@@ -33,7 +33,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var merk = await _context.Merk.SingleOrDefaultAsync(m => m.MerkID == id);
+            var merk = await _context.Merken.SingleOrDefaultAsync(m => m.MerkID == id);
             if (merk == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var merk = await _context.Merk.SingleOrDefaultAsync(m => m.MerkID == id);
+            var merk = await _context.Merken.SingleOrDefaultAsync(m => m.MerkID == id);
             if (merk == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var merk = await _context.Merk.SingleOrDefaultAsync(m => m.MerkID == id);
+            var merk = await _context.Merken.SingleOrDefaultAsync(m => m.MerkID == id);
             if (merk == null)
             {
                 return NotFound();
@@ -137,15 +137,15 @@ namespace HoneymoonShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var merk = await _context.Merk.SingleOrDefaultAsync(m => m.MerkID == id);
-            _context.Merk.Remove(merk);
+            var merk = await _context.Merken.SingleOrDefaultAsync(m => m.MerkID == id);
+            _context.Merken.Remove(merk);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool MerkExists(int id)
         {
-            return _context.Merk.Any(e => e.MerkID == id);
+            return _context.Merken.Any(e => e.MerkID == id);
         }
     }
 }

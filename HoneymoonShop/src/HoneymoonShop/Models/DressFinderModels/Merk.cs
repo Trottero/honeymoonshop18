@@ -9,6 +9,7 @@ namespace Models
     {
         public int MerkID { get; set; }
 
+        [Display(Name = "Merk")]
         [Required]
         public string MerkNaam { get; set; }
 

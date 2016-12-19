@@ -8,6 +8,9 @@ namespace Models
     public class Neklijn
     {
         public int NeklijnID { get; set; }
+
+        [Display(Name = "Neklijn")]
+        [Required]
         public string NeklijnNaam { get; set; }
 
         public IList<Jurk> Jurken { get; set; }
