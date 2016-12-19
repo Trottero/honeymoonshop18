@@ -1,0 +1,85 @@
+@model Models.Jurk
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Jurk</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="AfbeeldingNaam" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AfbeeldingNaam" class="form-control" />
+                <span asp-validation-for="AfbeeldingNaam" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategorieID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CategorieID" class ="form-control" asp-items="ViewBag.CategorieID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="KleurID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="KleurID" class ="form-control" asp-items="ViewBag.KleurID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MerkID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="MerkID" class ="form-control" asp-items="ViewBag.MerkID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NeklijnID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="NeklijnID" class ="form-control" asp-items="ViewBag.NeklijnID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Omschrijving" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Omschrijving" class="form-control" />
+                <span asp-validation-for="Omschrijving" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Prijs" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Prijs" class="form-control" />
+                <span asp-validation-for="Prijs" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SilhouetteID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="SilhouetteID" class ="form-control" asp-items="ViewBag.SilhouetteID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StijlID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="StijlID" class ="form-control" asp-items="ViewBag.StijlID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
