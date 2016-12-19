@@ -21,63 +21,63 @@ namespace Models
 
         //Foreign key for Merk
         [Display(Name = "Merk")]
-        public int MerkID { get; set; }
-
         [Required]
-        public Merk Merk { get; set; }
+        public int MerkID { get; set; }
+        
+        public virtual Merk Merk { get; set; }
 
         //Foreign key for Categorie
         [Display(Name = "Categorie")]
+        [Required]
         public int CategorieID { get; set; }
 
-        [Required]
-        public Categorie Categorie { get; set; }
+        public virtual Categorie Categorie { get; set; }
 
         //Foreign key for Stijl
         [Display(Name = "Stijl")]
+        [Required]
         public int StijlID { get; set; }
 
-        [Required]
         [DataType(DataType.Currency)]
-        public Stijl Stijl { get; set; }
+        public virtual Stijl Stijl { get; set; }
 
         [Required]
         public int Prijs { get; set; }
 
         //Foreign key for Neklijn
         [Display(Name = "Neklijn")]
-        public int NeklijnID { get; set; }
-
         [Required]
-        public Neklijn Neklijn { get; set; }
+        public int NeklijnID { get; set; }
+                  
+        public virtual Neklijn Neklijn { get; set; }
 
         //Foreign key for Silhouette
         [Display(Name = "Silhouette")]
+        [Required]
         public int SilhouetteID { get; set; }
 
-        [Required]
-        public Silhouette Silhouette { get; set; }
+        public virtual Silhouette Silhouette { get; set; }
 
         //Foreign key for Kleur
         [Display(Name = "Kleur")]
+        [Required]
         public int KleurID { get; set; }
 
-        [Required]
-        public Kleur Kleur { get; set; }
+        public virtual Kleur Kleur { get; set; }
 
         [Required]
         public string Omschrijving { get; set; }
 
-        [Display(Name = "Afbeelding 1")]
+        [Display(Name = "Afb. 1")]
         public string AfbeeldingNaam1 { get; set; }
 
-        [Display(Name = "Afbeelding 2")]
+        [Display(Name = "Afb. 2")]
         public string AfbeeldingNaam2 { get; set; }
 
-        [Display(Name = "Afbeelding 3")]
+        [Display(Name = "Afb. 3")]
         public string AfbeeldingNaam3 { get; set; }
 
-        [Display(Name = "Afbeelding 4")]
+        [Display(Name = "Afb 4")]
         public string AfbeeldingNaam4 { get; set; }
     }
 }

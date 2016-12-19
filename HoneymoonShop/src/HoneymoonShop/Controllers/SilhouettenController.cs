@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Data;
 using Models;
 
-namespace HoneymoonShop.Controllers.DressFinderControllers
+namespace HoneymoonShop.Controllers
 {
     public class SilhouettenController : Controller
     {

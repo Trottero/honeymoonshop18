@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Data;
 using Models;
 
-namespace HoneymoonShop.Controllers.DressFinderControllers
+namespace HoneymoonShop.Controllers
 {
     public class CategorienController : Controller
     {
@@ -19,13 +19,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             _context = context;    
         }
 
-        // GET: Categories
+        // GET: Categorien
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categorien.ToListAsync());
         }
 
-        // GET: Categories/Details/5
+        // GET: Categorien/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +42,13 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(categorie);
         }
 
-        // GET: Categories/Create
+        // GET: Categorien/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Categorien/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(categorie);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Categorien/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(categorie);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Categorien/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(categorie);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Categorien/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,7 +132,7 @@ namespace HoneymoonShop.Controllers.DressFinderControllers
             return View(categorie);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Categorien/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

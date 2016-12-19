@@ -10,8 +10,9 @@ namespace Models
         public int CategorieID { get; set; }
 
         [Required]
+        [Display(Name = "Categorie")]
         public string CategorieNaam { get; set; }
 
-        public IList<Jurk> Jurken { get; set; }
+        public virtual IList<Jurk> Jurken { get; set; }
     }
 }

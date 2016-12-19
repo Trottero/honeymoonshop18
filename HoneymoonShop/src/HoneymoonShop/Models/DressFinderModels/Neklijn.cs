@@ -13,6 +13,6 @@ namespace Models
         [Required]
         public string NeklijnNaam { get; set; }
 
-        public IList<Jurk> Jurken { get; set; }
+        public virtual IList<Jurk> Jurken { get; set; }
     }
 }
