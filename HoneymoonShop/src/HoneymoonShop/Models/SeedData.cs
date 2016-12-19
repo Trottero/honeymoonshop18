@@ -15,8 +15,8 @@ namespace HoneymoonShop.Models
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-
-                clearJurken(context);
+               
+                //clearJurken(context); //Verwijder alle jurken in Db
                 SeedMerken(context);
                 SeedCategorien(context);
                 SeedStijlen(context);
