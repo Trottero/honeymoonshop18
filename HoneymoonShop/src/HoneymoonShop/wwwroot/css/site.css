@@ -52,7 +52,7 @@ textarea {
     margin: 0;
     border-radius: 0;
     color: black;
-    background-color: #fcdddd;
+    background-color: #fac9c4;
     border:0;
 }
 
@@ -158,9 +158,9 @@ textarea {
 .navbar-pink > li > button {
     margin-top: 5px;
     text-transform: uppercase;
-    border: 5px solid pink;
+    border: 5px solid #f0597c;
     border-radius: 0;
-    background-color:pink;
+    background-color:#f0597c;
     color: black;
 }
 
