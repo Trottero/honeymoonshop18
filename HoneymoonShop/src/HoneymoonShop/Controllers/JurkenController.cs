@@ -40,7 +40,8 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.JurkID == id);
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                .SingleOrDefaultAsync(m => m.JurkID == id);
             if (jurk == null)
             {
                 return NotFound();
@@ -123,7 +124,8 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.JurkID == id);
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl).
+                SingleOrDefaultAsync(m => m.JurkID == id);
             if (jurk == null)
             {
                 return NotFound();
@@ -142,7 +144,8 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JurkID,AfbeeldingNaam1,AfbeeldingNaam2,AfbeeldingNaam3,AfbeeldingNaam4,ArtikelNr,CategorieID,KleurID,MerkID,NeklijnID,Omschrijving,Prijs,SilhouetteID,StijlID")] Jurk jurk)
+        public async Task<IActionResult> Edit(int id, [Bind("JurkID,AfbeeldingNaam1,AfbeeldingNaam2,AfbeeldingNaam3,AfbeeldingNaam4,ArtikelNr,CategorieID,KleurID,MerkID,NeklijnID,Omschrijving,Prijs,SilhouetteID,StijlID")] Jurk jurk,
+            IFormFile afbeelding1, IFormFile afbeelding2, IFormFile afbeelding3, IFormFile afbeelding4)
         {
             if (id != jurk.JurkID)
             {
@@ -153,6 +156,35 @@ namespace HoneymoonShop.Controllers
             {
                 try
                 {
+                    var path = Path.Combine(_environment.WebRootPath, "images");
+
+                    //Create List of attached files, only add file to list if file != null
+                    IList<IFormFile> images = (new List<IFormFile>() { afbeelding1, afbeelding2, afbeelding3, afbeelding4 }).
+                        Where(x => (x != null)).ToList();
+
+                    foreach (IFormFile file in images)
+                    {
+                        if (file.Length > 0) // && (file.Name.EndsWith(".jpg") || file.Name.EndsWith(".png")))
+                        {
+                            using (var fileStream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
+                            {
+                                await file.CopyToAsync(fileStream);
+                            }
+                        }
+                    }
+
+                    //Add images filenames to Jurk class, VERY UGLY CODE!!, TODO: Make Image model class if there's time left
+                    int index = 1;
+                    foreach (var image in images)
+                    {
+                        if (index == 1) { jurk.AfbeeldingNaam1 = image.FileName; }
+                        else if (index == 2) { jurk.AfbeeldingNaam2 = image.FileName; }
+                        else if (index == 3) { jurk.AfbeeldingNaam3 = image.FileName; }
+                        else if (index == 4) { jurk.AfbeeldingNaam4 = image.FileName; }
+                        index++;
+                    }
+
+                    //Update jurk to DbContext
                     _context.Update(jurk);
                     await _context.SaveChangesAsync();
                 }
@@ -186,7 +218,8 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.SingleOrDefaultAsync(m => m.JurkID == id);
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                .SingleOrDefaultAsync(m => m.JurkID == id);
             if (jurk == null)
             {
                 return NotFound();

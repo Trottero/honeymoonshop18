@@ -1,0 +1,68 @@
+﻿@model CatalogusFilterModel
+@{
+    ViewData["Title"] = "Catalogus Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <!--sorteer functionaliteit-->
+            <div class="col-md-3">
+                <img src="https://i.gyazo.com/e44b4266483fe2766241ff98617e1ce9.png" />
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <form class="form-inline">
+                            <div class="form-group cat-searchbarright">
+                                <label class="">Sorteer op: </label>
+                                <select class="form-control">
+                                    <option>Prijs Hoog/Laag</option>
+                                    <option>Prijs Laag/Hoog</option>
+                                    <option>Populariteit</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="itemContainer" class="nexa_bold cat">
+                    @{int count = 0; }
+                    @foreach (var item in Model.huidigeJurken)
+                    {
+                        <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></div>
+                        /*
+                        if (count == 8)
+                        {
+                            <div class="dressfinder-pics dressfinderdouble-pic"> <img src="https://i.gyazo.com/fb6c1eb95de82a821e2db9ec11309447.png" /></div>
+                        }
+
+                        if (count == 16)
+                        {
+                            <div class="dressfinder-pics"><img src="https://i.gyazo.com/591a6599b50c11222d52d7c5b60170ea.png" /></div>
+                        }
+                        count++;
+                        */
+                    }
+                </div>
+                <!--Page selection-->
+                <div class="row">
+                    <div class="col-mod-9">
+                        <div class="holder">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <img src="https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg" alt="Foto van vrouw met bruidsjurk" />
+            </div>
+        </div>
+    </div>
+</div>
+

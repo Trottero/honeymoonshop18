@@ -88,24 +88,24 @@
                         @Html.DisplayFor(modelItem => item.Omschrijving)
                     </td>
                     <td>
-                        <img src="~/images/@item.AfbeeldingNaam1" alt="Jurk afbeelding1" width="40" height="60" />
+                        <img src="~/images/@item.AfbeeldingNaam1" alt="~/images/@item.AfbeeldingNaam1" width="40" height="60" />
                     </td>
                     <td>
                         <img src="~/images/@item.AfbeeldingNaam2" alt="@item.AfbeeldingNaam2" width="40" height="60" />
                     </td>
                     <td>
-                        <img src="~/images/@item.AfbeeldingNaam3" alt="Jurk afbeelding1" width="40" height="60" />
+                        <img src="~/images/@item.AfbeeldingNaam3" alt="~/images/@item.AfbeeldingNaam3" width="40" height="60" />
                     </td>
                     <td>
-                        <img src="~/images/@item.AfbeeldingNaam4" alt="Jurk afbeelding1" width="40" height="60" />
+                        <img src="~/images/@item.AfbeeldingNaam4" alt="~/images/@item.AfbeeldingNaam4" width="40" height="60" />
                     </td>
 
                    
                    
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.ArtikelNr">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ArtikelNr">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ArtikelNr">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.JurkID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.JurkID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.JurkID">Delete</a>
                     </td>
                 </tr>
             }
