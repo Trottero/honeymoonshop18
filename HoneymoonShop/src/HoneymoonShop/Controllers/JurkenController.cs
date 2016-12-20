@@ -80,7 +80,7 @@ namespace HoneymoonShop.Controllers
 
                 foreach (IFormFile file in images)
                 {                    
-                    if (file.Length > 0 && (file.Name.EndsWith(".jpg") || file.Name.EndsWith(".png")))
+                    if (file.Length > 0) // && (file.Name.EndsWith(".jpg") || file.Name.EndsWith(".png")))
                     {
                         using (var fileStream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
                         {
