@@ -13,22 +13,28 @@ namespace HoneymoonShop.Controllers
 
         public CatalogusController(ApplicationDbContext context)
         {
-            _context = context;            
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            var jurken = _context.BruidsJurken;
+            var jurken = _context.Jurken;
             return View(jurken);
         }
 
 
         public IActionResult Newcollection()
         {
-            var jurken = _context.BruidsJurken;
+            var jurken = _context.Jurken;
             return View(jurken);
         }
 
+        public IActionResult Details(int artikelnummer)
+        {
+            ViewData["artikelnummer"] = artikelnummer;
+            var jurken = _context.Jurken;
+            return View(jurken);
+        }
 
     }
 }

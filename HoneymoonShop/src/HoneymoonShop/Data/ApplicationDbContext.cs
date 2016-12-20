@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Models;
+using Models;
 
 namespace HoneymoonShop.Data
 {
@@ -22,7 +23,22 @@ namespace HoneymoonShop.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+        public DbSet<Jurk> Jurken { get; set; }
 
-        public DbSet<BruidsJurk> BruidsJurken { get; set; }
+        public DbSet<Merk> Merken { get; set; }
+
+        public DbSet<Categorie> Categorien { get; set; }
+
+        public DbSet<Stijl> Stijlen { get; set; }
+
+        public DbSet<Kleur> Kleuren { get; set; }
+
+        public DbSet<Neklijn> Neklijnen { get; set; }
+
+        public DbSet<Silhouette> Silhouetten { get; set; }
+
+        
+
+        
     }
 }
