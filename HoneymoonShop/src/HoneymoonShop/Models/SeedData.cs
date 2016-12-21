@@ -23,8 +23,10 @@ namespace HoneymoonShop.Models
                 SeedNeklijnen(context);
                 SeedSilhouetten(context);
                 SeedKleuren(context);
-                SeedJurken(context);
                 context.SaveChanges();
+
+                SeedJurken(context);
+                //context.SaveChanges();
             }
         }
 
@@ -256,7 +258,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 10,
-                    CategorieID = 3,
+                    CategorieID = 2,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -271,7 +273,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 11,
-                    CategorieID = 3,
+                    CategorieID = 1,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -286,7 +288,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 12,
-                    CategorieID = 3,
+                    CategorieID = 1,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -301,7 +303,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 13,
-                    CategorieID = 3,
+                    CategorieID = 1,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -316,7 +318,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 14,
-                    CategorieID = 3,
+                    CategorieID = 2,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -331,7 +333,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 15,
-                    CategorieID = 3,
+                    CategorieID = 2,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -346,7 +348,7 @@ namespace HoneymoonShop.Models
                 },
                 new Jurk() {
                     ArtikelNr = 16,
-                    CategorieID = 3,
+                    CategorieID = 1,
                     MerkID = 2,
                     NeklijnID = 1,
                     SilhouetteID = 1,
@@ -421,7 +423,7 @@ namespace HoneymoonShop.Models
                 }
             };
             context.Jurken.AddRange(jurkenSeedList);
-
+            context.SaveChanges();
         }
     }
 }

@@ -224,3 +224,8 @@ header .intro-text .intro-heading {
   }
 }
 
+.navbar-header {
+    padding-left: 10px;
+}
+
+
