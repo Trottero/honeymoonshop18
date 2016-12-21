@@ -196,7 +196,8 @@ row-suits {
 }
 
 .det-sideimg {
-    margin-top: 20px;
+        width: 240px;
+    height: 240px;
 }
 
 .det-desclist {
