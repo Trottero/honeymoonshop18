@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace HoneymoonShop.Models
 {
     public class CatalogusFilterModel
-    {
-        
-        public Merk selectedMerken { get; set; }
+    {        
+        public List<int> selectedMerken { get; set; }
+
         public List<Jurk> filteredJurken { get; set; }
     }
 }

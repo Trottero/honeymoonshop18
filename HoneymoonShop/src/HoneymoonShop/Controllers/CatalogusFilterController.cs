@@ -35,18 +35,20 @@ namespace HoneymoonShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CatalogusFilterModel filterModel)
         {
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
             var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                          select j;
             //Filter merk
             if (filterModel.selectedMerken != null)
             {
-                foreach (Merk merk in filterModel.selectedMerken)
+                foreach (int merkID in filterModel.selectedMerken)
                 {
-                    jurken = jurken.Where(j => j.Merk == merk);
+                    jurken = jurken.Where(j => j.Merk.MerkID == merkID);
                 }
             }
+            
             filterModel.filteredJurken = await jurken.ToListAsync();
-
+            
             return View(filterModel);
         }
     }
