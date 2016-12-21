@@ -47,10 +47,10 @@ namespace HoneymoonShop.Controllers
 
             return View(jurk);
         }
-        /*
+        
         public async Task<IActionResult> Collection(String collection)
         {
-            /*
+            
             collection = "Summer SALE";
 
             if (collection == null || collection.Equals(""))
@@ -59,14 +59,15 @@ namespace HoneymoonShop.Controllers
             }
 
 
-            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl).Select(m => m.Categorie.CategorieNaam.Equals(collection));
-            if (jurk == null)
+            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                         select j;
+            jurken = jurken.Where(j => j.Categorie.CategorieNaam == collection);
+            if (jurken == null)
             {
                 return NotFound();
             }
-
-            return View(jurk);
+            return View(jurken);
             
-        }*/
+        }
     }
 }
