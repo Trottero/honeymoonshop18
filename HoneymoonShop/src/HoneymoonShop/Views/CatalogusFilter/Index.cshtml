@@ -8,7 +8,11 @@
         <div class="row">
             <!--sorteer functionaliteit-->
             <div class="col-md-3">
-                <img src="https://i.gyazo.com/e44b4266483fe2766241ff98617e1ce9.png" />
+                <form asp-controller="CatalogusFilter" asp-action="Index" method="post">
+                    <select asp-for="selectedMerken" asp-items="ViewBag.MerkID"></select>
+                    <input type="submit" value="Filter" />
+
+                </form>
             </div>
             <div class="col-md-9">
                 <div class="row">
@@ -29,9 +33,9 @@
                 </div>
                 <div id="itemContainer" class="nexa_bold cat">
                     @{int count = 0; }
-                    @foreach (var item in Model.huidigeJurken)
+                    @foreach (var item in Model.filteredJurken)
                     {
-                        <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></div>
+                        <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div></div>
                         /*
                         if (count == 8)
                         {

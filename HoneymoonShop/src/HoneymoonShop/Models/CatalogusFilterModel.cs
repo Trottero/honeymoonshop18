@@ -9,10 +9,8 @@ namespace HoneymoonShop.Models
 {
     public class CatalogusFilterModel
     {
-        public SelectList alleMerken { get; set; }
-        public SelectList selectedMerken { get; set; }
-
-        public List<Jurk> huidigeJurken { get; set; }
+        
+        public Merk selectedMerken { get; set; }
         public List<Jurk> filteredJurken { get; set; }
     }
 }
