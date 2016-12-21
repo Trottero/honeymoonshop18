@@ -15,10 +15,52 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.AfbeeldingNaam1)
+                @Html.DisplayNameFor(model => model.ArtikelNr)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.AfbeeldingNaam1)
+                @Html.DisplayFor(model => model.ArtikelNr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Categorie.CategorieNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Categorie.CategorieNaam)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Merk.MerkNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Merk.MerkNaam)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Stijl.StijlNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Stijl.StijlNaam)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Prijs)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Prijs)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Neklijn.NeklijnNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Neklijn.NeklijnNaam)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Silhouette.SilhouetteNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Silhouette.SilhouetteNaam)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Kleur.KleurNaam)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Kleur.KleurNaam)
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Omschrijving)
@@ -27,10 +69,28 @@
                 @Html.DisplayFor(model => model.Omschrijving)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Prijs)
+                @Html.DisplayNameFor(model => model.AfbeeldingNaam1)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Prijs)
+                <img src="~/images/@Html.DisplayFor(model => model.AfbeeldingNaam1)" alt="Jurk afbeelding1" width="40" height="60" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AfbeeldingNaam2)
+            </dt>
+            <dd>
+                <img src="~/images/@Html.DisplayFor(model => model.AfbeeldingNaam2)" alt="Jurk afbeelding1" width="40" height="60" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AfbeeldingNaam3)
+            </dt>
+            <dd>
+                <img src="~/images/@Html.DisplayFor(model => model.AfbeeldingNaam3)" alt="Jurk afbeelding1" width="40" height="60" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AfbeeldingNaam4)
+            </dt>
+            <dd>
+                <img src="~/images/@Html.DisplayFor(model => model.AfbeeldingNaam4)" alt="Jurk afbeelding1" width="40" height="60" />
             </dd>
         </dl>
 
