@@ -8,6 +8,7 @@
         <div class="row">
             <!--sorteer functionaliteit-->
             <div class="col-md-3">
+
                 <img src="https://i.gyazo.com/e44b4266483fe2766241ff98617e1ce9.png" />
             </div>
             <div class="col-md-9">
@@ -31,8 +32,8 @@
                     @{int count = 0; }
                     @foreach (var item in Model)
                     {
-                        <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></div>
-                        /*
+                        <div class="dressfinder-pics"><a asp-action="Details" asp-route-id="@item.JurkID"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk</div></a></div>
+                        /*/a
                         if (count == 8)
                         {
                             <div class="dressfinder-pics dressfinderdouble-pic"> <img src="https://i.gyazo.com/fb6c1eb95de82a821e2db9ec11309447.png" /></div>

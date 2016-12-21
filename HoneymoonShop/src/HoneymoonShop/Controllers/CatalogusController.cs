@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HoneymoonShop.Data;
+using Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HoneymoonShop.Controllers
 {
@@ -29,12 +31,42 @@ namespace HoneymoonShop.Controllers
             return View(jurken);
         }
 
-        public IActionResult Details(int artikelnummer)
+        public async Task<IActionResult> Details(int? id)
         {
-            ViewData["artikelnummer"] = artikelnummer;
-            var jurken = _context.Jurken;
-            return View(jurken);
-        }
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                .SingleOrDefaultAsync(m => m.JurkID == id);
+            if (jurk == null)
+            {
+                return NotFound();
+            }
+
+            return View(jurk);
+        }
+        /*
+        public async Task<IActionResult> Collection(String collection)
+        {
+            /*
+            collection = "Summer SALE";
+
+            if (collection == null || collection.Equals(""))
+            {
+                return NotFound();
+            }
+
+
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl).Select(m => m.Categorie.CategorieNaam.Equals(collection));
+            if (jurk == null)
+            {
+                return NotFound();
+            }
+
+            return View(jurk);
+            
+        }*/
     }
 }
