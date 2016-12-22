@@ -1,7 +1,34 @@
-﻿* {
-    font-family: 'Josefin Sans', sans-serif;
+﻿@font-face {
+    font-family: 'nexa_boldregular';
+    src: url('Nexa_Free_Bold-webfont.eot');
+    src: url('Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('Nexa_Free_Bold-webfont.woff2') format('woff2'), url('Nexa_Free_Bold-webfont.woff') format('woff'), url('Nexa_Free_Bold-webfont.ttf') format('truetype'), url('Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.nexa_bold {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: nexa_boldregular;
+}
+
+.sans-serif-thin {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+}
+
+.backgroundcolor {
+    background-color: white;
+}
+
+.navbarbackground {
+    background-color: white;
+}
+
+h5 {
+    font-family: sans-serif;
+    font-size: 18px;
+}
 
 .col-md-12-1 {
     height: 450px;
@@ -18,6 +45,7 @@
     background-position: center;
     background-size: 850px;
 }
+
 .col-md-12-3 {
     height: 200px;
     width: 100%;
@@ -25,23 +53,23 @@
     background-size: 100% 100%;
     background-position: center;
     background-size: 850px;
-   
 }
 
 .text1 {
+    font-family: 'Josefin Sans', sans-serif;
     position: center;
     font-size: 30px;
 }
 
 .text2 {
-    font-family: sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
 }
 
 .text3 {
-    font-family: sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
@@ -49,15 +77,15 @@
     vertical-align: middle;
     line-height: 270px;
 }
+
 .text4 {
-    font-family: sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
     text-align: center;
     vertical-align: middle;
     line-height: 270px;
-    
 }
 
 .pic-row {
@@ -77,82 +105,191 @@
 }
 
 .DSbtn {
-    font-family: sans-serif;
-    text-transform:uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
     font-size: 20px;
-    letter-spacing:2px;
+    letter-spacing: 2px;
     font-weight: bolder;
     border-radius: 0;
     display: block;
     margin: auto;
-   border-style:none;
-   margin-bottom:30px;
+    border-style: none;
+    margin-bottom: 30px;
 }
 
-.downarrow{
-    text-align:center;
-    margin-bottom:50px;
+.downarrow {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.arrowright{
-   
-    color:royalblue;
-    text-align:center;
- 
+.arrowright {
+    color: royalblue;
+    text-align: center;
 }
-.arrow-right-text{
-    font-size:50px;
-    text-align:center;
-    text-transform:uppercase;
-    color:white;
+
+.arrow-right-text {
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+row-suits {
+    display: flex;
+    width: 100%;
+}
+
+.video2 {
+    background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);
+    width: 63%;
+    height: 480px;
+    display: flex;
+}
+
+.video1 {
+    width: 33%;
+    position: center;
+    font-size: 25px;
+}
+
+
+/*catalogus styles*/
+.cat-col-md-12-1 {
+    height: 600px;
+    width: 1400px;
+    background-image: url(https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg);
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.dressfinder-pics {
+    margin: 10px;
+    height: 400px;
+    width: 290px;
+}
+
+.dressfinderdouble-pic {
+    margin-right: 45px;
+}
+
+.cat-line {
+    height: 10px;
+    border-bottom: 3px solid black;
+    width: 84%;
+    margin-left: 35px;
+}
+
+.cat-textinline {
+}
+
+.cat {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cat-textdescimage {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.det-sideimg {
+    margin-top:15px;
+        width: 240px;
+    height: 240px;
+}
+
+.det-desclist {
+    margin-top: 10px;
+}
+
+.det-large-pic{
+    margin: 20px;
+}
+
+.det-suggestedjels{
+    margin-right: 8px; 
     
 }
-row-suits{
-    display:flex;
-    width:100%;
+.sidetext > div > button {
+    margin-top: 20px;
+    border: 5px solid #f0597c;
+    border-radius: 0;
+    background-color: #f0597c;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
 }
-.video2{
-   background-image:url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);
-   width:63%;
-   height:480px;
-   display:flex;
-  
+.specialbutton {
+    margin-top: 20px;
+    border: 5px solid #f0597c;
+    border-radius: 0;
+    background-color: #f0597c;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
 }
 
-.video1{
-     width:33%;
-     position: center;
-     font-size: 25px;
- }
+.cat-background {
+    background-color: white;
+}
 
+@media (min-width: 1500px) {
+    .container {
+        width: 1400px;
+    }
+}
 
+.cat-searchbarright {
+    margin-left: 170px;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
 
-
-
-
+.form-control {
+    max-width: 220px;
+}
+.det-desclist-special{
+    color: #f7bfc8;
+}
 
 
 
 /*-FooterStyles-*/
 .footer {
-    background-color: #FCDDDD;
+    background-color: #fce8e7;
+    padding-bottom: 50px;
 }
 
 /*-- Top row--*/
-.left {
+.footerimages {
     padding-top: 80px;
     margin-bottom: 50px;
 }
 
-.center {
-    padding-top: 80px;
-    margin-bottom: 50px;
+.footerleft {
+    padding-left: 10%;
 }
 
-.right {
-    padding-top: 80px;
-    margin-bottom: 50px;
+.footerright {
+    padding-right: 10%;
 }
+
+.footerlefttext {
+    margin-left: 35%;
+}
+
+.footerrighttext {
+    margin-right: 35%;
+}
+
 
 /*-- Midden row--*/
 .midrow {
@@ -173,7 +310,7 @@ row-suits{
 
 /*-- Bottom row--*/
 .style_p_h3 {
-    font-family: sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -182,14 +319,14 @@ row-suits{
     width: 100%;
     padding: 0px;
     margin: 0px;
+    margin-left: 15%;
 }
 
 ul {
     list-style-type: none;
-    /*font-family: sans-serif;*/
-    font-size: 18px;
     padding: 0px;
     margin: 0px;
+    margin-left: 15%;
 }
 
 a {
@@ -200,4 +337,3 @@ a {
         text-decoration: none;
         color: black;
     }
-

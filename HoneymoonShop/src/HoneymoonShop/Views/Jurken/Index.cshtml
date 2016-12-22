@@ -1,0 +1,114 @@
+@model IEnumerable<Models.Jurk>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <hr />
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArtikelNr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categorie.CategorieNaam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Merk.MerkNaam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stijl.StijlNaam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prijs)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Neklijn.NeklijnNaam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Silhouette.SilhouetteNaam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kleur.KleurNaam)
+                </th>    
+                <th>
+                    @Html.DisplayNameFor(model => model.Omschrijving)
+                </th>            
+                <th>
+                    @Html.DisplayNameFor(model => model.AfbeeldingNaam1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AfbeeldingNaam2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AfbeeldingNaam3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AfbeeldingNaam4)
+                </th>               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArtikelNr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categorie.CategorieNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Merk.MerkNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stijl.StijlNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prijs)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Neklijn.NeklijnNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Silhouette.SilhouetteNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kleur.KleurNaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Omschrijving)
+                    </td>
+                    <td>
+                        <img src="~/images/@item.AfbeeldingNaam1" alt="~/images/@item.AfbeeldingNaam1" width="40" height="60" />
+                    </td>
+                    <td>
+                        <img src="~/images/@item.AfbeeldingNaam2" alt="@item.AfbeeldingNaam2" width="40" height="60" />
+                    </td>
+                    <td>
+                        <img src="~/images/@item.AfbeeldingNaam3" alt="~/images/@item.AfbeeldingNaam3" width="40" height="60" />
+                    </td>
+                    <td>
+                        <img src="~/images/@item.AfbeeldingNaam4" alt="~/images/@item.AfbeeldingNaam4" width="40" height="60" />
+                    </td>
+
+                   
+                   
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.JurkID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.JurkID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.JurkID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

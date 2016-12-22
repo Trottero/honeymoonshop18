@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="~/css/style.css" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" media="screen" />
-        
+        <link rel="stylesheet" type="text/css" href="~/css/jPages.css" media="screen" />
+
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -22,7 +23,24 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="backgroundcolor">
+    <div class="container">
+        <nav class="navbar navbar-default navbar-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Website</a>
+                    <a class="navbar-brand" href="#">Webshop</a>
+                    <a class="navbar-brand" asp-controller="Admin" asp-action="Index">Admin</a>
+                    <a class="navbar-brand" asp-controller="CatalogusFilter" asp-action="Index">Filter</a>
+                </div>
+                <div class="navbar-header navbar-right">
+                    <p class="navbar-text">T (010) 4126143</p>
+                    <p class="navbar-text"><span class="glyphicon glyphicon-search"></span></p>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--
     <div class="container">
         <div class="navbar navbar-custom">
             <div class="navbar-header">
@@ -34,10 +52,11 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div>s
+    -->
     <div class="container">
         <header>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse navbarbackground">
                 <ul class="nav navbar-nav navbar-left">
                     <li><h1>Honeymoon shop</h1></li>
                 </ul>
@@ -50,60 +69,66 @@
                     <li><button type="button" class="btn btn-default">De winkel</button></li>
                 </ul>
             </div>
+            <!--
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
                 <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
+            -->
 
         </header>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer class="footer">
-            <div class="container">
-                <!--Top row-->
-                <div class="row">
+    @RenderBody()
 
-                    <div class="col-md-4 left">
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
-                    </div>
-                    <div class="col-md-4 center">
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
-                    </div>
-                    <div class="col-md-4 right">
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
-                    </div>
+    <footer>
+        <div class="container footer">
+            <!--Top row-->
+            <div class="row">
 
-
+                <div class="col-md-4 footerimages footerleft">
+                    <center>
+                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                    </center>
                 </div>
-                <!--Midden row-->
-                <div class="row">
-
-                    <div class="col-md-12 midrow">
-                        <div>Korte Hoogstraat 4, 3011GL Rotterdam  <b>email</b> info@honeymoonshop.nl <b>tel</b>(010) 412 61 43 <b>whatsapp</b>(06) 25 19 99 27</div>
-                        <div><strong>Openingstijden MA</strong> 12.00 - 17.30 <b>DI t/m VR</b> 09.30 - 17.30 <b>ZA</b> 09.30 - 17.30 <b>ZO</b> 11.00 - 17.00</div>
-                    </div>
+                <div class="col-md-4 footerimages">
+                    <center>
+                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                    </center>
                 </div>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 midcol">
-                        <img class="img-responsive" src="~/images/indexa.png" alt="logo grand wedding show" />
-                        <img class="img-responsive" src="~/images/brand.gif" alt="logo cbw" />
-                    </div>
-                    <div class="col-md-4"></div>
+                <div class="col-md-4 footerimages footerright">
+                    <center>
+                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                    </center>
                 </div>
 
 
+            </div>
+            <!--Midden row-->
+            <div class="row">
 
-                <!--Bottom row-->
-                <div class="row foot">
+                <div class="col-md-12 midrow">
+                    <div class="sans-serif-thin">Korte Hoogstraat 4, 3011GL Rotterdam  <b>email</b> info@honeymoonshop.nl <b>tel</b>(010) 412 61 43 <b>whatsapp</b>(06) 25 19 99 27</div>
+                    <div class="sans-serif-thin"><strong>Openingstijden MA</strong> 12.00 - 17.30 <b>DI t/m VR</b> 09.30 - 17.30 <b>ZA</b> 09.30 - 17.30 <b>ZO</b> 11.00 - 17.00</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 midcol">
+                    <img class="img-responsive" src="~/images/indexa.png" alt="logo grand wedding show" />
+                    <img class="img-responsive" src="~/images/brand.gif" alt="logo cbw" />
+                </div>
+                <div class="col-md-4"></div>
+            </div>
 
-                    <div class="col-md-4">
 
+
+            <!--Bottom row-->
+            <div class="row foot">
+                <div class="col-md-4">
+                    <div class="footerlefttext">
                         <p class="style_p_h3">Winkel</p>
-                        <ul>
+                        <ul class="sans-serif-thin">
                             <li><a>Over de Honeymoon shop</a></li>
                             <li><a>Servicepunten</a></li>
                             <li><a>Routebeschrijving</a></li>
@@ -114,42 +139,42 @@
                             <li><a>Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
-                        <p class="style_p_h3">Service</p>
-                        <ul>
-                            <li><a>Beoordeling</a></li>
-                            <li><a>Dressfinder</a></li>
-                            <li><a>Gratis trouwmagazine</a></li>
-                            <li><a>Nieuwsbrief</a></li>
-                            <li><a>Vell gestelde vragen</a></li>
-                            <li><a>CWB erkend</a></li>
-                            <li><a>Reinigen van je trouwjurk</a></li>
-                            <li><a>10 reden om je afspraak te maken</a></li>
-                            <li><a>The Perfect Match</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <p class="style_p_h3">Service</p>
+                    <ul class="sans-serif-thin">
+                        <li><a>Beoordeling</a></li>
+                        <li><a>Dressfinder</a></li>
+                        <li><a>Gratis trouwmagazine</a></li>
+                        <li><a>Nieuwsbrief</a></li>
+                        <li><a>Vell gestelde vragen</a></li>
+                        <li><a>CWB erkend</a></li>
+                        <li><a>Reinigen van je trouwjurk</a></li>
+                        <li><a>10 reden om je afspraak te maken</a></li>
+                        <li><a>The Perfect Match</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footerrighttext">
                         <p class="style_p_h3">Acties</p>
-                        <ul>
+                        <ul class="sans-serif-thin">
                             <li><a>The Grand Wedding Show</a></li>
                             <li><a>Summer Sale</a></li>
                             <li><a>Trouwjurken onder de 1000 euro</a></li>
                             <li><a>Trouwjurken voor de volslanke bruid</a></li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
 
-        </footer>
-    </div>
+        </div>
+
+    </footer>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script type="text/javascript" src="~/lib/jquery.fancybox.js"></script>
-        <script type="text/javascript" src="~/lib/jquery.fancybox-media.js"></script>
+        <script type="text/javascript" src="~/lib/jPages.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -167,18 +192,15 @@
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">
-	$(document).ready(function() {
-	    $('.fancybox-media').fancybox({
-	        openEffect: 'none',
-	        closeEffect: 'none',
-	        helpers: {
-	            media: {}
+        $(document).ready(function () {
 
-	        }
-
-	    });
-
-	});
+            $(function () {
+                $(".holder").jPages({
+                    containerID: "itemContainer",
+                    perPage: 6,
+                });
+            });
+        });
     </script>
 </body>
 </html>

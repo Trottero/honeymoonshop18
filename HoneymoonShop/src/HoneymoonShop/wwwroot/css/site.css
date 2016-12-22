@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -49,6 +48,18 @@ textarea {
   }
 }
 
+.navbar-top {
+    margin: 0;
+    border-radius: 0;
+    color: black;
+    background-color: #fac9c4;
+    border:0;
+}
+
+.navbar-brand {
+    color: blue;
+}
+
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
@@ -60,7 +71,6 @@ textarea {
 
 .navbar-custom .navbar-brand {
   color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -74,7 +84,6 @@ textarea {
 .navbar-custom .navbar-toggle {
   background-color: #fed136;
   border-color: #fed136;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: white;
   font-size: 12px;
@@ -139,22 +148,26 @@ textarea {
 }
 
 .navbar-pink > li > a {
-    color: white;
+    color: black;
+}
+
+.navbar-nav > li > h1 {
+    color: black;
 }
 
 .navbar-pink > li > button {
     margin-top: 5px;
     text-transform: uppercase;
-    border: 5px solid pink;
+    border: 5px solid #f0597c;
     border-radius: 0;
-    background-color:pink;
-    color: white;
+    background-color:#f0597c;
+    color: black;
 }
 
 .navbar-pink > li > button:hover {
     border: 5px solid white;
     background-color: transparent;
-    color: white;
+    color: black;
 }
 
 .navbar-pink > li > a:hover {
@@ -179,14 +192,12 @@ header .intro-text {
   padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 22px;
   line-height: 22px;
   margin-bottom: 25px;
 }
 header .intro-text .intro-heading {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 50px;
@@ -199,14 +210,12 @@ header .intro-text .intro-heading {
     padding-bottom: 200px;
   }
   header .intro-text .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 40px;
     line-height: 40px;
     margin-bottom: 25px;
   }
   header .intro-text .intro-heading {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 75px;

@@ -91,7 +91,13 @@ namespace HoneymoonShop
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                /*routes.MapRoute(
+                    "Jurken", "DressFinderControllers/Jurken", new { controller = "Jurken", action = "Index" },
+                    new[] { "MvcApplication.Controllers.DressFinderControllers" }
+                    );*/
             });
+
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
