@@ -163,10 +163,7 @@ row-suits {
 }
 
 .dressfinder-pics {
-    margin: 20px;
-}
-
-.dressfinder-pic {
+    margin: 10px;
     height: 400px;
     width: 290px;
 }
@@ -191,10 +188,12 @@ row-suits {
 }
 
 .cat-textdescimage {
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .det-sideimg {
+    margin-top:15px;
         width: 240px;
     height: 240px;
 }
@@ -203,7 +202,28 @@ row-suits {
     margin-top: 10px;
 }
 
+.det-large-pic{
+    margin: 20px;
+}
+
+.det-suggestedjels{
+    margin-right: 8px; 
+    
+}
 .sidetext > div > button {
+    margin-top: 20px;
+    border: 5px solid #f0597c;
+    border-radius: 0;
+    background-color: #f0597c;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+.specialbutton {
     margin-top: 20px;
     border: 5px solid #f0597c;
     border-radius: 0;
@@ -235,6 +255,9 @@ row-suits {
 
 .form-control {
     max-width: 220px;
+}
+.det-desclist-special{
+    color: #f7bfc8;
 }
 
 
