@@ -192,11 +192,11 @@ row-suits {
 
 .cat-textdescimage {
     margin-top: 15px;
-    margin-left: -10px;
 }
 
 .det-sideimg {
-    margin-top: 20px;
+        width: 240px;
+    height: 240px;
 }
 
 .det-desclist {

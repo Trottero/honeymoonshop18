@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.Jurk>
+﻿@model Models.Jurk
 @{
     ///List < BruidsJurk > list = (List<BruidsJurk>) Model;
     ViewData["Title"] = "Catalogus Page";
@@ -8,13 +8,18 @@
         background-color: #fce8e7;
     }
 </style>
+<script type="text/javascript">
+    function changeImage(s) {
+        document.getElementById('large-pic').src = s;
+     }
+    </script>
 <div class="container cat-background">
     <!--Back row-->
     <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
-            <a asp-action="Newcollection"><img src="https://i.gyazo.com/50a581702729e91c6e44ed09627de3d1.png" /></a>
+            <a asp-action="collection"><img src="https://i.gyazo.com/50a581702729e91c6e44ed09627de3d1.png" /></a>
         </div>
         <div class="col-md-9">
         </div>
@@ -24,48 +29,47 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
-            <div class="cat-textdescimage" style="margin-top: 20px;"><img src="http://placehold.it/240x240"></div>
-            <div class="cat-textdescimage"><img src="http://placehold.it/240x240"></div>
-            <div class="cat-textdescimage"><img src="http://placehold.it/240x240"></div>
+            <div class="cat-textdescimage" style="margin-top: 20px;"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam1');" class="det-sideimg"></div>
+            <div class="cat-textdescimage"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam2" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam2')" class="det-sideimg"></div>
+            <div class="cat-textdescimage"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam3" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam3')" class="det-sideimg"></div>
         </div>
         <div class="col-md-5">
-            <div class="dressfinder-pics"><img src="http://placehold.it/575x750"></div>
+            <div class="dressfinder-pics"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" id="large-pic" style="width: 575px; height: 750px;"></div>
 
         </div>
         <div class="col-md-3 sans-serif-thin sidetext" style="margin-left: 50px; margin-top: 40px;">
             <div style="font-size: 24px;" class="nexa_bold">
-                Maggie Sottero
+                <!--HtmlDisplayFor(modelItem => item.Merk.Merknaam)-->
+                <!--ViewData["merknaam"]-->
+                @Model.Merk.MerkNaam
             </div>
             <div style="letter-spacing: 1px;">
-                artikel nr. 12294
+                artikel nr. @Model.ArtikelNr
             </div>
             <div>
                 <BR>
                 <BR>
                 </div>
             <div>
-                Trouwjurk van het merk Maggie Sottero gemaakt van kant. De top kan met- en zonder schouders gedragen worden. De jurk heeft een laag uitgesneden rug en een fishtail model met een sleep.
+                @Model.Omschrijving
+                <!--Trouwjurk van het merk Maggie Sottero gemaakt van kant. De top kan met- en zonder schouders gedragen worden. De jurk heeft een laag uitgesneden rug en een fishtail model met een sleep.-->
             </div>
             <BR>
             <br>
             <div>
-                Merk: Maggie Sottero
+                Merk: @Model.Merk.MerkNaam
             </div>
             
             <div class="det-desclist">
-                Kenmerken: Dit maar ook dit en dit.
+                Kenmerken: @Model.Silhouette.SilhouetteNaam @Model.Stijl.StijlNaam @Model.Neklijn.NeklijnNaam
             </div>
             
             <div class="det-desclist">
-                Prijsindicatie: jurk.prijs
+                Prijsindicatie: @Model.Prijs    
             </div>
             
             <div class="det-desclist">
-                Prijsindicatie: jurk.prijs
-            </div>
-            
-            <div class="det-desclist">
-                Kleuren: jurk.kleuren
+                Beschikbare kleuren: @Model.Kleur.KleurNaam
             </div>
             <br>
             <br>
