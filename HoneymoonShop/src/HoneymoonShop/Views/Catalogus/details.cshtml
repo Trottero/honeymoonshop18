@@ -29,12 +29,12 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
-            <div style="margin-top: 5px;"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam1');" class="det-sideimg"></div>
-            <div><img src="/images/BruidsJurken/@Model.AfbeeldingNaam2" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam2')" class="det-sideimg"></div>
-            <div><img src="/images/BruidsJurken/@Model.AfbeeldingNaam3" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam3')" class="det-sideimg"></div>
+            <div style="margin-top: 5px;"><img src="/images/@Model.AfbeeldingNaam1" onclick="changeImage('/images/@Model.AfbeeldingNaam1');" class="det-sideimg"></div>
+            <div><img src="/images/@Model.AfbeeldingNaam2" onclick="changeImage('/images/@Model.AfbeeldingNaam2')" class="det-sideimg"></div>
+            <div><img src="/images/@Model.AfbeeldingNaam3" onclick="changeImage('/images/@Model.AfbeeldingNaam3')" class="det-sideimg"></div>
         </div>
         <div class="col-md-5">
-            <div class="dressfinder-pics det-large-pic"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" id="large-pic" style="width: 575px; height: 750px;"></div>
+            <div class="dressfinder-pics det-large-pic"><img src="/images/@Model.AfbeeldingNaam1" id="large-pic" style="width: 575px; height: 750px;"></div>
 
         </div>
         <div class="col-md-3 sans-serif-thin sidetext" style="margin-left: 50px; margin-top: 40px;">
@@ -139,7 +139,7 @@
                 {
                     <div>
                         <a asp-action="Details" asp-route-id="@item.JurkID">
-                            <img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pics" style="height: 368px; width: 267px; margin: 8px;"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                            <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics" style="height: 368px; width: 267px; margin: 8px;"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
                         </a>
                     </div>
                     count++;
