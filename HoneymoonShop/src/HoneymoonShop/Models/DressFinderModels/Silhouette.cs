@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models
 {
-    [Table("Silhouette")]
+    [Table("Silhouetten")]
     public class Silhouette
     {
         public int SilhouetteID { get; set; }
