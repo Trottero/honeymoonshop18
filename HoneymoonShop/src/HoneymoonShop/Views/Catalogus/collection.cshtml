@@ -4,7 +4,6 @@
     ViewData["Title"] = "Catalogus Page";
 }
 
-
 <div class="container">
     <script type="text/javascript" src="js/site.js"></script>
     <div class="row">
@@ -150,10 +149,13 @@
 
                 </div>
                 <div id="itemContainer" class="nexa_bold cat">
-                    @{int count = 0; }
                     @foreach (var item in Model)
                     {
-                        <div class="dressfinder-pics"><a asp-action="Details" asp-route-id="@item.JurkID"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div></a></div>
+                        <div>
+                            <a asp-action="Details" asp-route-id="@item.JurkID">
+                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                            </a>
+                        </div>
                         /*/
                         if (count == 8)
                         {
@@ -182,7 +184,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <img src="https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg" alt="Foto van vrouw met bruidsjurk" />
+                <img style="margin-top: 180px;" src="https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg" alt="Foto van vrouw met bruidsjurk" />
             </div>
         </div>
     </div>
