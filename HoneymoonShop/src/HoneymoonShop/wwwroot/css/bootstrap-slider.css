@@ -45,8 +45,8 @@
   position: relative;
 }
 .slider.slider-horizontal {
-  width: 210px;
-  height: 20px;
+  width: 160px;
+  height: 15px;
 }
 .slider.slider-horizontal .slider-track {
   height: 10px;
@@ -71,7 +71,7 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  border-width: 0 10px 10px 10px;
+  border-width: 10px 10px 10px 10px;
   width: 0;
   height: 0;
   border-bottom-color: #0480be;
