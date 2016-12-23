@@ -8,6 +8,7 @@
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap-slider.css" />
         <link rel="stylesheet" href="~/css/Style.css" />
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
         <link rel="stylesheet" href="~/css/style.css" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -174,6 +175,7 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="~/js/bootstrap-slider.js"></script>
         <script type="text/javascript" src="~/lib/jPages.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
@@ -191,8 +193,16 @@
 
     @RenderSection("scripts", required: false)
 
+
+
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $('#ex1').slider({
+                formatter: function (value) {
+                    return 'Current value: ' + value;
+                }
+            });
 
             $(function () {
                 $(".holder").jPages({
