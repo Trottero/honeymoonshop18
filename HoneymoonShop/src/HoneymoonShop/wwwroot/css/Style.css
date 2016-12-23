@@ -319,8 +319,8 @@ a {
     /*-- Filter selectie--*/
 .col-md-3 {
 	max-width:25%;
-	padding-left:100px;
-    padding-right:80px;
+	padding-left:150px;
+    padding-right:40px;
 }
 
 .col-3 {
@@ -328,18 +328,147 @@ a {
 	max-width: 500px;
     max-height: 100px;
     overflow: auto;
+    
 }
 
 .Link {
-	background: #F8E0E0;
-	max-width: 500px;
-	margin-top: 5px;
+	flex:auto;
+    background: #F8E0E0;
+	max-width: 25%;
+
+    
 }
 .title {
 	margin: 1px;
+    
 }
-.title2 {
-	background: #E0E6F8;
-	outline: 1px solid #A9BCF5 !important;
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; 
+    content: "\e253";    
+    float: right;       
+    color: #FCCAC6;        
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e252";   
+}
+.panel-default {
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-color:#A9BCF5; 
+    margin-top: 0px;
+}
+
+.panel-default > .panel-heading {
+    border-bottom-width: 1px;
+    border-color:#A9BCF5;
+    border-bottom-style: solid;
+    background-color: #F6F6F6;
+}
+.titleFilter {
+    font-size: 17px;
+    margin-bottom: 5px;
 
 }
+.panel-heading {
+    padding: 5px 15px;
+}
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+/*.more-less {
+        float: right;
+        color: #FCCAC6;
+        
+    }*/
+
+
+
+/*
+.card-block {
+    background: #fcfcfc;
+
+}
+.mb-0 {
+	background: #f6f6f6;
+	outline: 1px solid #A9BCF5 !important;
+}
+.headingOne {
+	background: #f6f6f6;
+	outline: 1px solid #A9BCF5;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+/**
+ * Start by hiding the checkboxes
+ */
+.input[type=checkbox] {
+	visibility: hidden;
+}
+/**
+     * Checkbox Four
+     */
+    .checkboxFour {
+    width: 40px;
+    height: 40px;
+    background: #ddd;
+    margin: 20px 90px;
+    border-radius: 100%;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /**
+     * Create the checkbox button
+     */
+    .checkboxFour label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    background: #333;
+    -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /**
+     * Create the checked state
+     */
+    .checkboxFour input[type=checkbox]:checked + label {
+    background: #26ca28;
+    }
