@@ -10,6 +10,14 @@
             <div class="col-md-3">
                 <form asp-controller="CatalogusFilter" asp-action="Index" method="post">
                     <select asp-for="selectedMerken" asp-items="ViewBag.MerkID"></select>
+                    <select asp-for="selectedStijlen" asp-items="ViewBag.StijlID"></select>
+                    <input asp-for="selectedMinimumPrijs" />
+                    <input asp-for="selectedMaximumPrijs" />
+                    <select asp-for="selectedNeklijnen" asp-items="ViewBag.NeklijnID"></select>
+                    <select asp-for="selectedSilhouetten" asp-items="ViewBag.SilhouetteID"></select>
+                    <select asp-for="selectedKleuren" asp-items="ViewBag.KleurID"></select>
+                    
+
                     <input type="submit" value="Filter" />
 
                 </form>
@@ -35,7 +43,11 @@
                     @{int count = 0; }
                     @foreach (var item in Model.filteredJurken)
                     {
-                        <div class="dressfinder-pics"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div></div>
+                        <div>
+                            <a asp-controller="Catalogus" asp-action="Details" asp-route-id="@item.JurkID">
+                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                            </a>
+                        </div>
                         /*
                         if (count == 8)
                         {
@@ -48,6 +60,11 @@
                         }
                         count++;
                         */
+                    }
+                    @if(!Model.filteredJurken.Any())
+                    {
+                        <p>Geen jurken gevonden</p>
+
                     }
                 </div>
                 <!--Page selection-->
