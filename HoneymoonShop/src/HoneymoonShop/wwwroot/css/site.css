@@ -176,7 +176,7 @@ textarea {
 }
 
 header {
-  //background-image: url('../images/groom.jpg');
+  background-image: url('../images/groom.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -188,8 +188,8 @@ header {
   color: white;
 }
 header .intro-text {
-  //padding-top: 100px;
-  //padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
   font-style: italic;
@@ -206,8 +206,8 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
   header .intro-text {
-    //padding-top: 300px;
-    //padding-bottom: 200px;
+    padding-top: 300px;
+    padding-bottom: 200px;
   }
   header .intro-text .intro-lead-in {
     font-style: italic;
