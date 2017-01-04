@@ -11,6 +11,12 @@
     letter-spacing: 1px;
     font-family: nexa_boldregular;
 }
+.arial-bold{
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 15px;
+    text-transform: uppercase;
+}
 
 .sans-serif-thin {
     font-family: 'Josefin Sans', sans-serif;
@@ -172,15 +178,6 @@ row-suits {
     margin-right: 45px;
 }
 
-.cat-line {
-    height: 10px;
-    border-bottom: 3px solid black;
-    width: 84%;
-    margin-left: 35px;
-}
-
-.cat-textinline {
-}
 
 .cat {
     display: flex;

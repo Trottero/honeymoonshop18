@@ -172,11 +172,10 @@ textarea {
 
 .navbar-pink > li > a:hover {
     background-color: transparent;
-    color: pink;
+    color: #f0597c;
 }
 
 header {
-  background-image: url('../images/groom.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
