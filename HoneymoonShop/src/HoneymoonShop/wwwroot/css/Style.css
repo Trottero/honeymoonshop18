@@ -337,9 +337,9 @@ a {
     }
 
     /*-- Filter selectie--*/
-.col-md-3 {
+.col-md-3Filter {
 	max-width:25%;
-	padding-left:150px;
+	padding-left:120px;
     padding-right:40px;
 }
 
@@ -355,6 +355,7 @@ a {
 	flex:auto;
     background: #F8E0E0;
 	max-width: 25%;
+    
 
     
 }
@@ -399,9 +400,13 @@ a {
 }
 
 
-#ex1Slider .slider-selection {
-	background: #BABABA;
+#ex2Slider .slider-selection {
+	background-color: #BABABA;
 }
+
+
+
+
 
 /*.more-less {
         float: right;
@@ -438,7 +443,7 @@ a {
 
 
 
-#ex1Slider .slider-selection {
+#ex2Slider .slider-selection {
 	background: #BABABA;
 }
 /**
