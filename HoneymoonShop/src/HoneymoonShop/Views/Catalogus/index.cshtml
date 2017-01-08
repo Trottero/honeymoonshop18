@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Models.Jurk>
+@{
     ViewData["Title"] = "Catalogus Page";
 }
 <style type="text/css">
@@ -45,9 +46,25 @@
                 </div>
                 <!--nieuwe collectie-->
                 <div class="row nexa_bold cat">
-                    @for (int i = 0; i < 6; i++)
+                    @foreach (var item in Model)
                     {
-                        <div class="dressfinder-pics"><img src="https://i.gyazo.com/a76f807bfbce2180360834f48dd8ca39.png" /> <div class="cat-textdescimage"> Beautiful by Enzoani</div></div>
+                        <div>
+                            <a asp-action="Details" asp-route-id="@item.JurkID">
+                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                            </a>
+                        </div>
+                        /*/
+                        if (count == 8)
+                        {
+                            <div class="dressfinder-pics dressfinderdouble-pic"> <img src="https://i.gyazo.com/fb6c1eb95de82a821e2db9ec11309447.png" /></div>
+                        }
+
+                        if (count == 16)
+                        {
+                            <div class="dressfinder-pics"><img src="https://i.gyazo.com/591a6599b50c11222d52d7c5b60170ea.png" /></div>
+                        }
+                        count++;
+                        */
                     }
                 </div>
             </div>
