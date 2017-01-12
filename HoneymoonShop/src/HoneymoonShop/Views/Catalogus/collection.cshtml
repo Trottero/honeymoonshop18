@@ -11,29 +11,39 @@
 <div class="container cat-background">
     <script type="text/javascript" src="js/site.js"></script>
     <div class="row" style="margin-top: 20px; border-bottom: 2px solid #e5e5e5;">
-        </div>
+    </div>
     <div class="row" style="margin-top: 50px;">
-        </div>
+    </div>
     <div class="row">
         <div class="row">
             <!--sorteer functionaliteit-->
-           
+
             <div class="col-md-3Filter col-md-3">
                 <div align="left">
-                    <h4 class="Title"><b>Categoriën:</b></h4>
-                    <div class="col-3">
-                    
-                    <h7 class="Link">
-                        <a href="PLACE LINK" style="padding-right:80px"><b>Summer SALE</b></a> <h7>
-                            <br />
-                            <h7 class="Link">
-                                <a href="PLACE LINK" style="padding-right:60px" ><b> Nieuwe Collectie</b></a> <h7>
-                                    <br />
-                                    <h7 class="Link">
-                                        <a href="PLACE LINK" style="padding-right:40px"><b> Alle jurken bekijken</b></a>
-                                    </h7>
-                </div>
-                <h5 class="titleFilter sans-serif-thin"  style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
+                    <h4 class="nexa_bold" style="text-transform:uppercase; letter-spacing:2px; font-size:19px;"><b>Categoriën:</b></h4>
+                    <div class="sans-serif-thin">
+                        <a asp-action="collection" asp-route-id="Summer SALE" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b>Summer SALE</b>
+                                </h7>
+                            </div>
+                        </a><a asp-action="collection" asp-route-id="Nieuwe Collectie" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b> Nieuwe Collectie</b>
+                                </h7>
+                            </div>
+                        </a>
+                        <a asp-action="collection" asp-route-id="" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b> Alle jurken bekijken</b>
+                                </h7>
+                            </div>
+                        </a>
+                    </div>
+                    <h5 class="titleFilter sans-serif-thin" style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
                     <div class="panel-group sans-serif-thin" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
@@ -45,12 +55,12 @@
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                   
-                                        <!-- Checbox Four -->
-                                        <div class="checkboxFour">
-                                            <input type="checkbox" value="1" id="checkboxFourInput" name="" style="opacity:0" />
-                                            <label for="checkboxFourInput"></label>
-                                        </div>
+
+                                    <!-- Checbox Four -->
+                                    <div class="checkboxFour">
+                                        <input type="checkbox" value="1" id="checkboxFourInput" name="" style="opacity:0" />
+                                        <label for="checkboxFourInput"></label>
+                                    </div>
                                     Checkbox Four
                                 </div>
                             </div>
@@ -86,7 +96,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h5 class="titleFilter sans-serif-thin" style="margin-top:20px" font-weight: bold ><b>Filters verfijnen:</b></h5>
+                        <h5 class="titleFilter sans-serif-thin" style="margin-top:20px" font-weight: bold><b>Filters verfijnen:</b></h5>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
@@ -132,15 +142,15 @@
                             <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                                 <div class="panel-body">
                                     <div class="checkboxColor">
-                                       <input type="checkbox" value="1" id="checkboxId" name="" style="opacity:0; background:red; border-color:black" />
+                                        <input type="checkbox" value="1" id="checkboxId" name="" style="opacity:0; background:red; border-color:black" />
                                         <label for="checkbox_id">Text</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                            </div>
-                    
+                </div>
+
             </div>
             <div class="col-md-9">
                 <div class="row">
