@@ -355,7 +355,7 @@ a {
 	flex:auto;
     background: #F8E0E0;
 	max-width: 25%;
-    
+    padding-left:10px;
 
     
 }
@@ -400,51 +400,29 @@ a {
 }
 
 
-#ex2Slider .slider-selection {
-	background-color: #BABABA;
+
+
+
+
+
+#slider12c .slider-selection {
+	background: pink;
+}
+
+#slider12c .slider-handle {
+    background: white;
+    border:1px solid pink;
 }
 
 
-
-
-
-/*.more-less {
-        float: right;
-        color: #FCCAC6;
-        
-    }*/
-
-
-
-/*
-.card-block {
-    background: #fcfcfc;
-
+#slider12c .tooltip-inner {
+    background-color: transparent;
+    color: black;
 }
-.mb-0 {
-	background: #f6f6f6;
-	outline: 1px solid #A9BCF5 !important;
-}
-.headingOne {
-	background: #f6f6f6;
-	outline: 1px solid #A9BCF5;
-}*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#ex2Slider .slider-selection {
-	background: #BABABA;
+#slider12c .slider-horizontal.slidertrack {
+    height:5px;
+    margin-top: 5px;
 }
 /**
  * Start by hiding the checkboxes
@@ -456,15 +434,13 @@ a {
      * Checkbox Four
      */
     .checkboxFour {
-    width: 40px;
-    height: 40px;
-    background: #ddd;
-    margin: 20px 90px;
-    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 1px solid pink;
+    border-radius: 50%;
     position: relative;
-    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    
     }
 
     /**
@@ -472,8 +448,8 @@ a {
      */
     .checkboxFour label {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
     border-radius: 100px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -485,15 +461,24 @@ a {
     top: 5px;
     left: 5px;
     z-index: 1;
-    background: #333;
-    -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    background: white;
+    
     }
 
     /**
      * Create the checked state
      */
     .checkboxFour input[type=checkbox]:checked + label {
-    background: #26ca28;
+    background: #F8E0E0;
+    }
+
+    .checkboxColor {
+        width: 15px;
+        height: 15px;
+        border: 1px;
+        border-radius: 50%;
+        position: relative;
+        -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+        box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
     }

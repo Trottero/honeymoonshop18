@@ -212,9 +212,11 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $('#ex2').slider({tooltip: 'always',
+            $('#ex12c').slider({
+                id: "slider12c", min: 0, max: 2000, range: true, value: [100, 1750],
+                tooltip: 'always', tooltip_split: true, tooltip_position: 'bottom',
                 formatter: function (value) {
-                    return 'Current value: ' + value;
+                    return value;
                 }
             });
 
