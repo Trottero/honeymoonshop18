@@ -38,6 +38,8 @@ namespace HoneymoonShop.Data
 
         public DbSet<Silhouette> Silhouetten { get; set; }
 
+        public DbSet<Klant> Klant { get; set; }
+
         
 
         
