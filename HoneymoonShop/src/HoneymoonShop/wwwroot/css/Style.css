@@ -29,6 +29,14 @@ h5 {
     font-family: sans-serif;
     font-size: 18px;
 }
+.quicklinks-box{
+    padding-top: 4px;
+    padding-bottom:4px;
+    padding-left:10px;
+    width:200px;
+    background-color:#fce8e7;
+    margin-bottom:4px;
+}
 
 .col-md-12-1 {
     height: 450px;
@@ -353,14 +361,6 @@ a {
     
 }
 
-.Link {
-	flex:auto;
-    background: #F8E0E0;
-	max-width: 25%;
-    padding-left:10px;
-
-    
-}
 .title {
 	margin: 1px;
     
