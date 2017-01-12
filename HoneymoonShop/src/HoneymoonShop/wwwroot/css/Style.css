@@ -11,12 +11,6 @@
     letter-spacing: 1px;
     font-family: nexa_boldregular;
 }
-.arial-bold{
-    font-family: Arial;
-    font-weight: bolder;
-    font-size: 15px;
-    text-transform: uppercase;
-}
 
 .sans-serif-thin {
     font-family: 'Josefin Sans', sans-serif;
@@ -178,6 +172,15 @@ row-suits {
     margin-right: 45px;
 }
 
+.cat-line {
+    height: 10px;
+    border-bottom: 3px solid black;
+    width: 84%;
+    margin-left: 35px;
+}
+
+.cat-textinline {
+}
 
 .cat {
     display: flex;
@@ -185,9 +188,8 @@ row-suits {
 }
 
 .cat-textdescimage {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 10px;
-    margin-bottom: 15px;
 }
 
 .det-sideimg {
@@ -454,7 +456,6 @@ a {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
-    
     transition: all .5s ease;
     cursor: pointer;
     position: absolute;
