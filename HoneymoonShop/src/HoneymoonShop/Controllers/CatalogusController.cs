@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HoneymoonShop.Data;
-using Models;
 using Microsoft.EntityFrameworkCore;
+using Models;
 
 namespace HoneymoonShop.Controllers
 {
@@ -20,8 +20,20 @@ namespace HoneymoonShop.Controllers
 
         public IActionResult Index()
         {
-            var jurken = _context.Jurken;
-            return View(jurken);
+            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                         select j;
+            jurken = jurken.Where(j => j.Categorie.CategorieNaam == "Nieuwe Collectie");
+            List<Jurk> list = new List<Jurk>();
+            int count = 0;
+            foreach (var item in jurken)
+            {
+                if (count < 6)
+                {
+                    list.Add(item);
+                }
+                count++;
+            }
+            return View(list);
         }
 
         public async Task<IActionResult> Details(int? id)
