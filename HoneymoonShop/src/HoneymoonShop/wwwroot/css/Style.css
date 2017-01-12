@@ -365,6 +365,11 @@ a {
 	margin: 1px;
     
 }
+
+.chkbox {
+    padding-left: 20px;
+}
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings'; 
@@ -384,6 +389,10 @@ a {
     border-bottom-width: 0px;
     border-color:#A9BCF5; 
     margin-top: 0px;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    
 }
 
 .panel-default > .panel-heading {
@@ -473,7 +482,7 @@ a {
     background: white;
     
     }
-
+    
     /**
      * Create the checked state
      */
@@ -490,6 +499,6 @@ a {
         position: relative;
     }
 
-    .labelCheckbox {
-        float: right;
+    .textCheckbox {
+        margin-left:15px;
     }
