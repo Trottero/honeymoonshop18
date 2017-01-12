@@ -369,8 +369,8 @@ a {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings'; 
     content: "\e253";    
-    float: right;       
-    color: #FCCAC6;        
+    color: #FCCAC6;   
+    float: right;            
 }
 
 .panel-heading .accordion-toggle.collapsed:after {
@@ -402,11 +402,6 @@ a {
 }
 
 
-
-
-
-
-
 #slider12c .slider-selection {
 	background: pink;
 }
@@ -420,6 +415,19 @@ a {
 #slider12c .tooltip-inner {
     background-color: transparent;
     color: black;
+}
+
+#slider12c .tooltip.top {
+    background: transparent;
+}
+
+#slider12c .tooltip.bottom .tooltip-arrow {
+    border: 0px solid;
+}
+
+#slider12c ..slider.slider-horizontal .slider-handle.triangle {
+    background: transparent;
+    background-color: transparent;
 }
 
 #slider12c .slider-horizontal.slidertrack {
@@ -436,13 +444,13 @@ a {
      * Checkbox Four
      */
     .checkboxFour {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: white;
     border: 1px solid pink;
-    border-radius: 50%;
+    border-radius: 100%;
     position: relative;
-    
+    top: 2px;
     }
 
     /**
@@ -450,18 +458,18 @@ a {
      */
     .checkboxFour label {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
     cursor: pointer;
     position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 1;
+    top: 2px;
+    left: 2px;
+    z-index: 0;
     background: white;
     
     }
@@ -476,10 +484,12 @@ a {
     .checkboxColor {
         width: 15px;
         height: 15px;
-        border: 1px;
+        border: 1px solid #A9BCF5;
+        
         border-radius: 50%;
         position: relative;
-        -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-        box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .labelCheckbox {
+        float: right;
     }

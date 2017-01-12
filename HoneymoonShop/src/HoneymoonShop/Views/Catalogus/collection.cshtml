@@ -3,17 +3,9 @@
     ///List < BruidsJurk > list = (List<BruidsJurk>) Model;
     ViewData["Title"] = "Catalogus Page";
 }
-<style>
-    .backgroundcolor {
-        background-color: #fce8e7;
-    }
-</style>
-<div class="container cat-background">
+
+<div class="container">
     <script type="text/javascript" src="js/site.js"></script>
-    <div class="row" style="margin-top: 20px; border-bottom: 2px solid #e5e5e5;">
-        </div>
-    <div class="row" style="margin-top: 50px;">
-        </div>
     <div class="row">
         <div class="row">
             <!--sorteer functionaliteit-->
@@ -44,15 +36,21 @@
                                 </h4>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                   
-                                        <!-- Checbox Four -->
-                                        <div class="checkboxFour">
-                                            <input type="checkbox" value="1" id="checkboxFourInput" name="" style="opacity:0" />
+                                <div class ="panel-body">
+                                        <!-- Checbox Four -->  
+                                    <section>
+                                    <div class ="checkboxFour">
+                                            <input type="checkbox" value="0" id="checkboxFourInput" name="" style="opacity:0" />
                                             <label for="checkboxFourInput"></label>
+                                        <label2 for="checkboxFourInput">text</label2>
                                         </div>
-                                    Checkbox Four
-                                </div>
+                                        
+                                    <div class="checkboxFour" style="margin-top: 10px">
+                                        <input type="checkbox" value="1" id="checkboxFourInput2" name="" style="opacity:0" />
+                                        <label for="checkboxFourInput2"></label>
+                                    </div>
+                                    </section>
+                                                                </div>
                             </div>
                         </div>
                         <div class="panel panel-default" style="margin-top: 0px">
@@ -131,10 +129,18 @@
                             </div>
                             <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                                 <div class="panel-body">
-                                    <div class="checkboxColor">
-                                       <input type="checkbox" value="1" id="checkboxId" name="" style="opacity:0; background:red; border-color:black" />
-                                        <label for="checkbox_id">Text</label>
+                                    <form>
+                                    <div class="checkboxColor" style="background:white">
+                                       <input type="checkbox" value="1" id="checkboxId1" name="" style="opacity:0;" />
+                                        <label for="checkboxId1">text</label>
                                     </div>
+                                    <div class="checkboxColor" style="background: pink; margin-top:10px">
+                                        <input type="checkbox" value="2" id="checkboxId2" name="" style="opacity:0" />
+                                    </div>
+                                    <div class="checkboxColor" style="background:darkred;margin-top:10px">
+                                        <input type="checkbox" value="3" id="checkboxId3" name="" style="opacity:0;" />
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
