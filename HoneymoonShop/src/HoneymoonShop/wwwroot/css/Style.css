@@ -231,7 +231,7 @@ row-suits {
     padding-bottom: 8px;
     font-size: 15px;
 }
-.specialbutton {
+.specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus{
     margin-top: 20px;
     border: 5px solid #f0597c;
     border-radius: 0;
