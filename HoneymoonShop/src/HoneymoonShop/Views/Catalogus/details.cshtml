@@ -11,11 +11,11 @@
 <script type="text/javascript">
     function changeImage(s) {
         document.getElementById('large-pic').src = s;
-     }
-    </script>
+    }
+</script>
 <div class="container cat-background">
     <!--Back row-->
-    <div class="row">
+    <div class="row" style="margin-bottom: 30px; margin-top: 50px;  ">
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
@@ -29,12 +29,12 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
-            <div class="cat-textdescimage" style="margin-top: 20px;"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam1');" class="det-sideimg"></div>
-            <div class="cat-textdescimage"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam2" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam2')" class="det-sideimg"></div>
-            <div class="cat-textdescimage"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam3" onclick="changeImage('/images/BruidsJurken/@Model.AfbeeldingNaam3')" class="det-sideimg"></div>
+            <div style="margin-top: 5px;"><img src="/images/@Model.AfbeeldingNaam1" onclick="changeImage('/images/@Model.AfbeeldingNaam1');" class="det-sideimg"></div>
+            <div><img src="/images/@Model.AfbeeldingNaam2" onclick="changeImage('/images/@Model.AfbeeldingNaam2')" class="det-sideimg"></div>
+            <div><img src="/images/@Model.AfbeeldingNaam3" onclick="changeImage('/images/@Model.AfbeeldingNaam3')" class="det-sideimg"></div>
         </div>
         <div class="col-md-5">
-            <div class="dressfinder-pics"><img src="/images/BruidsJurken/@Model.AfbeeldingNaam1" id="large-pic" style="width: 575px; height: 750px;"></div>
+            <div class="dressfinder-pics det-large-pic"><img src="/images/@Model.AfbeeldingNaam1" id="large-pic" style="width: 575px; height: 750px;"></div>
 
         </div>
         <div class="col-md-3 sans-serif-thin sidetext" style="margin-left: 50px; margin-top: 40px;">
@@ -49,7 +49,7 @@
             <div>
                 <BR>
                 <BR>
-                </div>
+            </div>
             <div>
                 @Model.Omschrijving
                 <!--Trouwjurk van het merk Maggie Sottero gemaakt van kant. De top kan met- en zonder schouders gedragen worden. De jurk heeft een laag uitgesneden rug en een fishtail model met een sleep.-->
@@ -57,17 +57,21 @@
             <BR>
             <br>
             <div>
-                Merk: @Model.Merk.MerkNaam
+                Merk: <div class="det-desclist-special" style="display:inline;">@Model.Merk.MerkNaam</div>
             </div>
-            
+
             <div class="det-desclist">
-                Kenmerken: @Model.Silhouette.SilhouetteNaam @Model.Stijl.StijlNaam @Model.Neklijn.NeklijnNaam
+                Kenmerken: <div class="det-desclist-special" style="display:inline">@Model.Silhouette.SilhouetteNaam</div> <div class="det-desclist-special" style="display:inline">
+                    @Model.Stijl.StijlNaam
+                </div> <div class="det-desclist-special" style="display:inline">
+                    @Model.Neklijn.NeklijnNaam
+                </div>
             </div>
-            
+
             <div class="det-desclist">
-                Prijsindicatie: @Model.Prijs    
+                Prijsindicatie: @Model.Prijs
             </div>
-            
+
             <div class="det-desclist">
                 Beschikbare kleuren: @Model.Kleur.KleurNaam
             </div>
@@ -82,5 +86,68 @@
         </div>
         <div class="col-md-1">
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="margin-top: 55px; margin-bottom: 30px;">
+            <img src="https://i.gyazo.com/a85727f7951df0e105b7aab3200d273e.png" style="width: 99%; margin-left: 5px;">
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div style="height: 400px; overflow-y:hidden; display:inline;">
+                <div style="display:inline;">
+                    <img src="https://i.gyazo.com/d865f416ac5431a93b61cc67277ae505.png" class="det-suggestedjels" />
+                </div>
+                <div style="display:inline;">
+                    <img src="https://i.gyazo.com/d865f416ac5431a93b61cc67277ae505.png" class="det-suggestedjels" />
+                </div>
+                <div style="display:inline;">
+                    <img src="https://i.gyazo.com/d865f416ac5431a93b61cc67277ae505.png" class="det-suggestedjels" />
+                </div>
+                <div style="display:inline;">
+                    <img src="https://i.gyazo.com/d865f416ac5431a93b61cc67277ae505.png" class="det-suggestedjels" style="margin-right: 0px;" />
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="button" class="btn btn-default specialbutton">BEZOEK DE WEBSHOP</button>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="margin-top: 55px; margin-bottom: 30px;">
+            <img src="https://i.gyazo.com/877f6f5b05c0d512e00c1f6eaaf02fef.png" style="width: 99%; margin-left: 5px;">
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 nexa_bold cat">
+            @{int count = 0;
+                var jurken = (IEnumerable<Models.Jurk>)ViewData["Jurken"];
+
+            }
+            @foreach (var item in jurken)
+            {
+                if (count < 4)
+                {
+                    <div>
+                        <a asp-action="Details" asp-route-id="@item.JurkID">
+                            <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics" style="height: 368px; width: 267px; margin: 8px;"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                        </a>
+                    </div>
+                    count++;
+                }
+            }
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row" style="margin-top: 120px">
     </div>
 </div>

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models
 {
-    [Table("Silhouette")]
+    [Table("Silhouetten")]
     public class Silhouette
     {
         public int SilhouetteID { get; set; }
@@ -14,5 +14,8 @@ namespace Models
         public string SilhouetteNaam { get; set; }
 
         public virtual IList<Jurk> Jurken { get; set; }
+
+        [NotMapped]
+        public bool IsSelected { get; set; } = false;
     }
 }

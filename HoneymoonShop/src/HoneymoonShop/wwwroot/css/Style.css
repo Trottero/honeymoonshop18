@@ -11,6 +11,12 @@
     letter-spacing: 1px;
     font-family: nexa_boldregular;
 }
+.arial-bold{
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 15px;
+    text-transform: uppercase;
+}
 
 .sans-serif-thin {
     font-family: 'Josefin Sans', sans-serif;
@@ -28,6 +34,14 @@
 h5 {
     font-family: sans-serif;
     font-size: 18px;
+}
+.quicklinks-box{
+    padding-top: 4px;
+    padding-bottom:4px;
+    padding-left:10px;
+    width:200px;
+    background-color:#fce8e7;
+    margin-bottom:4px;
 }
 
 .col-md-12-1 {
@@ -163,10 +177,7 @@ row-suits {
 }
 
 .dressfinder-pics {
-    margin: 20px;
-}
-
-.dressfinder-pic {
+    margin: 10px;
     height: 400px;
     width: 290px;
 }
@@ -175,26 +186,19 @@ row-suits {
     margin-right: 45px;
 }
 
-.cat-line {
-    height: 10px;
-    border-bottom: 3px solid black;
-    width: 84%;
-    margin-left: 35px;
-}
-
-.cat-textinline {
-}
-
 .cat {
     display: flex;
     flex-wrap: wrap;
 }
 
 .cat-textdescimage {
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom:15px;
 }
 
 .det-sideimg {
+    margin-top:15px;
         width: 240px;
     height: 240px;
 }
@@ -203,6 +207,14 @@ row-suits {
     margin-top: 10px;
 }
 
+.det-large-pic{
+    margin: 20px;
+}
+
+.det-suggestedjels{
+    margin-right: 8px; 
+    
+}
 .sidetext > div > button {
     margin-top: 20px;
     border: 5px solid #f0597c;
@@ -215,6 +227,20 @@ row-suits {
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 15px;
+}
+.specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus{
+    margin-top: 20px;
+    border: 5px solid #f0597c;
+    border-radius: 0;
+    background-color: #f0597c;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    display:block;
 }
 
 .cat-background {
@@ -235,6 +261,9 @@ row-suits {
 
 .form-control {
     max-width: 220px;
+}
+.det-desclist-special{
+    color: #f7bfc8;
 }
 
 
@@ -314,3 +343,164 @@ a {
         text-decoration: none;
         color: black;
     }
+
+    /*-- Filter selectie--*/
+.col-md-3Filter {
+	max-width:25%;
+	padding-left:120px;
+    padding-right:40px;
+}
+
+.col-3 {
+    flex:auto;
+	max-width: 500px;
+    max-height: 100px;
+    overflow: auto;
+    
+}
+
+.title {
+	margin: 1px;
+    
+}
+
+.chkbox {
+    padding-left: 20px;
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; 
+    content: "\e253";    
+    color: #FCCAC6;   
+    float: right;            
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e252";   
+}
+.panel-default {
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-color:#A9BCF5; 
+    margin-top: 0px;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    
+}
+
+.panel-default > .panel-heading {
+    border-bottom-width: 1px;
+    border-color:#A9BCF5;
+    border-bottom-style: solid;
+    background-color: #F6F6F6;
+}
+.titleFilter {
+    font-size: 17px;
+    margin-bottom: 5px;
+
+}
+.panel-heading {
+    padding: 5px 15px;
+}
+
+
+#slider12c .slider-selection {
+	background: pink;
+}
+
+#slider12c .slider-handle {
+    background: white;
+    border:1px solid pink;
+}
+
+
+#slider12c .tooltip-inner {
+    background-color: transparent;
+    color: black;
+}
+
+#slider12c .tooltip.top {
+    background: transparent;
+}
+
+#slider12c .tooltip.bottom .tooltip-arrow {
+    border: 0px solid;
+}
+
+#slider12c ..slider.slider-horizontal .slider-handle.triangle {
+    background: transparent;
+    background-color: transparent;
+}
+
+#slider12c .slider-horizontal.slidertrack {
+    height:5px;
+    margin-top: 5px;
+}
+/**
+ * Start by hiding the checkboxes
+ */
+.input[type=checkbox] {
+	visibility: hidden;
+}
+/**
+    * Checkbox Four
+    */
+.checkboxFour {
+width: 18px;
+height: 18px;
+background: white;
+border: 1px solid pink;
+border-radius: 100%;
+position: relative;
+top: 2px;
+}
+
+/**
+    * Create the checkbox button
+    */
+.checkboxFour label {
+display: block;
+width: 12px;
+height: 12px;
+border-radius: 50px;
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+transition: all .5s ease;
+cursor: pointer;
+position: absolute;
+top: 2px;
+left: 2px;
+z-index: 0;
+background: white;
+    
+}
+    
+/**
+    * Create the checked state
+    */
+.checkboxFour input[type=checkbox]:checked + label {
+background: #F8E0E0;
+}
+
+.checkboxColor {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #A9BCF5;
+        
+    border-radius: 50%;
+    position: relative;
+}
+
+.textCheckbox {
+    margin-left:15px;
+}
+
+.checkbox1 {
+    display: none;
+}

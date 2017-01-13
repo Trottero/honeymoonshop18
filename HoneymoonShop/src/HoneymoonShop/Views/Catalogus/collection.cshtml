@@ -3,13 +3,204 @@
     ///List < BruidsJurk > list = (List<BruidsJurk>) Model;
     ViewData["Title"] = "Catalogus Page";
 }
+
 <div class="container">
+    <script type="text/javascript" src="js/site.js"></script>
+
+    <div class="row" style="margin-top: 20px; border-bottom: 2px solid #e5e5e5;">
+    </div>
+    <div class="row" style="margin-top: 50px;">
+    </div>
+
     <div class="row">
         <div class="row">
             <!--sorteer functionaliteit-->
-            <div class="col-md-3">
 
-                <img src="https://i.gyazo.com/e44b4266483fe2766241ff98617e1ce9.png" />
+            <div class="col-md-3Filter col-md-3">
+                <div align="left">
+                    <h4 class="nexa_bold" style="text-transform:uppercase; letter-spacing:2px; font-size:19px;"><b>Categoriën:</b></h4>
+                    <div class="sans-serif-thin">
+                        <a asp-action="collection" asp-route-id="Summer SALE" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b>Summer SALE</b>
+                                </h7>
+                            </div>
+                        </a><a asp-action="collection" asp-route-id="Nieuwe Collectie" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b> Nieuwe Collectie</b>
+                                </h7>
+                            </div>
+                        </a>
+                        <a asp-action="collection" asp-route-id="" style="">
+                            <div class="quicklinks-box">
+                                <h7>
+                                    <b> Alle jurken bekijken</b>
+                                </h7>
+                            </div>
+                        </a>
+                    </div>
+                    <h5 class="titleFilter sans-serif-thin" style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
+                    <div class="panel-group sans-serif-thin" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Merk
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body" style="overflow:auto;max-height:120px">
+                                    <!-- Checkbox Four -->
+                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;margin-bottom:-10px">
+                                        <div class="checkboxFour">
+                                            <input type="checkbox" value="0" id="checkboxFourInput" name="" style="opacity:0" />
+                                            <label for="checkboxFourInput"></label>
+                                        </div>
+                                        <div class="textCheckbox">
+                                            <text>Diane Legrand</text>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;margin-bottom:-10px">
+                                        <div class="checkboxFour" style="margin-top: 10px">
+                                            <input type="checkbox" value="1" id="checkboxFourInput2" name="" style="opacity:0" />
+                                            <label for="checkboxFourInput2"></label>
+                                        </div>
+                                        <div class="textCheckbox" style="padding-top:10px">
+                                            <text>Diane Legrand</text>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;margin-bottom:-10px">
+                                        <div class="checkboxFour" style="margin-top: 10px">
+                                            <input type="checkbox" value="2" id="checkboxFourInput3" name="" style="opacity:0" />
+                                            <label for="checkboxFourInput3"></label>
+                                        </div>
+                                        <div class="textCheckbox" style="padding-top:10px">
+                                            <text>Diane Legrand</text>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;margin-bottom:-10px">
+                                        <div class="checkboxFour" style="margin-top: 10px">
+                                            <input type="checkbox" value="3" id="checkboxFourInput4" name="" style="opacity:0" />
+                                            <label for="checkboxFourInput4"></label>
+                                        </div>
+                                        <div class="textCheckbox" style="padding-top:10px">
+                                            <text>Diane Legrand</text>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;margin-bottom:-10px">
+                                        <div class="checkboxFour" style="margin-top: 10px">
+                                            <input type="checkbox" value="4" id="checkboxFourInput5" name="" style="opacity:0" />
+                                            <label for="checkboxFourInput5"></label>
+                                        </div>
+                                        <div class="textCheckbox" style="padding-top:10px">
+                                            <text>Diane Legrand</text>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="margin-top: 0px">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Stijl Jurk
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="margin-top: 0px">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Prijs
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <input id="ex12c" type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000" data-slider-step="5" data-slider-value="[100,1900]" t />
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="titleFilter sans-serif-thin" style="margin-top:20px" font-weight: bold><b>Filters verfijnen:</b></h5>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Neklijn
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <fieldset data-role="controlgroup">
+                                        <legend>Agree to the terms:</legend>
+                                        <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+                                        <label for="checkbox-1" class="chkbox">I agree</label>
+
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="margin-top: 0px">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Silhoutte
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="margin-top: 0px; border-bottom-width: 1px">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Kleur
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                                <div class="panel-body">
+                                    <form>
+                                    <div class="checkboxColor" style="background:white">
+                                       <input type="checkbox" value="1" id="checkboxId1" name="" style="opacity:0;" />
+                                        <label for="checkboxId1">text</label>
+                                    </div>
+                                    <div class="checkboxColor" style="background: pink; margin-top:10px">
+                                        <input type="checkbox" value="2" id="checkboxId2" name="" style="opacity:0" />
+                                    </div>
+                                    <div class="checkboxColor" style="background:darkred;margin-top:10px">
+                                        <input type="checkbox" value="3" id="checkboxId3" name="" style="opacity:0;" />
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button type="button" class="btn btn-default specialbutton">FILTER</button>
+                    </div>
+              </div>
             </div>
             <div class="col-md-9">
                 <div class="row">
@@ -29,10 +220,13 @@
 
                 </div>
                 <div id="itemContainer" class="nexa_bold cat">
-                    @{int count = 0; }
                     @foreach (var item in Model)
                     {
-                        <div class="dressfinder-pics"><a asp-action="Details" asp-route-id="@item.JurkID"><img src="~/images/BruidsJurken/@item.AfbeeldingNaam1" class="dressfinder-pic"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div></a></div>
+                        <div>
+                            <a asp-action="Details" asp-route-id="@item.JurkID">
+                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                            </a>
+                        </div>
                         /*/
                         if (count == 8)
                         {
@@ -71,8 +265,9 @@
 
         <div class="row">
             <div class="col-md-12">
-                <img src="https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg" alt="Foto van vrouw met bruidsjurk" />
+                <img style="margin-top: 180px;" src="https://i.gyazo.com/1d49f6a56d0b097ebe4a01c4677da0ab.jpg" alt="Foto van vrouw met bruidsjurk" />
             </div>
         </div>
     </div>
 </div>
+
