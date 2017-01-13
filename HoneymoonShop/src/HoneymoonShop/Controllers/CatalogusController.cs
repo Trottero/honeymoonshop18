@@ -22,6 +22,20 @@ namespace HoneymoonShop.Controllers
 
         public IActionResult Index()
         {
+            CatalogusFilterModel filterModel = new CatalogusFilterModel();
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
+            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
+            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
+            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
+            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
+
+            filterModel.alleMerken = _context.Merken.ToList();
+            filterModel.alleStijlen = _context.Stijlen.ToList();
+            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
+            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
+            filterModel.alleKleuren = _context.Kleuren.ToList();
+            filterModel.filteredJurken = _context.Jurken.ToList();
             var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                          select j;
             jurken = jurken.Where(j => j.Categorie.CategorieNaam == "Nieuwe Collectie");
@@ -35,7 +49,8 @@ namespace HoneymoonShop.Controllers
                 }
                 count++;
             }
-            return View(list);
+            filterModel.filteredJurken = list;
+            return View(filterModel);
         }
 
         public async Task<IActionResult> Details(int? id)
