@@ -9,17 +9,20 @@ namespace HoneymoonShop.Models
 {
     public class CatalogusFilterModel
     {        
-        public List<int> selectedMerken { get; set; }
-        public List<int> selectedStijlen { get; set; }
+        public List<Merk> alleMerken { get; set; }
+        public List<Stijl> alleStijlen { get; set; }
 
         public int selectedMinimumPrijs { get; set; }
         public int selectedMaximumPrijs { get; set; }
 
-        public List<int> selectedNeklijnen { get; set; }
-        public List<int> selectedSilhouetten { get; set; }
-        public List<int> selectedKleuren { get; set; }
+        public List<Neklijn> alleNeklijnen { get; set; }
+        public List<Silhouette> alleSilhouetten { get; set; }
+
+        public List<Kleur> alleKleuren { get; set; }
 
 
         public List<Jurk> filteredJurken { get; set; }
+
+        public String sorteerOptie { get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace HoneymoonShop.Models
                 context.SaveChanges();
 
                 //Seed jurken
-                SeedJurken(context, 30);
+                SeedJurken(context, 100);
                
             }
         }
