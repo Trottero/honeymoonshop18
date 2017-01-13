@@ -164,12 +164,6 @@ textarea {
     color: black;
 }
 
-.navbar-pink > li > button:hover {
-    border: 5px solid white;
-    background-color: transparent;
-    color: black;
-}
-
 .navbar-pink > li > a:hover {
     background-color: transparent;
     color: #f0597c;

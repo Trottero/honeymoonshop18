@@ -240,6 +240,7 @@ row-suits {
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 15px;
+    display:block;
 }
 
 .cat-background {
