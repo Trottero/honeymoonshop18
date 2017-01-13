@@ -37,14 +37,17 @@
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-default navbar-top">
+
                 <div class="container-fluid" style="margin-top: 5px; margin-bottom: 2px; margin-left: 10px;">
                     <div class="navbar-header arial-bold">
                         <a class="navbar-brand" href="#">Website</a>
                         <a class="navbar-brand" href="#" style="margin-left: -5px;">Webshop</a>
+
                         <a class="navbar-brand" asp-controller="Admin" asp-action="Index">Admin</a>
                         <a class="navbar-brand" asp-controller="CatalogusFilter" asp-action="Index">Filter</a>
                     </div>
                     <div class="navbar-header navbar-right">
+
                         <p class="navbar-text" style="font-size: 15px;"><b>T</b> (010) 4126143</p>
                         <p class="navbar-text"><span class="glyphicon glyphicon-search"></span></p>
                     </div>
@@ -73,6 +76,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li><h1>Honeymoon shop</h1></li>
                     </ul>
+
                     <ul class="nav navbar-nav navbar-right navbar-pink arial-bold" style="letter-spacing: 1px; margin-right: 8px;">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Bruid</a></li>
@@ -223,7 +227,19 @@
             $(function () {
                 $(".holder").jPages({
                     containerID: "itemContainer",
-                    perPage: 6,
+                    perPage: 12,
+                    previous: "previous",
+                    next: "next"
+                });
+
+                    var newPerPage = parseInt($(this).val());
+
+                    $(".holder").jPages("destroy").jPages({
+                        containerID: "itemContainer",
+                        perPage: newPerPage,
+                        previous: "previous",
+                        next: "next"
+                    });
                 });
             });
         });
