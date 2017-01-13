@@ -14,5 +14,8 @@ namespace Models
         public string KleurNaam { get; set; }
 
         public virtual IList<Jurk> Jurken { get; set; }
+
+        [NotMapped]
+        public bool IsSelected { get; set; } = false;
     }
 }

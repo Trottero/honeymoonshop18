@@ -11,6 +11,12 @@
     letter-spacing: 1px;
     font-family: nexa_boldregular;
 }
+.arial-bold{
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 15px;
+    text-transform: uppercase;
+}
 
 .sans-serif-thin {
     font-family: 'Josefin Sans', sans-serif;
@@ -180,24 +186,15 @@ row-suits {
     margin-right: 45px;
 }
 
-.cat-line {
-    height: 10px;
-    border-bottom: 3px solid black;
-    width: 84%;
-    margin-left: 35px;
-}
-
-.cat-textinline {
-}
-
 .cat {
     display: flex;
     flex-wrap: wrap;
 }
 
 .cat-textdescimage {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 10px;
+    margin-bottom:15px;
 }
 
 .det-sideimg {
@@ -231,7 +228,7 @@ row-suits {
     padding-bottom: 8px;
     font-size: 15px;
 }
-.specialbutton {
+.specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus{
     margin-top: 20px;
     border: 5px solid #f0597c;
     border-radius: 0;
@@ -243,6 +240,7 @@ row-suits {
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 15px;
+    display:block;
 }
 
 .cat-background {
@@ -450,55 +448,59 @@ a {
 	visibility: hidden;
 }
 /**
-     * Checkbox Four
-     */
-    .checkboxFour {
-    width: 18px;
-    height: 18px;
-    background: white;
-    border: 1px solid pink;
-    border-radius: 100%;
-    position: relative;
-    top: 2px;
-    }
+    * Checkbox Four
+    */
+.checkboxFour {
+width: 18px;
+height: 18px;
+background: white;
+border: 1px solid pink;
+border-radius: 100%;
+position: relative;
+top: 2px;
+}
 
-    /**
-     * Create the checkbox button
-     */
-    .checkboxFour label {
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50px;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-    cursor: pointer;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    z-index: 0;
-    background: white;
+/**
+    * Create the checkbox button
+    */
+.checkboxFour label {
+display: block;
+width: 12px;
+height: 12px;
+border-radius: 50px;
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+transition: all .5s ease;
+cursor: pointer;
+position: absolute;
+top: 2px;
+left: 2px;
+z-index: 0;
+background: white;
     
-    }
+}
     
-    /**
-     * Create the checked state
-     */
-    .checkboxFour input[type=checkbox]:checked + label {
-    background: #F8E0E0;
-    }
+/**
+    * Create the checked state
+    */
+.checkboxFour input[type=checkbox]:checked + label {
+background: #F8E0E0;
+}
 
-    .checkboxColor {
-        width: 15px;
-        height: 15px;
-        border: 1px solid #A9BCF5;
+.checkboxColor {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #A9BCF5;
         
-        border-radius: 50%;
-        position: relative;
-    }
+    border-radius: 50%;
+    position: relative;
+}
 
-    .textCheckbox {
-        margin-left:15px;
-    }
+.textCheckbox {
+    margin-left:15px;
+}
+
+.checkbox1 {
+    display: none;
+}
