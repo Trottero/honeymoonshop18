@@ -8,6 +8,7 @@
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap-slider.css" />
         <link rel="stylesheet" href="~/css/Style.css" />
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
         <link rel="stylesheet" href="~/css/style.css" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -24,18 +25,27 @@
     </environment>
 </head>
 <body class="backgroundcolor">
+    <style>
+        .navbar-brand{
+            font-size:15px;
+            font-weight:800;
+        }
+        .btn-default{
+            font-weight: bold;
+        }
+        </style>
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
+                <div class="container-fluid" style="margin-top: 5px; margin-bottom: 2px; margin-left: 10px;">
+                    <div class="navbar-header arial-bold">
                         <a class="navbar-brand" href="#">Website</a>
-                        <a class="navbar-brand" href="#">Webshop</a>
+                        <a class="navbar-brand" href="#" style="margin-left: -5px;">Webshop</a>
                         <a class="navbar-brand" asp-controller="Admin" asp-action="Index">Admin</a>
                         <a class="navbar-brand" asp-controller="CatalogusFilter" asp-action="Index">Filter</a>
                     </div>
                     <div class="navbar-header navbar-right">
-                        <p class="navbar-text">T (010) 4126143</p>
+                        <p class="navbar-text" style="font-size: 15px;"><b>T</b> (010) 4126143</p>
                         <p class="navbar-text"><span class="glyphicon glyphicon-search"></span></p>
                     </div>
                 </div>
@@ -63,13 +73,14 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li><h1>Honeymoon shop</h1></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right navbar-pink">
+                    <ul class="nav navbar-nav navbar-right navbar-pink arial-bold" style="letter-spacing: 1px; margin-right: 8px;">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Bruid</a></li>
+                        <li><a href="#">Bruidegom</a></li>
                         <li><a href="#">De winkel</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><button type="button" class="btn btn-default">De winkel</button></li>
+                        <li><button type="button" class="btn btn-default specialbutton" style="margin-top: 0px; padding: 10px; padding-top: 5px; padding-bottom: 5px; color: white; letter-spacing:1px; font-weight: bolder;">AFSPRAAK MAKEN</button></li>
                     </ul>
                 </div>
                 <!--
@@ -178,6 +189,7 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="~/js/bootstrap-slider.js"></script>
         <script type="text/javascript" src="~/lib/jPages.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
@@ -195,26 +207,23 @@
 
     @RenderSection("scripts", required: false)
 
+
+
     <script type="text/javascript">
         $(document).ready(function () {
-            
+
+            $('#ex12c').slider({
+                id: "slider12c", min: 0, max: 2000, range: true, value: [100, 1750],
+                tooltip: 'always', tooltip_split: true, tooltip_position: 'bottom',
+                formatter: function (value) {
+                    return value;
+                }
+            });
+
             $(function () {
-                $("div.holder").jPages({
+                $(".holder").jPages({
                     containerID: "itemContainer",
-                    perPage: 12,
-                    previous: "previous",
-                    next: "next"
-                });
-
-                $("select").change(function () {
-                    var newPerPage = parseInt($(this).val());
-
-                    $("div.holder").jPages("destroy").jPages({
-                        containerID: "itemContainer",
-                        perPage: newPerPage,
-                        previous: "previous",
-                        next: "next"
-                    });
+                    perPage: 6,
                 });
             });
         });
