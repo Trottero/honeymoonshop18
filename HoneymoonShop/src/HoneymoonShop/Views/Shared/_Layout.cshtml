@@ -232,6 +232,7 @@
                     next: "next"
                 });
 
+                $(".itemsPerPageSelect").change(function () {
                     var newPerPage = parseInt($(this).val());
 
                     $(".holder").jPages("destroy").jPages({
