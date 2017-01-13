@@ -28,26 +28,3 @@
 .holder span {
     margin:0 5px;
 }
-
-.customBtns {
-    position: relative;
-}
-
-.arrowPrev,.arrowNext {
-    width:9px;
-    height:20px;
-    position:absolute;
-    top:-35px;
-    cursor:pointer;
-}
-.arrowPrev {
-    background-image:url('../images/previous.png');
-    left:-32px;
-}
-.arrowNext {
-    background-image:url('../images/next.png');
-    right: 45px;
-}
-.arrowPrev.jp-disabled,.arrowNext.jp-disabled {
-    display: none;
-}
