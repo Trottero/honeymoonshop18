@@ -61,14 +61,14 @@
                                                 <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
                                                     <div class="checkboxFour">
                                                         @Html.HiddenFor(m => m.alleMerken[i].MerkID)
-                                                        @Html.HiddenFor(m => m.alleMerken[i].MerkNaam)
+                                                        @Html.HiddenFor(m => m.alleMerken[i].MerkNaam)  
                                                         @Html.CheckBoxFor(m => m.alleMerken[i].IsSelected)
-                                                        
-                                                        <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
+                                                        <!--<input type="checkbox" name="alleMerken[@i].IsSelected" value="true" data-val="true" id="checkboxFourInput@i" 
+                                                               data-val-required="The IsSelected field is required." style="opacity:0" />-->
                                                         <label for="checkboxFourInput"></label>
-                                                    </div>
+                                                    </div> 
                                                     <div class="textCheckbox">
-                                                        <text style="font-size:15px">@Model.alleMerken[i].MerkNaam</text>
+                                                        <text style="font-size:12px">@Model.alleMerken[i].MerkNaam</text>
                                                     </div>
                                                 </div>
                                                
@@ -93,10 +93,8 @@
                                                 <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
                                                     <div class="checkboxFour">
                                                         @Html.HiddenFor(m => m.alleStijlen[i].StijlID)
-                                                        @Html.HiddenFor(m => m.alleStijlen[i].StijlNaam)
-                                                        @Html.CheckBoxFor(m => m.alleStijlen[i].IsSelected)
-
-                                                        <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
+                                                        @Html.HiddenFor(m => m.alleStijlen[i].StijlNaam)                                                        
+                                                        <input type="checkbox" name="alleStijlen[@i].IsSelected" value="true" data-val="true" id="alleStijlen_0__IsSelected" style="opacity:0" />
                                                         <label for="checkboxFourInput"></label>
                                                     </div>
                                                     <div class="textCheckbox">
@@ -121,8 +119,8 @@
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                     <div class="panel-body">
-                                        <input id="ex12c" type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000" data-slider-step="5" data-slider-value="[100,1900]" t 
-                                               asp-for="selectedMinimumPrijs"/>
+                                        <input id="ex12c" type="text" class="span2" name="PrijsRange" value="" data-slider-min="0" data-slider-max="10000" data-slider-step="50" data-slider-value="[2000,8000]" t 
+                                               />
                                     </div>
                                 </div>
                             </div>
@@ -147,9 +145,7 @@
                                                         <div class="checkboxFour">
                                                             @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnID)
                                                             @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnNaam)
-                                                            @Html.CheckBoxFor(m => m.alleNeklijnen[i].IsSelected)
-
-                                                            <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
+                                                            <input type="checkbox" name="alleNeklijnen[@i].IsSelected" value="true" data-val="true" id="checkboxFourInput@i" style="opacity:0" />
                                                             <label for="checkboxFourInput"></label>
                                                         </div>
                                                         <div class="textCheckbox">
@@ -177,9 +173,7 @@
                                             <div class="checkboxFour">
                                                 @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteNaam)
                                                 @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteID)
-                                                @Html.CheckBoxFor(m => m.alleSilhouetten[i].IsSelected)
-
-                                                <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
+                                                <input type="checkbox" name="alleSilhouetten[@i].IsSelected" value="true" data-val="true" id="checkboxFourInput@i" style="opacity:0" />
                                                 <label for="checkboxFourInput"></label>
                                             </div>
                                             <div class="textCheckbox">
@@ -205,9 +199,7 @@
                                                 <div class="checkboxFour">
                                                     @Html.HiddenFor(m => m.alleKleuren[i].KleurNaam)
                                                     @Html.HiddenFor(m => m.alleKleuren[i].KleurID)
-                                                    @Html.CheckBoxFor(m => m.alleKleuren[i].IsSelected)
-
-                                                    <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
+                                                    <input type="checkbox" name="alleKleuren[@i].IsSelected" value="true" data-val="true" id="checkboxFourInput@i" style="opacity:0" />
                                                     <label for="checkboxFourInput"></label>
                                                 </div>
                                                 <div class="textCheckbox">
@@ -232,14 +224,15 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" value="Filter" />
+
+                        <input type="submit" value="Filter" />                        
                     </form>
                 </div>
             </div>
 
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">@Model.filteredJurken.Count jurken gevonden</div>
                     <div class="col-md-6">
                         
                             <div class="form-group cat-searchbarright">
@@ -250,6 +243,7 @@
                                     @Html.HiddenFor(m => m.alleNeklijnen)
                                     @Html.HiddenFor(m => m.alleSilhouetten)
                                     @Html.HiddenFor(m => m.alleKleuren)
+                                    @Html.HiddenFor(m => m.PrijsRange)                                    
                                     <select asp-for="sorteerOptie">
                                         <option>Prijs Hoog/Laag</option>
                                         <option>Prijs Laag/Hoog</option>
@@ -269,7 +263,7 @@
                     {
                         <div>
                             <a asp-controller="Catalogus" asp-action="Details" asp-route-id="@item.JurkID">
-                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam</div>
+                                <img src="~/images/@item.AfbeeldingNaam1" class="dressfinder-pics"><div class="cat-textdescimage"> @item.Merk.MerkNaam  @item.Prijs</div>
                             </a>
                         </div>
                         /*

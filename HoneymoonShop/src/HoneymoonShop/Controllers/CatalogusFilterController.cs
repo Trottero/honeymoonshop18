@@ -53,6 +53,7 @@ namespace HoneymoonShop.Controllers
             ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
             ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
 
+            
 
             //CREATE LISTS OF SELECTED INPUT
             var selectedMerkIDs = (from merk in filterModel.alleMerken
@@ -75,16 +76,24 @@ namespace HoneymoonShop.Controllers
                                     where kleur.IsSelected
                                     select kleur.KleurID).ToList();
 
+            //default values 
+            int minPrijs = 0;
+            int maxPrijs = 10000;
+            //Get minimum and maximum prijs from Model.PrijsRange
+            /*if (filterModel.PrijsRange != null)
+            {
+                minPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[0]);
+                maxPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[1]);
+            }*/
             //FILTER INPUT
-
             var filteredJurken = from jurk in _context.Jurken.Include(j => j.Merk).Include(j => j.Stijl).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Kleur)
                                  where (selectedMerkIDs == null || selectedMerkIDs.Count == 0 || selectedMerkIDs.Contains(jurk.MerkID))
                                  && (selectedStijlIDs == null || selectedStijlIDs.Count == 0 || selectedStijlIDs.Contains(jurk.StijlID))
                                  && (selectedNeklijnIDs == null || selectedNeklijnIDs.Count == 0 || selectedNeklijnIDs.Contains(jurk.NeklijnID))
                                  && (selectedSilhouetteIDs == null || selectedSilhouetteIDs.Count == 0 || selectedSilhouetteIDs.Contains(jurk.SilhouetteID))
                                  && (selectedKleurIDs == null || selectedKleurIDs.Count == 0 || selectedKleurIDs.Contains(jurk.KleurID))
-                                 //&& jurk.Prijs > filterModel.selectedMinimumPrijs 
-                                 //&& jurk.Prijs < filterModel.selectedMaximumPrijs                                 
+                                 && jurk.Prijs > minPrijs
+                                 && jurk.Prijs < maxPrijs                                 
                                  select jurk;
 
 
@@ -106,6 +115,14 @@ namespace HoneymoonShop.Controllers
             {
                 filteredJurken = filteredJurken.OrderByDescending(j => j.Merk.MerkNaam);
             }
+
+            //Fill filter after call
+            /*filterModel.alleMerken = _context.Merken.ToList();
+            filterModel.alleStijlen = _context.Stijlen.ToList();
+            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
+            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
+            filterModel.alleKleuren = _context.Kleuren.ToList();
+            filterModel.filteredJurken = _context.Jurken.ToList();*/
 
 
             filterModel.filteredJurken = await filteredJurken.ToListAsync();
