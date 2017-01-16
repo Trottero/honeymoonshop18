@@ -48,12 +48,12 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             Merk
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body" style="overflow:auto;max-height:120px">
                                         @{ 
                                             @for (int i = 0; i < Model.alleMerken.Count; i++)
@@ -80,12 +80,12 @@
                             <div class="panel panel-default" style="margin-top: 0px">
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             Stijl Jurk
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="panel-body" style="overflow:auto;max-height:120px">
                                         @{
                                             @for (int i = 0; i < Model.alleStijlen.Count; i++)
@@ -114,14 +114,14 @@
                             <div class="panel panel-default" style="margin-top: 0px">
                                 <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             Prijs
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                                     <div class="panel-body">
-                                        <input id="ex12c" type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000" data-slider-step="5" data-slider-value="[100,1900]" t 
+                                        <input id="ex12c" type="text" class="span2" value="" data-slider-min="0" data-slider-max="10000" data-slider-step="5" data-slider-value="[100,9000]" t 
                                                asp-for="selectedMinimumPrijs"/>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                             Neklijn
                                         </a>
                                     </h4>
@@ -165,7 +165,7 @@
                             <div class="panel panel-default" style="margin-top: 0px">
                                 <div class="panel-heading" role="tab" id="headingFive">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                             Silhoutte
                                         </a>
                                     </h4>
@@ -192,7 +192,7 @@
                             <div class="panel panel-default" style="margin-top: 0px; border-bottom-width: 1px">
                                 <div class="panel-heading" role="tab" id="headingSix">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                             Kleur
                                         </a>
                                     </h4>
