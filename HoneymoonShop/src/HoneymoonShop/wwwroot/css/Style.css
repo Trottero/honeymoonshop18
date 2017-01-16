@@ -45,7 +45,694 @@ h5 {
     background-color: #fce8e7;
     margin-bottom: 4px;
 }
-/*--Bruid Styles*/
+
+/*Home Styles*/
+.Ctop {
+    height: 800px;
+    background-image: url(/images/Background.png);
+ 
+    background-position: center;
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.Ctext1 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    left:160px;
+    top: 390px;
+}
+
+.Ctext2 {
+    
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    top: 420px;
+    left:320px;
+}
+
+.buttwrapper {
+    display: inline-block;
+    position: absolute;
+    top:620px;
+    left:480px;
+}
+
+.Bruidbtn {
+    width: 200px;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-radius: 0;
+    margin: auto;
+    border-style: none;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    background-color: #f730ff;
+    border-color:#f730ff;
+    border-style: solid;
+    border-width: thick;
+}
+
+    .Bruidbtn:hover, .Bruidbtn:active, .Bruidbtn:link {
+        background-color: #f730ff;
+         border-color:#f730ff;
+    }
+
+.Bruidegombtn {
+    width: 200px;
+    height: 60px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color:white;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-radius: 0;
+    margin: auto;
+    border-color:white;
+    border-style: solid;
+    border-width: thick;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+ .Bruidegombtn:hover, .Bruidegombtn:active, .Bruidegombtn:link {
+        background-color:transparent;
+        border-color:white;
+        color:white;
+    }
+ .Cdownarrow {
+
+    text-align: center;
+    
+    margin-bottom: 50px;
+    
+}
+
+/*Bruid Styles */
+.Btop {
+    height: 450px;
+    background-image: url(/images/bruid1.png);
+    background-position: center;
+    text-align: center;
+    background-size: 100% 100%;
+}
+.Btext1 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    
+    position: absolute;
+    top: 240px;
+}
+
+.Btext2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    
+    position: absolute;
+    top: 270px;
+}
+
+.Bcollectie {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/collectie1.png);
+    background-position: center;
+    /*background-size: 850px;*/
+    background-size: 75%;
+    background-repeat: no-repeat;
+}
+.Bcollectie-text {
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: absolute;
+    /*vertical-align: middle;*/
+    letter-spacing: -1px;
+    top: 100px;
+   
+}
+/*mobiel*/
+@media only screen and (min-device-width: 320px){
+    .Bcollectie-text {
+        font-size:15px;
+    }
+   
+  
+   
+}
+
+/*tablets*/
+@media only screen and (min-device-width : 768px){
+    .Bcollectie-text {
+        left:170px;
+        font-size:20px;
+    }
+    
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .Bcollectie-text {
+        left:220px;
+        font-size: 35px;
+    }
+     .Btext1{
+        left: 400px;
+    }
+    .Btext2{
+        left:200px;
+    }
+    .Bsuits-text{
+        left: 360px;
+    }
+     .Btextbox{
+         left: 320px;
+    }
+     .Btext-blog{
+         left: 300px;
+     }
+    
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    .Bcollectie-text {
+        left:250px;
+        font-size: 35px;
+
+    }
+     .Btext1{
+        left: 500px;
+    }
+    .Btext2{
+        left:300px;
+    }
+    .Bsuits-text{
+        left: 350px;
+    }
+    .Btextbox{
+         left: 420px;
+    }
+    .Btext-blog{
+        left: 400px;
+    }
+    
+}
+.Bsuits {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/theDress.png);
+    background-size: 75%;
+    background-position: center;
+    /*background-size: 850px;*/
+    background-repeat: no-repeat;
+}
+.Hsuits {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/osh.png);
+    background-size: 75%;
+    background-position: center;
+    /*background-size: 850px;*/
+    background-repeat: no-repeat;
+}
+.Bsuits-text {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100px;
+}
+
+.Btext4 {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 270px;
+}
+
+.Bpic-row {
+    width: 100%;
+    margin: 20px auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /*overflow:hidden;*/
+}
+
+
+.Bdress-pics {
+    margin-right: 25px;
+    width: 300px;
+    height: 600px;
+}
+
+
+
+.BDSbtn {
+    background-color:#f730ff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    border-style: none;
+    margin-bottom: 30px;
+    width: 300px;
+    color:white;
+}
+.BDSbtn:hover,.BDSbtn:active,.BDSbtn:link{
+    background-color:#f730ff;
+}
+
+.Bdownarrow {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Barrowright {
+    color: #f730ff;
+    left: 300px;
+    position: absolute;
+    top: 235px;
+}
+
+.Barrow-right-text {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    left: 320px;
+    position: absolute;
+    top: 230px;
+}
+
+.Bsuits {
+    display: flex;
+    width: 100%;
+}
+
+.Bvideo2 {
+    background-image: url(http://stylishbride.files.wordpress.com/2011/03/jt_shouston11.jpg);
+        background-repeat:no-repeat;
+    width: 65%;
+    height: 480px;
+    display: flex;
+}
+
+.Bvideo1 {
+    width: 35%;
+    position: center;
+    font-size: 25px;
+}
+
+.Bol > li {
+    counter-increment: item;
+    list-style: none inside;
+    margin: 30px 0;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+    .Bol > li:before {
+        content: counter(item);
+        margin-right: 15px;
+        padding: 2px;
+        display: block;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        background-color: #f730ff;
+        color: white;
+        text-align: center;
+        float: left;
+    }
+
+.Btextnr {
+    text-align: center;
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 100px;
+    background-color: #f730ff;
+    color: white;
+    left: 110px;
+    position: absolute;
+    top: 420px;
+    font-size: 70px;
+}
+
+.Btextbox {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    color: black;
+    left: 320px;
+    position: absolute;
+    top: 300px;
+    width: 320px;
+    height: 250px;
+    font-size: 20px;
+    padding: 20px;
+    padding-right: 30px;
+}
+
+.Bdownarrow2 {
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Bblog {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/blog1.png);
+    background-position: center;
+    /*background-size: 850px;*/
+    background-size: 75%;
+    background-repeat: no-repeat;
+    margin-bottom: 80px;
+}
+
+.Btext-blog {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    
+    left: 300px;
+    
+    letter-spacing: -1px;
+    top: 100px;
+}
+
+.Br-events {
+    display: flex;
+    width: 100%;
+}
+
+.Bevnt {
+    height: 420px;
+    width:585px;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+}
+hr{
+    height:4px;
+    
+}
+.Btxtbxhead {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    
+}
+.Btxtbxbdy{
+   
+    padding-right: 15px;
+    padding-left: 20px;
+    font-size: 18px;
+    position: absolute;
+    top:90px;
+    left: 0;
+    width: 100%;
+    
+}
+
+.Btxtbxfoot{
+   padding-left: 20px;
+    font-size: 18px;
+   
+}
+
+.Btxtbx {
+    background-color: white;
+  
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 50%;
+    height: 200px;
+}
+
+.Bevnt2 {
+    padding: 0px;
+    height: 420px;
+    width: 585px;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.Btextbox1-1 {
+    padding: 0px;
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: black;
+ 
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox1-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+  
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox1-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox2-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox2-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+
+.Btextbox2-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox3-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    
+    height: 500px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox3-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+ 
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox3-3 {
+    background-color: white;
+    border: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    box-shadow: 0px 1px 10px gainsboro;
+    color: black;
+    
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.BMBbtn {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    border-style: none;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    background-color:#f730ff;
+}
+.BMBbtn:hover,.BMBbtn:active,.BMBbtn:link{
+    background-color:#f730ff;
+}
+
+.Bhead {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.Btxt {
+    font-size: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+}
+
+.Bbgrnd {
+    background-image: url(http://www.honeymoonshop.nl/uploads/cache/img-8050-1.jpg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+     height:327px;
+    width: 100%
+}
+
+.Bbgrnd1 {
+    background-image: url(http://www.honeymoonshop.nl/uploads/cache/image-20.jpeg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+  height:327px;
+    width: 100%
+}
+
+.Bbgrnd2 {
+    background-image: url(http://www.honeymoonshop.nl/uploads/cache/17111-66-4.jpg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+     height:327px;
+    width: 100%
+}
+
+.Bdownarrow3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.Bbottom-pic {
+      height: 450px;
+     background-image:url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
+    background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1009/large_Trouwjurk_Passen.jpg);
+    /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
+    background-position: center;
+    background-repeat:no-repeat;
+    width: 100%;
+}
+
+.HBbottom-pic {
+      height: 450px;
+     background-image:url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
+   
+    /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
+    background-position: center;
+    background-repeat:no-repeat;
+    width: 100%;
+}
+
+/*--Bruidegom Styles*/
 .top {
    height: 500px;
     /*background-image: url(http://www.joan.nl/wp-content/uploads/2014/12/bruidsmode-joan_top-02.jpg);*/
@@ -216,6 +903,7 @@ h5 {
     margin: auto;
     border-style: none;
     margin-bottom: 30px;
+    width:300px;
 }
 
 .downarrow {
