@@ -96,6 +96,7 @@ namespace HoneymoonShop.Controllers
                                  && jurk.Prijs < maxPrijs                                 
                                  select jurk;
 
+            
 
             //SORTEER
             if (filterModel.sorteerOptie != null && filterModel.sorteerOptie.Equals("Prijs Hoog/Laag"))
