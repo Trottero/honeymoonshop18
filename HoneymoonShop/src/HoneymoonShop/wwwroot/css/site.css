@@ -1,5 +1,9 @@
 ﻿body {
     padding-bottom: 20px;
+    background-color: #FCDDDD;
+}
+.bodycontainer{
+    background-color:white;
 }
 
 /* Wrapping element */

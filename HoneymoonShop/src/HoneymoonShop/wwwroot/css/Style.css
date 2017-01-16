@@ -11,7 +11,8 @@
     letter-spacing: 1px;
     font-family: nexa_boldregular;
 }
-.arial-bold{
+
+.arial-bold {
     font-family: Arial;
     font-weight: bolder;
     font-size: 15px;
@@ -35,44 +36,33 @@ h5 {
     font-family: sans-serif;
     font-size: 18px;
 }
-.quicklinks-box{
-    padding-top: 4px;
-    padding-bottom:4px;
-    padding-left:10px;
-    width:200px;
-    background-color:#fce8e7;
-    margin-bottom:4px;
-}
 
-.col-md-12-1 {
-    height: 450px;
-    background-image: url(http://esq.h-cdn.co/assets/15/50/1600x800/landscape-1449613000-groom.jpg);
+.quicklinks-box {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    width: 200px;
+    background-color: #fce8e7;
+    margin-bottom: 4px;
+}
+/*--Bruid Styles*/
+.top {
+   height: 500px;
+    /*background-image: url(http://www.joan.nl/wp-content/uploads/2014/12/bruidsmode-joan_top-02.jpg);*/
+    background-image:url(/images/bruidegom.png);
+    background-position: center;
     text-align: center;
     background-size: 100% 100%;
+    background-repeat:no-repeat;
 }
-
-.col-md-12-2 {
-    height: 200px;
-    width: 100%;
-    background-image: url(/images/collection.png);
-    background-size: 100% 100%;
-    background-position: center;
-    background-size: 850px;
-}
-
-.col-md-12-3 {
-    height: 200px;
-    width: 100%;
-    background-image: url(/images/suits.png);
-    background-size: 100% 100%;
-    background-position: center;
-    background-size: 850px;
-}
-
 .text1 {
     font-family: 'Josefin Sans', sans-serif;
-    position: center;
+    text-align: center;
     font-size: 30px;
+    color: white;
+    
+    position: absolute;
+    top: 240px;
 }
 
 .text2 {
@@ -80,18 +70,115 @@ h5 {
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
+    color: white;
+    
+    position: absolute;
+    top: 270px;
 }
 
-.text3 {
-    font-family: 'Josefin Sans', sans-serif;
+.collectie {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/collection.png);
+    background-position: center;
+    /*background-size: 850px;*/
+    background-size: 75%;
+    background-repeat: no-repeat;
+}
+
+.collectie-text {
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: absolute;
+    /*vertical-align: middle;*/
+    letter-spacing: -1px;
+    top: 100px;
+   
+}
+/*mobiel*/
+@media only screen and (min-device-width: 320px){
+    .collectie-text {
+        font-size:15px;
+    }
+   
+  
+   
+}
+
+/*tablets*/
+@media only screen and (min-device-width : 768px){
+    .collectie-text {
+        left:170px;
+        font-size:20px;
+    }
+    
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .collectie-text {
+        left:270px;
+        font-size: 35px;
+    }
+     .text1{
+        left: 400px;
+    }
+    .text2{
+        left:200px;
+    }
+    .suits-text{
+        left: 360px;
+    }
+     .textbox{
+         left: 320px;
+    }
+     .text-blog{
+         left: 300px;
+     }
+    
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    .collectie-text {
+        left:370px;
+        font-size: 35px;
+
+    }
+     .text1{
+        left: 500px;
+    }
+    .text2{
+        left:300px;
+    }
+    .suits-text{
+        left: 460px;
+    }
+    .textbox{
+         left: 420px;
+    }
+    .text-blog{
+        left: 400px;
+    }
+    
+}
+.suits {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/suits.png);
+    background-size: 75%;
+    background-position: center;
+    /*background-size: 850px;*/
+    background-repeat: no-repeat;
+}
+.suits-text {
+    font-family: sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 270px;
+    position: absolute;
+    top: 100px;
 }
-
 .text4 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
@@ -154,18 +241,374 @@ row-suits {
 }
 
 .video2 {
-    background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);
-    width: 63%;
+    /*background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);*/
+    background-image:url(http://www.canali.com/media/wysiwyg/The-Edition/News/Openings/Canali-Atlanta-Store-Window-3.jpg);
+    background-repeat:no-repeat;
+    width: 65%;
     height: 480px;
     display: flex;
 }
 
 .video1 {
-    width: 33%;
-    position: center;
+    width:35%;
+    position:center;
     font-size: 25px;
+    
+}
+ol > li {
+    counter-increment: item;
+    list-style: none inside;
+    margin: 30px 0;
+    overflow: hidden;
+    line-height: 1.3;
+ 
 }
 
+
+    ol > li:before {
+        content: counter(item);
+        margin-right: 15px;
+        padding: 2px;
+        display: block;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        background-color: royalblue;
+        color: white;
+        text-align: center;
+       
+        float: left;
+    }
+
+.textnr {
+    text-align: center;
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 100px;
+    background-color: royalblue;
+    color: white;
+    left: 110px;
+    position: absolute;
+    top: 420px;
+    font-size: 70px;
+}
+
+.textbox {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    color: black;
+   
+    position: absolute;
+    top: 300px;
+    width: 320px;
+    height: 250px;
+    font-size: 20px;
+    padding: 20px;
+    padding-right: 30px;
+}
+
+.downarrow2 {
+    margin-top: 70px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/blog.png);
+    background-size:75%;
+    background-position: center;
+   background-repeat:no-repeat;
+    margin-bottom: 80px;
+}
+
+.text-blog {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    letter-spacing: -1px;
+    top: 100px;
+
+
+}
+
+.r-events {
+    display: flex;
+    width: 100%;
+}
+
+.evnt {
+    height: 420px;
+    /*width:585px;*/
+    position: relative;
+    width: 100%;
+    padding: 0px;
+}
+
+.txtbxhead {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    
+}
+hr{
+    height:4px;
+    
+}
+.txtbxbdy{
+   
+    padding-right: 15px;
+    padding-left: 20px;
+    font-size: 18px;
+    position: absolute;
+    top:90px;
+    left: 0;
+    width: 100%;
+    
+}
+
+.txtbxfoot{
+   padding-left: 20px;
+    font-size: 18px;
+   
+}
+
+.txtbx {
+    background-color: white;
+  
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 50%;
+    height: 200px;
+}
+
+.evnt2 {
+    padding: 0px;
+    height: 420px;
+    /*width: 585px;*/
+    position: relative;
+    width: 100%;
+}
+
+
+
+.textbox1-1 {
+    padding: 0px;
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox1-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox1-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox2-3 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 320px;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-1 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 25%;*/
+    height: 500px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-2 {
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    color: black;
+    /*width: 25%;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.textbox3-3 {
+    background-color: white;
+    border: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    box-shadow: 0px 1px 10px gainsboro;
+    color: black;
+    /*width: 25%;*/
+    height: 500px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.MBbtn {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+    border-style: none;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.head {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.txt {
+    font-size: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+}
+
+.bgrnd {
+    background-image: url(http://www.honeymoonshop.nl/uploads/cache/img-8050-1.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    margin: 0px;
+    padding: 0px;
+    height:327px;
+    width: 100%;
+    
+}
+
+.bgrnd1 {
+    background-image: url(http://www.krystlebrides.co.uk/media/wysiwyg/real-bride-3.jpg);
+    background-size: cover;
+        background-repeat:no-repeat;
+    margin: 0px;
+    padding: 0px;
+    height: 327px;
+    width: 100%;
+}
+
+.bgrnd2 {
+    background-image: url(http://www.honeymoonshop.nl/uploads/cache/17111-66-4.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    margin: 0px;
+    padding: 0px;
+    height: 327px;
+    width: 100%;
+}
+
+.downarrow3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.bottom-pic {
+    height: 450px;
+    background-image: url(http://esq.h-cdn.co/assets/15/50/1600x800/landscape-1449613000-groom.jpg);
+    background-position: center;
+    width: 100%;
+}
 
 /*catalogus styles*/
 .cat-col-md-12-1 {
@@ -194,12 +637,12 @@ row-suits {
 .cat-textdescimage {
     margin-top: 5px;
     margin-left: 10px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
 .det-sideimg {
-    margin-top:15px;
-        width: 240px;
+    margin-top: 15px;
+    width: 240px;
     height: 240px;
 }
 
@@ -207,14 +650,14 @@ row-suits {
     margin-top: 10px;
 }
 
-.det-large-pic{
+.det-large-pic {
     margin: 20px;
 }
 
-.det-suggestedjels{
-    margin-right: 8px; 
-    
+.det-suggestedjels {
+    margin-right: 8px;
 }
+
 .sidetext > div > button {
     margin-top: 20px;
     border: 5px solid #f0597c;
@@ -228,7 +671,8 @@ row-suits {
     padding-bottom: 8px;
     font-size: 15px;
 }
-.specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus{
+
+.specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus {
     margin-top: 20px;
     border: 5px solid #f0597c;
     border-radius: 0;
@@ -240,7 +684,7 @@ row-suits {
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 15px;
-    display:block;
+    display: block;
 }
 
 .cat-background {
@@ -262,7 +706,8 @@ row-suits {
 .form-control {
     max-width: 220px;
 }
-.det-desclist-special{
+
+.det-desclist-special {
     color: #f7bfc8;
 }
 
@@ -344,24 +789,22 @@ a {
         color: black;
     }
 
-    /*-- Filter selectie--*/
+/*-- Filter selectie--*/
 .col-md-3Filter {
-	max-width:25%;
-	padding-left:120px;
-    padding-right:40px;
+    max-width: 25%;
+    padding-left: 120px;
+    padding-right: 40px;
 }
 
 .col-3 {
-    flex:auto;
-	max-width: 500px;
+    flex: auto;
+    max-width: 500px;
     max-height: 100px;
     overflow: auto;
-    
 }
 
 .title {
-	margin: 1px;
-    
+    margin: 1px;
 }
 
 .chkbox {
@@ -370,52 +813,53 @@ a {
 
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
-    font-family: 'Glyphicons Halflings'; 
-    content: "\e253";    
-    color: #FCCAC6;   
-    float: right;            
+    font-family: 'Glyphicons Halflings';
+    content: "\e253";
+    color: #FCCAC6;
+    float: right;
 }
 
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
-    content: "\e252";   
+    content: "\e252";
 }
+
 .panel-default {
     border-left-width: 0px;
     border-right-width: 0px;
     border-top-width: 1px;
     border-bottom-width: 0px;
-    border-color:#A9BCF5; 
+    border-color: #A9BCF5;
     margin-top: 0px;
 }
 
-.panel-default > .panel-heading + .panel-collapse > .panel-body {
-    
-}
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    }
 
-.panel-default > .panel-heading {
-    border-bottom-width: 1px;
-    border-color:#A9BCF5;
-    border-bottom-style: solid;
-    background-color: #F6F6F6;
-}
+    .panel-default > .panel-heading {
+        border-bottom-width: 1px;
+        border-color: #A9BCF5;
+        border-bottom-style: solid;
+        background-color: #F6F6F6;
+    }
+
 .titleFilter {
     font-size: 17px;
     margin-bottom: 5px;
-
 }
+
 .panel-heading {
     padding: 5px 15px;
 }
 
 
 #slider12c .slider-selection {
-	background: pink;
+    background: pink;
 }
 
 #slider12c .slider-handle {
     background: white;
-    border:1px solid pink;
+    border: 1px solid pink;
 }
 
 
@@ -438,67 +882,65 @@ a {
 }
 
 #slider12c .slider-horizontal.slidertrack {
-    height:5px;
+    height: 5px;
     margin-top: 5px;
 }
 /**
  * Start by hiding the checkboxes
  */
 .input[type=checkbox] {
-	visibility: hidden;
+    visibility: hidden;
 }
 /**
     * Checkbox Four
     */
 .checkboxFour {
-width: 18px;
-height: 18px;
-background: white;
-border: 1px solid pink;
-border-radius: 100%;
-position: relative;
-top: 2px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 1px solid pink;
+    border-radius: 100%;
+    position: relative;
+    top: 2px;
 }
 
-/**
+    /**
     * Create the checkbox button
     */
-.checkboxFour label {
-display: block;
-width: 12px;
-height: 12px;
-border-radius: 50px;
--webkit-transition: all .5s ease;
--moz-transition: all .5s ease;
--o-transition: all .5s ease;
-transition: all .5s ease;
-cursor: pointer;
-position: absolute;
-top: 2px;
-left: 2px;
-z-index: 0;
-background: white;
-    
-}
-    
-/**
+    .checkboxFour label {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+        cursor: pointer;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        z-index: 0;
+        background: white;
+    }
+
+    /**
     * Create the checked state
     */
-.checkboxFour input[type=checkbox]:checked + label {
-background: #F8E0E0;
-}
+    .checkboxFour input[type=checkbox]:checked + label {
+        background: #F8E0E0;
+    }
 
 .checkboxColor {
     width: 15px;
     height: 15px;
     border: 1px solid #A9BCF5;
-        
     border-radius: 50%;
     position: relative;
 }
 
 .textCheckbox {
-    margin-left:15px;
+    margin-left: 15px;
 }
 
 .checkbox1 {
