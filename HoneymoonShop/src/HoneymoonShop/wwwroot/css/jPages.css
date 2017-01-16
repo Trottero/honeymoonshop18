@@ -1,5 +1,12 @@
 .ItemsPerPageForm {
     margin: 30px 40px;
+    margin-left:10px;
+}
+.Selection {
+    width: 120px;
+    height: 35px;
+    border: solid grey 1px;
+    padding-left: 10px;
 }
 
 .navigationBar {
