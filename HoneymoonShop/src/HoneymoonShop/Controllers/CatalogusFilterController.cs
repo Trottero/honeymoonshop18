@@ -26,13 +26,9 @@ namespace HoneymoonShop.Controllers
         public IActionResult Index()
         {
             CatalogusFilterModel filterModel = new CatalogusFilterModel();
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
-
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
+            
+            
             filterModel.alleMerken = _context.Merken.ToList();
             filterModel.alleStijlen = _context.Stijlen.ToList();
             filterModel.alleNeklijnen = _context.Neklijnen.ToList();
@@ -46,14 +42,8 @@ namespace HoneymoonShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CatalogusFilterModel filterModel)
         {
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
 
-            
 
             //CREATE LISTS OF SELECTED INPUT
             var selectedMerkIDs = (from merk in filterModel.alleMerken
@@ -85,6 +75,7 @@ namespace HoneymoonShop.Controllers
                 minPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[0]);
                 maxPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[1]);
             }*/
+            
             //FILTER INPUT
             var filteredJurken = from jurk in _context.Jurken.Include(j => j.Merk).Include(j => j.Stijl).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Kleur)
                                  where (selectedMerkIDs == null || selectedMerkIDs.Count == 0 || selectedMerkIDs.Contains(jurk.MerkID))
@@ -117,16 +108,7 @@ namespace HoneymoonShop.Controllers
                 filteredJurken = filteredJurken.OrderByDescending(j => j.Merk.MerkNaam);
             }
 
-            //Fill filter after call
-            /*filterModel.alleMerken = _context.Merken.ToList();
-            filterModel.alleStijlen = _context.Stijlen.ToList();
-            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
-            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
-            filterModel.alleKleuren = _context.Kleuren.ToList();
-            filterModel.filteredJurken = _context.Jurken.ToList();*/
-
-
-            filterModel.filteredJurken = await filteredJurken.ToListAsync();
+           filterModel.filteredJurken = await filteredJurken.ToListAsync();
             return View(filterModel);
         }
     }

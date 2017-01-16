@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace HoneymoonShop.Models
 {
     public class CatalogusFilterModel
-    {        
+    {    
+        public List<Categorie> alleCategorien { get; set; } 
+           
         public List<Merk> alleMerken { get; set; }
         public List<Stijl> alleStijlen { get; set; }
 
@@ -19,8 +21,6 @@ namespace HoneymoonShop.Models
         public List<Silhouette> alleSilhouetten { get; set; }
 
         public List<Kleur> alleKleuren { get; set; }
-
-
         public List<Jurk> filteredJurken { get; set; }
 
         public string sorteerOptie { get; set; }
