@@ -464,6 +464,17 @@ hr{
     height:4px;
     
 }
+.Bdatebox{
+    background-color:#f730ff;
+    height:55px;
+    width:45px;
+    color:white;
+    position:absolute;
+    top:0px;
+    right:30px;
+    text-align:center;
+    font-size:18px;
+}
 .Btxtbxhead {
     padding-top: 0px;
     padding-right: 20px;
@@ -474,27 +485,20 @@ hr{
     width: 100%;
     
 }
-.Btxtbxbdy{
-   
-    padding-right: 15px;
+.Btxtbxbody{
+    padding-right: 20px;
     padding-left: 20px;
-    font-size: 18px;
     position: absolute;
-    top:90px;
-    left: 0;
-    width: 100%;
-    
+    top:80px;
 }
-
 .Btxtbxfoot{
-   padding-left: 20px;
-    font-size: 18px;
-   
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top:180px;
 }
-
 .Btxtbx {
     background-color: white;
-  
     position: absolute;
     top: 220px;
     left: 0;
@@ -510,7 +514,18 @@ hr{
     width: 100%;
 }
 
+.row1{
+    display:flex;
+    flex-flow: column wrap;
+}
+.row1 > :nth-child(3n + 1) { order: 1; } /* 1st column */
+.row1 > :nth-child(3n + 2) { order: 2; } /* 2nd column */
+.row1 > :nth-child(3n + 3) { order: 3; } /* 3rd column */
 
+.row1> :nth-child(-n + 3) {
+  page-break-before: always; /* CSS 2.1 syntax */
+  break-before: always;  /* New syntax */
+}
 
 .Btextbox1-1 {
     padding: 0px;
@@ -521,7 +536,7 @@ hr{
     letter-spacing: 2px;
     font-size: 20px;
     color: black;
- 
+
     height: 500px;
     margin-left: 50px;
     margin-top: 70px;
@@ -586,7 +601,32 @@ hr{
     margin-left: 50px;
     margin-top: 70px;
 }
+.Btextbox1-2-nieuws{
+    background-color:#B3D5FC;
+    text-transform: uppercase;
+   font-weight:bolder;
+    height:170px;
+    font-size: 25px;
+    text-align:center;
+    padding:30px;
+    margin-left: 50px;
+    margin-top: 70px;
+   
+}
 
+.Btextbox1-2-sol{
+     background-color:#DF4580;
+    text-transform: uppercase;
+   font-weight:bolder;
+    height:200px;
+    font-size: 25px;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-left: 50px;
+    margin-top: 70px;
+    
+}
 
 .Btextbox2-3 {
     background-color: white;
@@ -700,6 +740,31 @@ hr{
 .Bbgrnd2 {
     background-image: url(http://www.honeymoonshop.nl/uploads/cache/17111-66-4.jpg);
     background-size: cover;
+    margin: 0px;
+    padding: 0px;
+     height:327px;
+    width: 100%
+}
+.Bbgrnd4{
+    background-image:url(http://wac.450f.edgecastcdn.net/80450F/thefw.com/files/2012/05/bride-wars-vera-wang-wedding-dress-kate-hudson.jpg);
+     background-size: cover;
+    margin: 0px;
+    padding: 0px;
+     height:327px;
+    width: 100%
+}
+
+.Bbgrnd3{
+    background-image:url(http://www.wedding3.com/wp-content/uploads/2016/11/impressive-bridal-magazines-trendy-bride-wedding-magazine-cover-2014-2016.jpg);
+     background-size: cover;
+    margin: 0px;
+    padding: 0px;
+     height:327px;
+    width: 100%
+}
+.Bbgrnd5{
+    background-image:url(http://www.demilked.com/magazine/wp-content/uploads/2016/09/hijab-bride-muslim-wedding-dress-1.jpg);
+      background-size: cover;
     margin: 0px;
     padding: 0px;
      height:327px;
@@ -913,14 +978,24 @@ hr{
 
 .arrowright {
     color: royalblue;
-    text-align: center;
+    left: 300px;
+    position: absolute;
+    top: 235px;
+}
+
+.bv{
+     left: 300px;
+    position: absolute;
+    top: 235px;
 }
 
 .arrow-right-text {
-    font-size: 50px;
-    text-align: center;
+   font-size: 50px;
     text-transform: uppercase;
     color: white;
+    left: 320px;
+    position: absolute;
+    top: 230px;
 }
 
 row-suits {
@@ -1040,6 +1115,23 @@ ol > li {
     padding: 0px;
 }
 
+
+
+hr{
+    height:4px;
+    
+}
+.datebox{
+    background-color:royalblue;
+    height:55px;
+    width:45px;
+    color:white;
+    position:absolute;
+    top:0px;
+    right:30px;
+    text-align:center;
+    font-size:18px;
+}
 .txtbxhead {
     padding-top: 0px;
     padding-right: 20px;
@@ -1050,26 +1142,25 @@ ol > li {
     width: 100%;
     
 }
-hr{
-    height:4px;
-    
-}
-.txtbxbdy{
-   
-    padding-right: 15px;
+.txtbxbody{
+    padding-right: 20px;
     padding-left: 20px;
-    font-size: 18px;
     position: absolute;
-    top:90px;
-    left: 0;
-    width: 100%;
-    
+    top:80px;
 }
-
 .txtbxfoot{
-   padding-left: 20px;
-    font-size: 18px;
-   
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top:180px;
+}
+.txtbx {
+    background-color: white;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 50%;
+    height: 200px;
 }
 
 .txtbx {
