@@ -45,12 +45,154 @@ h5 {
     background-color: #fce8e7;
     margin-bottom: 4px;
 }
+/*De winkel Styles*/
+.DWtop {
+    height: 500px;
+    background-image: url(/images/winkelbg.png);
+    background-position: center;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.DWtext1 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+}
+
+.DWtext2 {
+    font-weight: bolder;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+}
+/*mobiel*/
+@media only screen and (min-device-width: 320px) {
+}
+/*tablets*/
+@media only screen and (min-device-width : 768px) {
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+
+    .DWtext1 {
+        left: 250px;
+        top: 250px;
+    }
+
+    .DWtext2 {
+        top: 270px;
+        left: 120px;
+    }
+}
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    .DWtext1 {
+        top: 250px;
+        left: 370px;
+    }
+
+    .DWtext2 {
+        top: 270px;
+        left: 240px;
+    }
+}
+
+.Adver {
+    /*display: flex;*/
+    flex-flow: column wrap;
+    height: 800px;
+    margin-bottom: 50px;
+}
+
+    .Adver > :nth-child(3n + 1) {
+        order: 1;
+    }
+    /* 1st column */
+    .Adver > :nth-child(3n + 2) {
+        order: 2;
+    }
+    /* 2nd column */
+    .Adver > :nth-child(3n + 3) {
+        order: 3;
+    }
+    /* 3rd column */
+    .Adver > :nth-child(-n + 3) {
+        page-break-before: always; /* CSS 2.1 syntax */
+        break-before: always; /* New syntax */
+    }
+
+.Advbox1-2 {
+    
+    background-image: url(~/images/ad.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+     
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    height: 246px;
+    width:317px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Advbox1-1 {
+    padding: 0px;
+    background-color: white;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    /*text-transform: uppercase;*/
+    /*letter-spacing: 2px;*/
+    font-size: 20px;
+    color: black;
+    height: 280px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Advhead {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.Advtxt {
+    font-size: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+}
+
+.Advfoot {
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top: 230px;
+}
+
+.Advbox {
+    background-color: #DF4580;
+    text-transform: uppercase;
+    font-weight: bolder;
+    height: 220px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
 
 /*Home Styles*/
 .Ctop {
     height: 800px;
     background-image: url(/images/Background.png);
- 
     background-position: center;
     text-align: center;
     background-size: 100% 100%;
@@ -62,26 +204,19 @@ h5 {
     font-size: 40px;
     color: white;
     position: absolute;
-    left:160px;
-    top: 390px;
 }
 
 .Ctext2 {
-    
     font-weight: bolder;
     font-size: 35px;
     text-transform: uppercase;
     color: white;
     position: absolute;
-    top: 420px;
-    left:320px;
 }
 
 .buttwrapper {
     display: inline-block;
     position: absolute;
-    top:620px;
-    left:480px;
 }
 
 .Bruidbtn {
@@ -97,14 +232,14 @@ h5 {
     margin-top: 70px;
     margin-bottom: 20px;
     background-color: #f730ff;
-    border-color:#f730ff;
+    border-color: #f730ff;
     border-style: solid;
     border-width: thick;
 }
 
     .Bruidbtn:hover, .Bruidbtn:active, .Bruidbtn:link {
         background-color: #f730ff;
-         border-color:#f730ff;
+        border-color: #f730ff;
     }
 
 .Bruidegombtn {
@@ -112,29 +247,69 @@ h5 {
     height: 60px;
     background-color: transparent;
     text-transform: uppercase;
-    color:white;
+    color: white;
     font-size: 20px;
     letter-spacing: 5px;
     font-weight: bolder;
     border-radius: 0;
     margin: auto;
-    border-color:white;
+    border-color: white;
     border-style: solid;
     border-width: thick;
     margin-top: 70px;
     margin-bottom: 20px;
 }
- .Bruidegombtn:hover, .Bruidegombtn:active, .Bruidegombtn:link {
-        background-color:transparent;
-        border-color:white;
-        color:white;
-    }
- .Cdownarrow {
 
+    .Bruidegombtn:hover, .Bruidegombtn:active, .Bruidegombtn:link {
+        background-color: transparent;
+        border-color: white;
+        color: white;
+    }
+/*mobiel*/
+@media only screen and (min-device-width: 320px) {
+}
+/*tablets*/
+@media only screen and (min-device-width : 768px) {
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+
+    .Ctext1 {
+        left: 160px;
+        top: 390px;
+    }
+
+    .Ctext2 {
+        top: 420px;
+        left: 320px;
+    }
+
+    .buttwrapper {
+        top: 620px;
+        left: 480px;
+    }
+}
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    .Ctext1 {
+        top: 390px;
+        left: 280px;
+    }
+
+    .Ctext2 {
+        top: 420px;
+        left: 450px;
+    }
+
+    .buttwrapper {
+        top: 600px;
+        left: 750px;
+    }
+}
+
+.Cdownarrow {
     text-align: center;
-    
     margin-bottom: 50px;
-    
 }
 
 /*Bruid Styles */
@@ -145,12 +320,12 @@ h5 {
     text-align: center;
     background-size: 100% 100%;
 }
+
 .Btext1 {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     font-size: 30px;
     color: white;
-    
     position: absolute;
     top: 240px;
 }
@@ -161,7 +336,6 @@ h5 {
     font-size: 35px;
     text-transform: uppercase;
     color: white;
-    
     position: absolute;
     top: 270px;
 }
@@ -175,6 +349,7 @@ h5 {
     background-size: 75%;
     background-repeat: no-repeat;
 }
+
 .Bcollectie-text {
     font-family: sans-serif;
     font-weight: bolder;
@@ -183,74 +358,75 @@ h5 {
     /*vertical-align: middle;*/
     letter-spacing: -1px;
     top: 100px;
-   
 }
 /*mobiel*/
-@media only screen and (min-device-width: 320px){
+@media only screen and (min-device-width: 320px) {
     .Bcollectie-text {
-        font-size:15px;
+        font-size: 15px;
     }
-   
-  
-   
 }
-
 /*tablets*/
-@media only screen and (min-device-width : 768px){
+@media only screen and (min-device-width : 768px) {
     .Bcollectie-text {
-        left:170px;
-        font-size:20px;
+        left: 170px;
+        font-size: 20px;
     }
-    
 }
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
     .Bcollectie-text {
-        left:220px;
+        left: 220px;
         font-size: 35px;
     }
-     .Btext1{
+
+    .Btext1 {
         left: 400px;
     }
-    .Btext2{
-        left:200px;
+
+    .Btext2 {
+        left: 200px;
     }
-    .Bsuits-text{
+
+    .Bsuits-text {
         left: 360px;
     }
-     .Btextbox{
-         left: 320px;
-    }
-     .Btext-blog{
-         left: 300px;
-     }
-    
-}
 
+    .Btextbox {
+        left: 320px;
+    }
+
+    .Btext-blog {
+        left: 300px;
+    }
+}
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
     .Bcollectie-text {
-        left:250px;
+        left: 250px;
         font-size: 35px;
-
     }
-     .Btext1{
+
+    .Btext1 {
         left: 500px;
     }
-    .Btext2{
-        left:300px;
+
+    .Btext2 {
+        left: 300px;
     }
-    .Bsuits-text{
+
+    .Bsuits-text {
         left: 350px;
     }
-    .Btextbox{
-         left: 420px;
+
+    .Btextbox {
+        left: 420px;
     }
-    .Btext-blog{
+
+    .Btext-blog {
         left: 400px;
     }
-    
 }
+
 .Bsuits {
     height: 200px;
     width: 100%;
@@ -260,6 +436,7 @@ h5 {
     /*background-size: 850px;*/
     background-repeat: no-repeat;
 }
+
 .Hsuits {
     height: 200px;
     width: 100%;
@@ -269,6 +446,7 @@ h5 {
     /*background-size: 850px;*/
     background-repeat: no-repeat;
 }
+
 .Bsuits-text {
     font-family: sans-serif;
     font-weight: bolder;
@@ -297,17 +475,14 @@ h5 {
     /*overflow:hidden;*/
 }
 
-
 .Bdress-pics {
     margin-right: 25px;
     width: 300px;
     height: 600px;
 }
 
-
-
 .BDSbtn {
-    background-color:#f730ff;
+    background-color: #f730ff;
     font-family: sans-serif;
     text-transform: uppercase;
     font-size: 20px;
@@ -319,11 +494,12 @@ h5 {
     border-style: none;
     margin-bottom: 30px;
     width: 300px;
-    color:white;
+    color: white;
 }
-.BDSbtn:hover,.BDSbtn:active,.BDSbtn:link{
-    background-color:#f730ff;
-}
+
+    .BDSbtn:hover, .BDSbtn:active, .BDSbtn:link {
+        background-color: #f730ff;
+    }
 
 .Bdownarrow {
     text-align: center;
@@ -353,7 +529,7 @@ h5 {
 
 .Bvideo2 {
     background-image: url(http://stylishbride.files.wordpress.com/2011/03/jt_shouston11.jpg);
-        background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 65%;
     height: 480px;
     display: flex;
@@ -441,9 +617,7 @@ h5 {
     font-size: 35px;
     text-transform: uppercase;
     position: absolute;
-    
     left: 300px;
-    
     letter-spacing: -1px;
     top: 100px;
 }
@@ -455,26 +629,28 @@ h5 {
 
 .Bevnt {
     height: 420px;
-    width:585px;
+    width: 585px;
     position: relative;
     width: 100%;
     padding: 0px;
 }
-hr{
-    height:4px;
-    
+
+hr {
+    height: 4px;
 }
-.Bdatebox{
-    background-color:#f730ff;
-    height:55px;
-    width:45px;
-    color:white;
-    position:absolute;
-    top:0px;
-    right:30px;
-    text-align:center;
-    font-size:18px;
+
+.Bdatebox {
+    background-color: #f730ff;
+    height: 55px;
+    width: 45px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    text-align: center;
+    font-size: 18px;
 }
+
 .Btxtbxhead {
     padding-top: 0px;
     padding-right: 20px;
@@ -483,20 +659,24 @@ hr{
     top: 0px;
     left: 0;
     width: 100%;
-    
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
-.Btxtbxbody{
+
+.Btxtbxbody {
     padding-right: 20px;
     padding-left: 20px;
     position: absolute;
-    top:80px;
+    top: 80px;
 }
-.Btxtbxfoot{
+
+.Btxtbxfoot {
     padding-right: 20px;
     padding-left: 20px;
     position: absolute;
-    top:180px;
+    top: 180px;
 }
+
 .Btxtbx {
     background-color: white;
     position: absolute;
@@ -514,29 +694,37 @@ hr{
     width: 100%;
 }
 
-.row1{
-    display:flex;
+.row1 {
+    display: flex;
     flex-flow: column wrap;
 }
-.row1 > :nth-child(3n + 1) { order: 1; } /* 1st column */
-.row1 > :nth-child(3n + 2) { order: 2; } /* 2nd column */
-.row1 > :nth-child(3n + 3) { order: 3; } /* 3rd column */
 
-.row1> :nth-child(-n + 3) {
-  page-break-before: always; /* CSS 2.1 syntax */
-  break-before: always;  /* New syntax */
-}
+    .row1 > :nth-child(3n + 1) {
+        order: 1;
+    }
+    /* 1st column */
+    .row1 > :nth-child(3n + 2) {
+        order: 2;
+    }
+    /* 2nd column */
+    .row1 > :nth-child(3n + 3) {
+        order: 3;
+    }
+    /* 3rd column */
+    .row1 > :nth-child(-n + 3) {
+        page-break-before: always; /* CSS 2.1 syntax */
+        break-before: always; /* New syntax */
+    }
 
 .Btextbox1-1 {
     padding: 0px;
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     font-size: 20px;
     color: black;
-
     height: 500px;
     margin-left: 50px;
     margin-top: 70px;
@@ -546,11 +734,10 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-  
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -561,11 +748,10 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -576,13 +762,23 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    
     height: 500px;
     font-size: 20px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.Btextbox2-vac {
+    background-image: url(/images/vac.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: hidden;
+    box-shadow: 0px 1px 10px gainsboro;
+    height: 500px;
     margin-left: 50px;
     margin-top: 70px;
 }
@@ -591,52 +787,49 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
     margin-top: 70px;
 }
-.Btextbox1-2-nieuws{
-    background-color:#B3D5FC;
+
+.Btextbox1-2-nieuws {
+    background-color: #B3D5FC;
     text-transform: uppercase;
-   font-weight:bolder;
-    height:170px;
+    font-weight: bolder;
+    height: 170px;
     font-size: 25px;
-    text-align:center;
-    padding:30px;
+    text-align: center;
+    padding: 45px;
     margin-left: 50px;
     margin-top: 70px;
-   
 }
 
-.Btextbox1-2-sol{
-     background-color:#DF4580;
+.Btextbox1-2-sol {
+    background-color: #DF4580;
     text-transform: uppercase;
-   font-weight:bolder;
-    height:200px;
+    font-weight: bolder;
+    height: 200px;
     font-size: 25px;
-    color:white;
-    text-align:center;
-    padding:30px;
+    color: white;
+    text-align: center;
+    padding: 30px;
     margin-left: 50px;
     margin-top: 70px;
-    
 }
 
 .Btextbox2-3 {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -647,11 +840,10 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    
     height: 500px;
     font-size: 30px;
     margin-left: 50px;
@@ -662,11 +854,10 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
- 
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -676,12 +867,11 @@ hr{
 .Btextbox3-3 {
     background-color: white;
     border: hidden;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     box-shadow: 0px 1px 10px gainsboro;
     color: black;
-    
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -700,16 +890,18 @@ hr{
     border-style: none;
     margin-top: 70px;
     margin-bottom: 20px;
-    background-color:#f730ff;
+    background-color: #f730ff;
 }
-.BMBbtn:hover,.BMBbtn:active,.BMBbtn:link{
-    background-color:#f730ff;
-}
+
+    .BMBbtn:hover, .BMBbtn:active, .BMBbtn:link {
+        background-color: #f730ff;
+    }
 
 .Bhead {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
+    text-transform: uppercase;
 }
 
 .Btxt {
@@ -724,8 +916,8 @@ hr{
     background-size: cover;
     margin: 0px;
     padding: 0px;
-     height:327px;
-    width: 100%
+    height: 327px;
+    width: 100%;
 }
 
 .Bbgrnd1 {
@@ -733,8 +925,8 @@ hr{
     background-size: cover;
     margin: 0px;
     padding: 0px;
-  height:327px;
-    width: 100%
+    height: 327px;
+    width: 100%;
 }
 
 .Bbgrnd2 {
@@ -742,33 +934,35 @@ hr{
     background-size: cover;
     margin: 0px;
     padding: 0px;
-     height:327px;
-    width: 100%
-}
-.Bbgrnd4{
-    background-image:url(http://wac.450f.edgecastcdn.net/80450F/thefw.com/files/2012/05/bride-wars-vera-wang-wedding-dress-kate-hudson.jpg);
-     background-size: cover;
-    margin: 0px;
-    padding: 0px;
-     height:327px;
-    width: 100%
+    height: 327px;
+    width: 100%;
 }
 
-.Bbgrnd3{
-    background-image:url(http://www.wedding3.com/wp-content/uploads/2016/11/impressive-bridal-magazines-trendy-bride-wedding-magazine-cover-2014-2016.jpg);
-     background-size: cover;
+.Bbgrnd4 {
+    background-image: url(http://wac.450f.edgecastcdn.net/80450F/thefw.com/files/2012/05/bride-wars-vera-wang-wedding-dress-kate-hudson.jpg);
+    background-size: cover;
     margin: 0px;
     padding: 0px;
-     height:327px;
-    width: 100%
+    height: 327px;
+    width: 100%;
 }
-.Bbgrnd5{
-    background-image:url(http://www.demilked.com/magazine/wp-content/uploads/2016/09/hijab-bride-muslim-wedding-dress-1.jpg);
-      background-size: cover;
+
+.Bbgrnd3 {
+    background-image: url(http://www.wedding3.com/wp-content/uploads/2016/11/impressive-bridal-magazines-trendy-bride-wedding-magazine-cover-2014-2016.jpg);
+    background-size: cover;
     margin: 0px;
     padding: 0px;
-     height:327px;
-    width: 100%
+    height: 327px;
+    width: 100%;
+}
+
+.Bbgrnd5 {
+    background-image: url(http://www.demilked.com/magazine/wp-content/uploads/2016/09/hijab-bride-muslim-wedding-dress-1.jpg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    height: 327px;
+    width: 100%;
 }
 
 .Bdownarrow3 {
@@ -776,43 +970,41 @@ hr{
     margin-bottom: 50px;
 }
 
-
 .Bbottom-pic {
-      height: 450px;
-     background-image:url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
-    background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1009/large_Trouwjurk_Passen.jpg);
+    height: 450px;
+    background-image: url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
+    background-image: url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1009/large_Trouwjurk_Passen.jpg);
     /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 100%;
 }
 
 .HBbottom-pic {
-      height: 450px;
-     background-image:url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
-   
+    height: 450px;
+    background-image: url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
     /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 100%;
 }
 
 /*--Bruidegom Styles*/
 .top {
-   height: 500px;
+    height: 500px;
     /*background-image: url(http://www.joan.nl/wp-content/uploads/2014/12/bruidsmode-joan_top-02.jpg);*/
-    background-image:url(/images/bruidegom.png);
+    background-image: url(/images/bruidegom.png);
     background-position: center;
     text-align: center;
     background-size: 100% 100%;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
+
 .text1 {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     font-size: 30px;
     color: white;
-    
     position: absolute;
     top: 240px;
 }
@@ -823,7 +1015,6 @@ hr{
     font-size: 35px;
     text-transform: uppercase;
     color: white;
-    
     position: absolute;
     top: 270px;
 }
@@ -846,74 +1037,75 @@ hr{
     /*vertical-align: middle;*/
     letter-spacing: -1px;
     top: 100px;
-   
 }
 /*mobiel*/
-@media only screen and (min-device-width: 320px){
+@media only screen and (min-device-width: 320px) {
     .collectie-text {
-        font-size:15px;
+        font-size: 15px;
     }
-   
-  
-   
 }
-
 /*tablets*/
-@media only screen and (min-device-width : 768px){
+@media only screen and (min-device-width : 768px) {
     .collectie-text {
-        left:170px;
-        font-size:20px;
+        left: 170px;
+        font-size: 20px;
     }
-    
 }
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
     .collectie-text {
-        left:270px;
+        left: 270px;
         font-size: 35px;
     }
-     .text1{
+
+    .text1 {
         left: 400px;
     }
-    .text2{
-        left:200px;
+
+    .text2 {
+        left: 200px;
     }
-    .suits-text{
+
+    .suits-text {
         left: 360px;
     }
-     .textbox{
-         left: 320px;
-    }
-     .text-blog{
-         left: 300px;
-     }
-    
-}
 
+    .textbox {
+        left: 320px;
+    }
+
+    .text-blog {
+        left: 300px;
+    }
+}
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
     .collectie-text {
-        left:370px;
+        left: 370px;
         font-size: 35px;
-
     }
-     .text1{
+
+    .text1 {
         left: 500px;
     }
-    .text2{
-        left:300px;
+
+    .text2 {
+        left: 300px;
     }
-    .suits-text{
+
+    .suits-text {
         left: 460px;
     }
-    .textbox{
-         left: 420px;
+
+    .textbox {
+        left: 420px;
     }
-    .text-blog{
+
+    .text-blog {
         left: 400px;
     }
-    
 }
+
 .suits {
     height: 200px;
     width: 100%;
@@ -923,6 +1115,7 @@ hr{
     /*background-size: 850px;*/
     background-repeat: no-repeat;
 }
+
 .suits-text {
     font-family: sans-serif;
     font-weight: bolder;
@@ -931,6 +1124,7 @@ hr{
     position: absolute;
     top: 100px;
 }
+
 .text4 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
@@ -950,7 +1144,6 @@ hr{
     /*overflow:hidden;*/
 }
 
-
 .dress-pics {
     margin-right: 25px;
     width: 300px;
@@ -968,7 +1161,7 @@ hr{
     margin: auto;
     border-style: none;
     margin-bottom: 30px;
-    width:300px;
+    width: 300px;
 }
 
 .downarrow {
@@ -983,14 +1176,14 @@ hr{
     top: 235px;
 }
 
-.bv{
-     left: 300px;
+.bv {
+    left: 300px;
     position: absolute;
     top: 235px;
 }
 
 .arrow-right-text {
-   font-size: 50px;
+    font-size: 50px;
     text-transform: uppercase;
     color: white;
     left: 320px;
@@ -1005,28 +1198,26 @@ row-suits {
 
 .video2 {
     /*background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);*/
-    background-image:url(http://www.canali.com/media/wysiwyg/The-Edition/News/Openings/Canali-Atlanta-Store-Window-3.jpg);
-    background-repeat:no-repeat;
+    background-image: url(http://www.canali.com/media/wysiwyg/The-Edition/News/Openings/Canali-Atlanta-Store-Window-3.jpg);
+    background-repeat: no-repeat;
     width: 65%;
     height: 480px;
     display: flex;
 }
 
 .video1 {
-    width:35%;
-    position:center;
+    width: 35%;
+    position: center;
     font-size: 25px;
-    
 }
+
 ol > li {
     counter-increment: item;
     list-style: none inside;
     margin: 30px 0;
     overflow: hidden;
     line-height: 1.3;
- 
 }
-
 
     ol > li:before {
         content: counter(item);
@@ -1040,7 +1231,6 @@ ol > li {
         background-color: royalblue;
         color: white;
         text-align: center;
-       
         float: left;
     }
 
@@ -1064,7 +1254,6 @@ ol > li {
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
     color: black;
-   
     position: absolute;
     top: 300px;
     width: 320px;
@@ -1084,9 +1273,9 @@ ol > li {
     height: 200px;
     width: 100%;
     background-image: url(/images/blog.png);
-    background-size:75%;
+    background-size: 75%;
     background-position: center;
-   background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin-bottom: 80px;
 }
 
@@ -1098,8 +1287,6 @@ ol > li {
     position: absolute;
     letter-spacing: -1px;
     top: 100px;
-
-
 }
 
 .r-events {
@@ -1115,23 +1302,22 @@ ol > li {
     padding: 0px;
 }
 
-
-
-hr{
-    height:4px;
-    
+hr {
+    height: 4px;
 }
-.datebox{
-    background-color:royalblue;
-    height:55px;
-    width:45px;
-    color:white;
-    position:absolute;
-    top:0px;
-    right:30px;
-    text-align:center;
-    font-size:18px;
+
+.datebox {
+    background-color: royalblue;
+    height: 55px;
+    width: 45px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    text-align: center;
+    font-size: 18px;
 }
+
 .txtbxhead {
     padding-top: 0px;
     padding-right: 20px;
@@ -1140,20 +1326,24 @@ hr{
     top: 0px;
     left: 0;
     width: 100%;
-    
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-.txtbxbody{
+
+.txtbxbody {
     padding-right: 20px;
     padding-left: 20px;
     position: absolute;
-    top:80px;
+    top: 80px;
 }
-.txtbxfoot{
+
+.txtbxfoot {
     padding-right: 20px;
     padding-left: 20px;
     position: absolute;
-    top:180px;
+    top: 180px;
 }
+
 .txtbx {
     background-color: white;
     position: absolute;
@@ -1165,7 +1355,6 @@ hr{
 
 .txtbx {
     background-color: white;
-  
     position: absolute;
     top: 220px;
     left: 0;
@@ -1181,14 +1370,12 @@ hr{
     width: 100%;
 }
 
-
-
 .textbox1-1 {
     padding: 0px;
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     font-size: 20px;
     color: black;
@@ -1202,7 +1389,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1217,7 +1404,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1232,7 +1419,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1247,7 +1434,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1262,7 +1449,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1277,7 +1464,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1292,7 +1479,7 @@ hr{
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -1306,7 +1493,7 @@ hr{
 .textbox3-3 {
     background-color: white;
     border: hidden;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     box-shadow: 0px 1px 10px gainsboro;
@@ -1336,6 +1523,7 @@ hr{
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
+    text-transform: uppercase;
 }
 
 .txt {
@@ -1348,18 +1536,17 @@ hr{
 .bgrnd {
     background-image: url(http://www.honeymoonshop.nl/uploads/cache/img-8050-1.jpg);
     background-size: cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin: 0px;
     padding: 0px;
-    height:327px;
+    height: 327px;
     width: 100%;
-    
 }
 
 .bgrnd1 {
     background-image: url(http://www.krystlebrides.co.uk/media/wysiwyg/real-bride-3.jpg);
     background-size: cover;
-        background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin: 0px;
     padding: 0px;
     height: 327px;
@@ -1369,7 +1556,7 @@ hr{
 .bgrnd2 {
     background-image: url(http://www.honeymoonshop.nl/uploads/cache/17111-66-4.jpg);
     background-size: cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin: 0px;
     padding: 0px;
     height: 327px;
@@ -1381,14 +1568,12 @@ hr{
     margin-bottom: 50px;
 }
 
-
 .bottom-pic {
     height: 450px;
     background-image: url(http://esq.h-cdn.co/assets/15/50/1600x800/landscape-1449613000-groom.jpg);
     background-position: center;
     width: 100%;
 }
-
 /*catalogus styles*/
 .cat-col-md-12-1 {
     height: 600px;
