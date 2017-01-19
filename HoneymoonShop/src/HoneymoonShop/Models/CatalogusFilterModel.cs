@@ -12,8 +12,7 @@ namespace HoneymoonShop.Models
         public List<Merk> alleMerken { get; set; }
         public List<Stijl> alleStijlen { get; set; }
 
-        public int selectedMinimumPrijs { get; set; }
-        public int selectedMaximumPrijs { get; set; }
+       public string PrijsRange { get; set; }
 
         public List<Neklijn> alleNeklijnen { get; set; }
         public List<Silhouette> alleSilhouetten { get; set; }
