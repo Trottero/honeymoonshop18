@@ -228,8 +228,8 @@
                 $(".holder").jPages({
                     containerID: "itemContainer",
                     perPage: 12,
-                    previous: "previous",
-                    next: "next"
+                    previous: "span.arrowPrev",
+                    next: "span.arrowNext"
                 });
 
                 $(".itemsPerPageSelect").change(function () {
@@ -238,8 +238,8 @@
                     $(".holder").jPages("destroy").jPages({
                         containerID: "itemContainer",
                         perPage: newPerPage,
-                        previous: "previous",
-                        next: "next"
+                        previous: "span.arrowPrev",
+                        next: "span.arrowNext"
                     });
                 });
             });

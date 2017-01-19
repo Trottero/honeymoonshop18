@@ -3,10 +3,12 @@
     margin-left:10px;
 }
 .Selection {
-    width: 120px;
-    height: 35px;
-    border: solid grey 1px;
+    width: 100px;
+    height: 40px;
+    border: solid #D1D2D4 2px;
     padding-left: 10px;
+    background: url(https://i.gyazo.com/711275b043bc103dfa40111bad0c7b4a.png) no-repeat 96% 0;
+    overflow: hidden;
 }
 
 .navigationBar {
@@ -14,24 +16,38 @@
 }
 
  .holder {
-      margin: 30px 0 0;
+     margin-top:40px;
+     margin-bottom: 0px;
+     margin-left:0px;
+     margin-right:0px;
 }
 .holder a {
-    font-size:12px;
+    font-size:16px;
     cursor:pointer;
     margin:0 5px;
-    color:#333;
-}
-.holder a:hover {
-    background-color:#222;
-    color:#fff;
+    color:#B2B2B2;
 }
 .holder a.jp-current,a.jp-current:hover {
-    color:#FF4242;
+    color:#000000;
     font-weight:bold;
     cursor:default;
     background:none;
 }
 .holder span {
     margin:0 5px;
+}
+.arrowNext {
+    background-image:url(https://i.gyazo.com/60122597f06da2f70691c6c787a939cc.png);
+    right: -50px;
+}
+.arrowPrev {
+   
+    background-image:url(https://i.gyazo.com/8875f00be8374d5c99991ecd3d5e83bf.png);
+}
+.arrowPrev,.arrowNext {
+    width:8px;
+    height:14px;
+    position:absolute;
+    top:44px;
+    cursor:pointer;
 }
