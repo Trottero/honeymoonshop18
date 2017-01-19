@@ -45,62 +45,7 @@ h5 {
     background-color: #fce8e7;
     margin-bottom: 4px;
 }
-/*De winkel Styles*/
-.DWtop {
-    height: 500px;
-    background-image: url(/images/winkelbg.png);
-    background-position: center;
-    text-align: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-.DWtext1 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-    font-size: 40px;
-    color: white;
-    position: absolute;
-}
-
-.DWtext2 {
-    font-weight: bolder;
-    font-size: 35px;
-    text-transform: uppercase;
-    color: white;
-    position: absolute;
-}
-/*mobiel*/
-@media only screen and (min-device-width: 320px) {
-}
-/*tablets*/
-@media only screen and (min-device-width : 768px) {
-}
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-
-    .DWtext1 {
-        left: 250px;
-        top: 250px;
-    }
-
-    .DWtext2 {
-        top: 270px;
-        left: 120px;
-    }
-}
-/* Large screens ----------- */
-@media only screen and (min-width : 1824px) {
-    .DWtext1 {
-        top: 250px;
-        left: 370px;
-    }
-
-    .DWtext2 {
-        top: 270px;
-        left: 240px;
-    }
-}
+/*------------------------------------------------De winkel Styles------------------------------------------------*/
 
 .Adver {
     /*display: flex;*/
@@ -126,27 +71,11 @@ h5 {
         break-before: always; /* New syntax */
     }
 
-.Advbox1-2 {
-    
-    background-image: url(~/images/ad.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-     
-    border: hidden;
-    box-shadow: 0px 1px 10px gainsboro;
-    height: 246px;
-    width:317px;
-    margin-left: 50px;
-    margin-top: 70px;
-}
-
 .Advbox1-1 {
     padding: 0px;
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
-    /*letter-spacing: 2px;*/
     font-size: 20px;
     color: black;
     height: 280px;
@@ -189,30 +118,7 @@ h5 {
     margin-top: 70px;
 }
 
-/*Home Styles*/
-.Ctop {
-    height: 800px;
-    background-image: url(/images/Background.png);
-    background-position: center;
-    text-align: center;
-    background-size: 100% 100%;
-}
-
-.Ctext1 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-    font-size: 40px;
-    color: white;
-    position: absolute;
-}
-
-.Ctext2 {
-    font-weight: bolder;
-    font-size: 35px;
-    text-transform: uppercase;
-    color: white;
-    position: absolute;
-}
+/*------------------------------------------------Home Styles------------------------------------------------*/
 
 .buttwrapper {
     display: inline-block;
@@ -274,16 +180,6 @@ h5 {
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
 
-    .Ctext1 {
-        left: 160px;
-        top: 390px;
-    }
-
-    .Ctext2 {
-        top: 420px;
-        left: 320px;
-    }
-
     .buttwrapper {
         top: 620px;
         left: 480px;
@@ -291,15 +187,6 @@ h5 {
 }
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
-    .Ctext1 {
-        top: 390px;
-        left: 280px;
-    }
-
-    .Ctext2 {
-        top: 420px;
-        left: 450px;
-    }
 
     .buttwrapper {
         top: 600px;
@@ -312,40 +199,13 @@ h5 {
     margin-bottom: 50px;
 }
 
-/*Bruid Styles */
-.Btop {
-    height: 450px;
-    background-image: url(/images/bruid1.png);
-    background-position: center;
-    text-align: center;
-    background-size: 100% 100%;
-}
-
-.Btext1 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 240px;
-}
-
-.Btext2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 35px;
-    text-transform: uppercase;
-    color: white;
-    position: absolute;
-    top: 270px;
-}
+/*------------------------------------------------Bruid Styles------------------------------------------------*/
 
 .Bcollectie {
     height: 200px;
     width: 100%;
     background-image: url(/images/collectie1.png);
     background-position: center;
-    /*background-size: 850px;*/
     background-size: 75%;
     background-repeat: no-repeat;
 }
@@ -355,7 +215,6 @@ h5 {
     font-weight: bolder;
     text-transform: uppercase;
     position: absolute;
-    /*vertical-align: middle;*/
     letter-spacing: -1px;
     top: 100px;
 }
@@ -379,14 +238,6 @@ h5 {
         font-size: 35px;
     }
 
-    .Btext1 {
-        left: 400px;
-    }
-
-    .Btext2 {
-        left: 200px;
-    }
-
     .Bsuits-text {
         left: 360px;
     }
@@ -404,14 +255,6 @@ h5 {
     .Bcollectie-text {
         left: 250px;
         font-size: 35px;
-    }
-
-    .Btext1 {
-        left: 500px;
-    }
-
-    .Btext2 {
-        left: 300px;
     }
 
     .Bsuits-text {
@@ -433,7 +276,6 @@ h5 {
     background-image: url(/images/theDress.png);
     background-size: 75%;
     background-position: center;
-    /*background-size: 850px;*/
     background-repeat: no-repeat;
 }
 
@@ -443,7 +285,6 @@ h5 {
     background-image: url(/images/osh.png);
     background-size: 75%;
     background-position: center;
-    /*background-size: 850px;*/
     background-repeat: no-repeat;
 }
 
@@ -472,7 +313,6 @@ h5 {
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
-    /*overflow:hidden;*/
 }
 
 .Bdress-pics {
@@ -605,7 +445,6 @@ h5 {
     width: 100%;
     background-image: url(/images/blog1.png);
     background-position: center;
-    /*background-size: 850px;*/
     background-size: 75%;
     background-repeat: no-repeat;
     margin-bottom: 80px;
@@ -721,7 +560,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     font-size: 20px;
     color: black;
@@ -734,7 +572,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -748,7 +585,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -762,7 +598,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -787,7 +622,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -826,7 +660,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -840,7 +673,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -854,7 +686,6 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
@@ -867,7 +698,6 @@ hr {
 .Btextbox3-3 {
     background-color: white;
     border: hidden;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     box-shadow: 0px 1px 10px gainsboro;
@@ -972,9 +802,7 @@ hr {
 
 .Bbottom-pic {
     height: 450px;
-    background-image: url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
     background-image: url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1009/large_Trouwjurk_Passen.jpg);
-    /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
@@ -983,42 +811,12 @@ hr {
 .HBbottom-pic {
     height: 450px;
     background-image: url(http://giordanosweddings.com/wp-content/uploads/2016/07/average_wedding_cost.jpg);
-    /*background-image:url(http://d1y45yrzkfyqcf.cloudfront.net/uploads/posts/1066/large_Korte_Trouwjurk.jpg);*/
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
 }
 
-/*--Bruidegom Styles*/
-.top {
-    height: 500px;
-    /*background-image: url(http://www.joan.nl/wp-content/uploads/2014/12/bruidsmode-joan_top-02.jpg);*/
-    background-image: url(/images/bruidegom.png);
-    background-position: center;
-    text-align: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-.text1 {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 240px;
-}
-
-.text2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 35px;
-    text-transform: uppercase;
-    color: white;
-    position: absolute;
-    top: 270px;
-}
-
+/*------------------------------------------------Bruidegom Styles------------------------------------------------*/
 .collectie {
     height: 200px;
     width: 100%;
@@ -1058,14 +856,6 @@ hr {
         font-size: 35px;
     }
 
-    .text1 {
-        left: 400px;
-    }
-
-    .text2 {
-        left: 200px;
-    }
-
     .suits-text {
         left: 360px;
     }
@@ -1083,14 +873,6 @@ hr {
     .collectie-text {
         left: 370px;
         font-size: 35px;
-    }
-
-    .text1 {
-        left: 500px;
-    }
-
-    .text2 {
-        left: 300px;
     }
 
     .suits-text {
@@ -1197,7 +979,6 @@ row-suits {
 }
 
 .video2 {
-    /*background-image: url(/images/34ff6a788ac762f5ed74127b8c73de08.jpg);*/
     background-image: url(http://www.canali.com/media/wysiwyg/The-Edition/News/Openings/Canali-Atlanta-Store-Window-3.jpg);
     background-repeat: no-repeat;
     width: 65%;
@@ -1296,7 +1077,6 @@ ol > li {
 
 .evnt {
     height: 420px;
-    /*width:585px;*/
     position: relative;
     width: 100%;
     padding: 0px;
@@ -1365,7 +1145,6 @@ hr {
 .evnt2 {
     padding: 0px;
     height: 420px;
-    /*width: 585px;*/
     position: relative;
     width: 100%;
 }
@@ -1375,11 +1154,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     font-size: 20px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     margin-left: 50px;
     margin-top: 70px;
@@ -1389,11 +1166,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1404,11 +1179,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1419,11 +1192,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1434,11 +1205,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1449,11 +1218,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 320px;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1464,11 +1231,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 25%;*/
     height: 500px;
     font-size: 30px;
     margin-left: 50px;
@@ -1479,11 +1244,9 @@ hr {
     background-color: white;
     border: hidden;
     box-shadow: 0px 1px 10px gainsboro;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     color: black;
-    /*width: 25%;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1493,12 +1256,10 @@ hr {
 .textbox3-3 {
     background-color: white;
     border: hidden;
-    /*text-transform: uppercase;*/
     letter-spacing: 2px;
     padding: 0px;
     box-shadow: 0px 1px 10px gainsboro;
     color: black;
-    /*width: 25%;*/
     height: 500px;
     font-size: 20px;
     margin-left: 50px;
@@ -1574,7 +1335,8 @@ hr {
     background-position: center;
     width: 100%;
 }
-/*catalogus styles*/
+
+/*------------------------------------------------catalogus styles------------------------------------------------*/
 .cat-col-md-12-1 {
     height: 600px;
     width: 1400px;
@@ -1677,7 +1439,7 @@ hr {
 
 
 
-/*-FooterStyles-*/
+/*------------------------------------------------FooterStyles-------------------------------------------------*/
 .footer {
     background-color: #fce8e7;
     padding-bottom: 50px;

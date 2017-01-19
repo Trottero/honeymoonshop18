@@ -1,13 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Bruidegom Page";
 }
+<style type="text/css">
+    .navbarbackground {
+        background-color: transparent;
+    }
+
+    header {
+        background-image: url(/images/bruidegom.png);
+        height: 580px;
+        background-position: center;
+        text-align: center;
+        background-size: 100% 100%;
+    }
+
+    .navbar-pink > li > a {
+        color: white;
+    }
+</style>
+
 <div class="container bodycontainer">
-    <div class="row">
-        <div class="col-md-12 top">
-            <div class="text1">Op zoek naar een perfecte pak</div>
-            <div class="text2">van begin tot eind kunnen wij je helpen</div>
-        </div>
-    </div>
+
     <!--collectie section-->
     <div class="row">
         <div class="col-md-12 collectie">
@@ -55,7 +68,6 @@
 
             <a class="fancybox-media fa fa-caret-right arrowright" style="font-size:60px;color:royalblue;" href="https://www.youtube.com/watch?v=rCzKyzwyr18" rel="media-gallery"> </a>
             <a class="fancybox-media arrow-right-text" href="https://www.youtube.com/watch?v=rCzKyzwyr18" rel="media-gallery">Bekijk Video</a>
-            @*<a class="fancybox-media arrowright" href="https://www.youtube.com/watch?v=rCzKyzwyr18" rel="media-gallery"><img src="~/images/bekijkvid.png"  /></a>*@
             <div class="col-md-3 textnr"><span>1</span></div>
             <div class="col-md-4 textbox">
                 hoe vind je de perfecte outfit?
@@ -179,8 +191,6 @@
         </div>
 
     </div>
-
-
 
     <!--buttons-->
     <div class="row">

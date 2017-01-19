@@ -1,14 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style type="text/css">
+    .navbarbackground {
+        background-color: transparent;
+    }
+
+    header {
+        background-image: url(/images/Background1.png);
+        height: 800px;
+        background-position: center;
+        text-align: center;
+        background-size: 100% 100%;
+    }
+
+    .navbar-pink > li > a {
+        color: white;
+    }
+</style>
 <div class="container bodycontainer">
 
     <div class="row">
-        <div class="col-md-12 Ctop">
-            <div class="Ctext1">Al bijna 50 jaar de grootste bruidszaak van Nederland.</div>
-            <h2 class="Ctext2">Hoe kunnen we jou helpen?</h2>
 
-        </div>
         <div class="col-md-12 buttwrapper">
             <a class="btn btn-primary btn-lg Bruidbtn" href="~/Bruid/Index">Bruid</a>
             <a class="btn btn-primary btn-lg Bruidegombtn" href="~/Bruidegom/Index">Bruidegom</a>
