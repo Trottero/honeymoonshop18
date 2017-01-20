@@ -16,6 +16,6 @@ namespace Models
         public virtual IList<Jurk> Jurken { get; set; }
 
         [NotMapped]
-        public bool IsSelected { get; set; } = false;
+        public string Status { get; set; }
     }
 }
