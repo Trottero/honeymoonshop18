@@ -4,19 +4,16 @@
     <div align="left">
         <h4 class="nexa_bold" style="text-transform:uppercase; letter-spacing:2px; font-size:19px;"><b>Categoriën:</b></h4>
         <div class="sans-serif-thin">
-            <a asp-action="collection" asp-route-id="Summer SALE" style="">
-                <div class="quicklinks-box">
-                    <h7>
-                        <b>Summer SALE</b>
-                    </h7>
-                </div>
-            </a><a asp-action="collection" asp-route-id="Nieuwe Collectie" style="">
-                <div class="quicklinks-box">
-                    <h7>
-                        <b> Nieuwe Collectie</b>
-                    </h7>
-                </div>
-            </a>
+            @foreach (var categorie in ViewBag.CategorieID)
+            {
+                <a asp-controller="Catalogus" asp-action="collection" asp-route-id="@categorie.Text">
+                    <div class="quicklinks-box">
+                        <h7>
+                            <b>@categorie.Text</b>
+                        </h7>
+                    </div>
+                </a>
+            }
             <a asp-action="collection" asp-route-id="" style="">
                 <div class="quicklinks-box">
                     <h7>
@@ -25,71 +22,63 @@
                 </div>
             </a>
         </div>
-        <form asp-controller="Catalogus" asp-action="Collection" method="post">
+        <form asp-controller="CatalogusFilter" asp-action="Index" method="post">
+            
             <h5 class="titleFilter sans-serif-thin" style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
             <div class="panel-group sans-serif-thin" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Merk
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body" style="overflow:auto;max-height:120px">
-                            @{
-                                @for (int i = 0; i < Model.alleMerken.Count; i++)
-                                {
-                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
-                                        <div class="checkboxFour">
-                                            @Html.HiddenFor(m => m.alleMerken[i].MerkID)
-                                            @Html.HiddenFor(m => m.alleMerken[i].MerkNaam)
-                                            @Html.CheckBoxFor(m => m.alleMerken[i].IsSelected)
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <ul class="filterList">
+                            @for (int i = 0; i < Model.alleMerken.Count; i++)
+                            {
+                                //Pass unchanged fields back to controller post method
+                                @Html.HiddenFor(m => m.alleMerken[i].MerkID)
+                                @Html.HiddenFor(m => m.alleMerken[i].MerkNaam)
 
-                                            <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
-                                            <label for="checkboxFourInput"></label>
-                                        </div>
-                                        <div class="textCheckbox">
-                                            <text style="font-size:15px">@Model.alleMerken[i].MerkNaam</text>
-                                        </div>
+                                <li class="filterListItem">
+                                    <div id="Merk_@Model.alleMerken[i].MerkID" class="checkbox">
+                                        <div class="checkboxDot"></div>
+                                        <label class="filterItemText">@Model.alleMerken[i].MerkNaam</label>
                                     </div>
+                                    <input type="hidden" id="inputMerk_@Model.alleMerken[i].MerkID" name="alleMerken[@i].Status" />
+                                </li>
 
-                                }
                             }
-                        </div>
+                        </ul>
                     </div>
                 </div>
                 <div class="panel panel-default" style="margin-top: 0px">
                     <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Stijl Jurk
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body" style="overflow:auto;max-height:120px">
-                            @{
-                                @for (int i = 0; i < Model.alleStijlen.Count; i++)
-                                {
-                                    <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
-                                        <div class="checkboxFour">
-                                            @Html.HiddenFor(m => m.alleStijlen[i].StijlID)
-                                            @Html.HiddenFor(m => m.alleStijlen[i].StijlNaam)
-                                            @Html.CheckBoxFor(m => m.alleStijlen[i].IsSelected)
+                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                        <ul class="filterList">
+                            @for (int i = 0; i < Model.alleStijlen.Count; i++)
+                            {
+                                //Pass unchanged fields back to controller post method
+                                @Html.HiddenFor(m => m.alleStijlen[i].StijlID)
+                                @Html.HiddenFor(m => m.alleStijlen[i].StijlNaam)
 
-                                            <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
-                                            <label for="checkboxFourInput"></label>
-                                        </div>
-                                        <div class="textCheckbox">
-                                            <text style="font-size:15px">@Model.alleStijlen[i].StijlNaam</text>
-                                        </div>
+                                <li class="filterListItem">
+                                    <div id="Stijl_@Model.alleStijlen[i].StijlID" class="checkbox">
+                                        <div class="checkboxDot"></div>
+                                        <label class="filterItemText">@Model.alleStijlen[i].StijlNaam</label>
                                     </div>
-
-                                }
+                                    <input type="hidden" id="inputStijl_@Model.alleStijlen[i].StijlID" name="alleStijlen[@i].Status" />
+                                </li>
                             }
-                        </div>
+                        </ul>
                     </div>
                 </div>
 
@@ -97,15 +86,15 @@
                 <div class="panel panel-default" style="margin-top: 0px">
                     <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Prijs
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
                             <input id="ex12c" type="text" class="span2" value="" data-slider-min="0" data-slider-max="10000" data-slider-step="5" data-slider-value="[100,9000]" t
-                                   asp-for="selectedMinimumPrijs" />
+                                   name="PrijsRange" />
                         </div>
                     </div>
                 </div>
@@ -115,106 +104,102 @@
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingFour">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 Neklijn
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                        <div class="panel-body">
-                            <div class="panel-body" style="overflow:auto;max-height:120px">
-                                @{
-                                    @for (int i = 0; i < Model.alleNeklijnen.Count; i++)
-                                    {
-                                        <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
-                                            <div class="checkboxFour">
-                                                @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnID)
-                                                @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnNaam)
-                                                @Html.CheckBoxFor(m => m.alleNeklijnen[i].IsSelected)
+                        <ul class="filterList">
+                            @for (int i = 0; i < Model.alleNeklijnen.Count; i++)
+                            {
+                                //Pass unchanged fields back to controller post method
+                                @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnID)
+                                @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnNaam)
 
-                                                <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
-                                                <label for="checkboxFourInput"></label>
-                                            </div>
-                                            <div class="textCheckbox">
-                                                <text style="font-size:15px">@Model.alleNeklijnen[i].NeklijnNaam</text>
-                                            </div>
-                                        </div>
-                                    }
-                                }
-                            </div>
-                        </div>
+                                <li class="filterListItem">
+                                    <div id="Neklijn_@Model.alleNeklijnen[i].NeklijnID" class="checkbox">
+                                        <div class="checkboxDot"></div>
+                                        <label class="filterItemText">@Model.alleNeklijnen[i].NeklijnNaam</label>
+                                    </div>
+                                    <input type="hidden" id="inputNeklijn_@Model.alleNeklijnen[i].NeklijnID" name="alleNeklijnen[@i].Status" />
+                                </li>
+                            }
+                        </ul>
                     </div>
                 </div>
                 <div class="panel panel-default" style="margin-top: 0px">
                     <div class="panel-heading" role="tab" id="headingFive">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 Silhoutte
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                        @for (int i = 0; i < Model.alleSilhouetten.Count; i++)
-                        {
-                            <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
-                                <div class="checkboxFour">
-                                    @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteNaam)
-                                    @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteID)
-                                    @Html.CheckBoxFor(m => m.alleSilhouetten[i].IsSelected)
+                        <ul class="filterList">
+                            @for (int i = 0; i < Model.alleSilhouetten.Count; i++)
+                            {
+                                //Pass unchanged fields back to controller post method
+                                @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteID)
+                                @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteNaam)
 
-                                    <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
-                                    <label for="checkboxFourInput"></label>
-                                </div>
-                                <div class="textCheckbox">
-                                    <text style="font-size:15px">@Model.alleSilhouetten[i].SilhouetteNaam</text>
-                                </div>
-                            </div>
-                        }
+                                <li class="filterListItem">
+                                    <div id="Silhouette_@Model.alleSilhouetten[i].SilhouetteID" class="checkbox">
+                                        <div class="checkboxDot"></div>
+                                        <label class="filterItemText">@Model.alleSilhouetten[i].SilhouetteNaam</label>
+                                    </div>
+                                    <input type="hidden" id="inputSilhouette_@Model.alleSilhouetten[i].SilhouetteID" name="alleSilhouetten[@i].Status" />
+                                </li>
+                            }
+                        </ul>
                     </div>
                 </div>
                 <div class="panel panel-default" style="margin-top: 0px; border-bottom-width: 1px">
                     <div class="panel-heading" role="tab" id="headingSix">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <a class="accordion-toggle" role="button" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 Kleur
                             </a>
                         </h4>
                     </div>
                     <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                        <div class="panel-body">
+                        <ul class="filterList">
                             @for (int i = 0; i < Model.alleKleuren.Count; i++)
                             {
-                                <div class="checkbox1" style="display:flex;flex-wrap:wrap;">
-                                    <div class="checkboxFour">
-                                        @Html.HiddenFor(m => m.alleKleuren[i].KleurNaam)
-                                        @Html.HiddenFor(m => m.alleKleuren[i].KleurID)
-                                        @Html.CheckBoxFor(m => m.alleKleuren[i].IsSelected)
+                                //Pass unchanged fields back to controller post method
+                                @Html.HiddenFor(m => m.alleKleuren[i].KleurID)
+                                @Html.HiddenFor(m => m.alleKleuren[i].KleurNaam)
 
-                                        <!--<input type="checkbox" asp-for="alleMerken[i].IsSelected" value="@i" id="checkboxFourInput@i" name="" style="opacity:0" /> -->
-                                        <label for="checkboxFourInput"></label>
+                                <li class="filterListItem">
+                                    <div id="Kleur_@Model.alleKleuren[i].KleurID" class="checkbox">
+                                        <div class="checkboxDot"></div>
+                                        <label class="filterItemText">@Model.alleKleuren[i].KleurNaam</label>
                                     </div>
-                                    <div class="textCheckbox">
-                                        <text style="font-size:15px">@Model.alleKleuren[i].KleurNaam</text>
-                                    </div>
-                                </div>
+                                    <input type="hidden" id="inputKleur_@Model.alleKleuren[i].KleurID" name="alleKleuren[@i].Status" />
+                                </li>
                             }
+                        </ul>
 
-                            <!-- Kleuren
-                            <div class="checkboxColor" style="background:white">
-                                <input type="checkbox" value="1" id="checkboxId1" name="" style="opacity:0;" />
-                                <label for="checkboxId1">text</label>
-                            </div>
-                            <div class="checkboxColor" style="background: pink; margin-top:10px">
-                                <input type="checkbox" value="2" id="checkboxId2" name="" style="opacity:0" />
-                            </div>
-                            <div class="checkboxColor" style="background:darkred;margin-top:10px">
-                                <input type="checkbox" value="3" id="checkboxId3" name="" style="opacity:0;" />
-                            </div>
-                             -->
-                        </div>
+
                     </div>
                 </div>
             </div>
+            <!--JavaScript to keep selected filter input-->
+            <script type="text/javascript">
+                var selectedMerken = @Html.Raw(Json.Serialize(Model.selectedMerken));
+                keepMerken(selectedMerken);
+                var selectedStijlen = @Html.Raw(Json.Serialize(Model.selectedStijlen));
+                keepStijlen(selectedStijlen);
+                var selectedNeklijnen = @Html.Raw(Json.Serialize(Model.selectedNeklijnen));
+                keepNeklijnen(selectedNeklijnen);
+                var selectedSilhouetten = @Html.Raw(Json.Serialize(Model.selectedSilhouetten));
+                keepSilhouetten(selectedSilhouetten);
+                var selectedKleuren = @Html.Raw(Json.Serialize(Model.selectedKleuren));
+                keepKleuren(selectedKleuren);
+                var selectedPrijsRange = @Html.Raw(Json.Serialize(Model.PrijsRange));
+                keepPrijs(selectedPrijsRange);
+            </script>
             <input type="submit" value="Filter" class="btn btn-default specialbutton" />
         </form>
     </div>

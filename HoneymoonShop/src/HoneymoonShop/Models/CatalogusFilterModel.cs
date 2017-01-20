@@ -12,8 +12,7 @@ namespace HoneymoonShop.Models
         public List<Merk> alleMerken { get; set; }
         public List<Stijl> alleStijlen { get; set; }
 
-        public int selectedMinimumPrijs { get; set; }
-        public int selectedMaximumPrijs { get; set; }
+       public string PrijsRange { get; set; }
 
         public List<Neklijn> alleNeklijnen { get; set; }
         public List<Silhouette> alleSilhouetten { get; set; }
@@ -22,7 +21,14 @@ namespace HoneymoonShop.Models
 
 
         public List<Jurk> filteredJurken { get; set; }
-
         public string sorteerOptie { get; set; }
+
+
+        //Lists to save filter input from user;
+        public List<Int32> selectedMerken { get; set; }
+        public List<Int32> selectedStijlen { get; set; }
+        public List<Int32> selectedNeklijnen{ get; set; }
+        public List<Int32> selectedSilhouetten{ get; set; }
+        public List<Int32> selectedKleuren { get; set; }
     }
 }
