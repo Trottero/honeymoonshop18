@@ -20,9 +20,9 @@ namespace HoneymoonShop.Controllers
         }
 
         // GET: Categorien
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Categorien.ToListAsync());
+            return View(_context.Categorien.ToList());
         }
 
         // GET: Categorien/Details/5
@@ -53,12 +53,12 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategorieID,CategorieNaam")] Categorie categorie)
+        public IActionResult Create([Bind("CategorieID,CategorieNaam")] Categorie categorie)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(categorie);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(categorie);

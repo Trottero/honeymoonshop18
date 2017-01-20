@@ -17,6 +17,11 @@ namespace HoneymoonShop.Data
            
         }
 
+        public ApplicationDbContext()
+        {
+
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -28,7 +33,7 @@ namespace HoneymoonShop.Data
 
         public DbSet<Merk> Merken { get; set; }
 
-        public DbSet<Categorie> Categorien { get; set; }
+        public virtual DbSet<Categorie> Categorien { get; set; }
 
         public DbSet<Stijl> Stijlen { get; set; }
 
