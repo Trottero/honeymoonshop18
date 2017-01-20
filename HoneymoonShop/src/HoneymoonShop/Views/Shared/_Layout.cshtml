@@ -78,10 +78,10 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right navbar-pink arial-bold" style="letter-spacing: 1px; margin-right: 8px;">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Bruid</a></li>
-                        <li><a href="#">Bruidegom</a></li>
-                        <li><a href="#">De winkel</a></li>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li><a href="~/Bruid">Bruid</a></li>
+                        <li><a href="~/Bruidegom">Bruidegom</a></li>
+                        <li><a href="~/DeWinkel">DeWinkel</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><button type="button" class="btn btn-default specialbutton" style="margin-top: 0px; padding: 10px; padding-top: 5px; padding-bottom: 5px; color: white; letter-spacing:1px; font-weight: bolder;">AFSPRAAK MAKEN</button></li>
@@ -107,17 +107,17 @@
 
                 <div class="col-md-4 footerimages footerleft">
                     <center>
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                        <img class="img-responsive" src="~/images/T1.png" />
                     </center>
                 </div>
                 <div class="col-md-4 footerimages">
                     <center>
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                        <img class="img-responsive" src="~/images/T2.png" />
                     </center>
                 </div>
                 <div class="col-md-4 footerimages footerright">
                     <center>
-                        <img class="img-responsive" src="http://placehold.it/300x160" />
+                        <img class="img-responsive" src="~/images/T3.png" />
                     </center>
                 </div>
 
@@ -217,7 +217,7 @@
         $(document).ready(function () {
 
             $('#ex12c').slider({
-                id: "slider12c", min: 0, max: 2000, range: true, value: [100, 1750],
+                id: "slider12c", min: 0, max: 10000, range: true, value: [1000, 9000],
                 tooltip: 'always', tooltip_split: true, tooltip_position: 'bottom',
                 formatter: function (value) {
                     return value;
@@ -228,8 +228,8 @@
                 $(".holder").jPages({
                     containerID: "itemContainer",
                     perPage: 12,
-                    previous: "previous",
-                    next: "next"
+                    previous: "span.arrowPrev",
+                    next: "span.arrowNext"
                 });
 
                 $(".itemsPerPageSelect").change(function () {
@@ -238,8 +238,8 @@
                     $(".holder").jPages("destroy").jPages({
                         containerID: "itemContainer",
                         perPage: newPerPage,
-                        previous: "previous",
-                        next: "next"
+                        previous: "span.arrowPrev",
+                        next: "span.arrowNext"
                     });
                 });
             });
