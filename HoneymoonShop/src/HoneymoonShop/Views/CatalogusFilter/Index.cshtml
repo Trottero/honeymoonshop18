@@ -22,8 +22,8 @@
                     <div class="col-md-6">@Model.filteredJurken.Count jurken gevonden</div>
                     <div class="col-md-6">
                         
-                            <div class="form-group cat-searchbarright">
-                                <label class="">Sorteer op: </label>
+                            <div class="form-group cat-searchbarright nexa_bold">
+                                
                                 <form asp-controller="CatalogusFilter" asp-action="Index" method="post">
                                     
                                     <!--Pass unchanged fields back to controller post method-->
@@ -66,7 +66,7 @@
                                         <option>Merk A-Z</option>
                                         <option>Merk Z-A</option>
                                     </select>
-                                    <input type="submit" value="Sorteer" class="btn btn-default specialbutton" />
+                                    <input type="submit" value="Sorteer" class="btn btn-default specialbutton" style="display:inline; margin-top: 0px; margin-left: 10px;" />
                                 </form>
                             </div>
                         
@@ -100,12 +100,24 @@
                         <p>Geen jurken gevonden</p>
 
                     }
-                </div>
+                </div>               
                 <!--Page selection-->
                 <div class="row">
-                    <div class="col-mod-9">
-                        <div class="holder">
-
+                    <div class="paginationBar">
+                        <div class="col-md-7">
+                            <form class="ItemsPerPageForm nexa_bold">
+                                <label>Aantal tonen: </label>
+                                <select class="itemsPerPageSelect Selection">
+                                    <option>12</option>
+                                    <option>24</option>
+                                    <option>36</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="arrowPrev"></span>
+                            <div class="holder nexa_bold" style="margin-left: 15px;"></div>
+                            <span class="arrowNext"></span>
                         </div>
                     </div>
                 </div>
