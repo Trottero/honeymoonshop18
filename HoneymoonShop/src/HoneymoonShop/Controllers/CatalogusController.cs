@@ -22,13 +22,10 @@ namespace HoneymoonShop.Controllers
 
         public IActionResult Index()
         {
-            CatalogusFilterModel filterModel = new CatalogusFilterModel();
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
+
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
+
+            CatalogusFilterModel filterModel = new CatalogusFilterModel();            
 
             filterModel.alleMerken = _context.Merken.ToList();
             filterModel.alleStijlen = _context.Stijlen.ToList();
@@ -76,13 +73,9 @@ namespace HoneymoonShop.Controllers
         public async Task<IActionResult> Collection(String id)
             //id = collection name
         {
-            CatalogusFilterModel filterModel = new CatalogusFilterModel();
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
+
+            CatalogusFilterModel filterModel = new CatalogusFilterModel();          
 
             filterModel.alleMerken = _context.Merken.ToList();
             filterModel.alleStijlen = _context.Stijlen.ToList();
@@ -104,83 +97,80 @@ namespace HoneymoonShop.Controllers
             {
                 return NotFound();
             }
-            filterModel.filteredJurken = jurken.ToList();
+            filterModel.filteredJurken = await jurken.ToListAsync();
             return View(filterModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Collection(CatalogusFilterModel filterModel)
-        //id = collection name
+        public async Task<IActionResult> Index(CatalogusFilterModel filterModel)
         {
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam");
-            ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam");
-            ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
-            ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
-            ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
-
-
-
+            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
 
             //CREATE LISTS OF SELECTED INPUT
             var selectedMerkIDs = (from merk in filterModel.alleMerken
-                                   where merk.IsSelected
+                                   where merk.Status == "checked"
                                    select merk.MerkID).ToList();
 
             var selectedStijlIDs = (from stijl in filterModel.alleStijlen
-                                    where stijl.IsSelected
+                                    where stijl.Status == "checked"
                                     select stijl.StijlID).ToList();
 
             var selectedNeklijnIDs = (from neklijn in filterModel.alleNeklijnen
-                                      where neklijn.IsSelected
+                                      where neklijn.Status == "checked"
                                       select neklijn.NeklijnID).ToList();
 
             var selectedSilhouetteIDs = (from silhouette in filterModel.alleSilhouetten
-                                         where silhouette.IsSelected
+                                         where silhouette.Status == "checked"
                                          select silhouette.SilhouetteID).ToList();
 
             var selectedKleurIDs = (from kleur in filterModel.alleKleuren
-                                    where kleur.IsSelected
+                                    where kleur.Status == "checked"
                                     select kleur.KleurID).ToList();
 
-            //FILTER INPUT
+            int minPrijs = 0;
+            int maxPrijs = 10000;
 
+            //Convert PrijsRange to minimum and maximum prijs
+            if (!string.IsNullOrEmpty(filterModel.PrijsRange))
+            {
+                minPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[0]);
+                maxPrijs = Int32.Parse(filterModel.PrijsRange.Split(',')[1]);
+            }
+
+            //FILTER INPUT            
             var filteredJurken = from jurk in _context.Jurken.Include(j => j.Merk).Include(j => j.Stijl).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Kleur)
                                  where (selectedMerkIDs == null || selectedMerkIDs.Count == 0 || selectedMerkIDs.Contains(jurk.MerkID))
                                  && (selectedStijlIDs == null || selectedStijlIDs.Count == 0 || selectedStijlIDs.Contains(jurk.StijlID))
                                  && (selectedNeklijnIDs == null || selectedNeklijnIDs.Count == 0 || selectedNeklijnIDs.Contains(jurk.NeklijnID))
                                  && (selectedSilhouetteIDs == null || selectedSilhouetteIDs.Count == 0 || selectedSilhouetteIDs.Contains(jurk.SilhouetteID))
                                  && (selectedKleurIDs == null || selectedKleurIDs.Count == 0 || selectedKleurIDs.Contains(jurk.KleurID))
-                                 //&& jurk.Prijs > filterModel.selectedMinimumPrijs 
-                                 //&& jurk.Prijs < filterModel.selectedMaximumPrijs                                 
+                                 && jurk.Prijs > minPrijs
+                                 && jurk.Prijs < maxPrijs
                                  select jurk;
 
-
-
             //SORTEER
-            if (filterModel.sorteerOptie != null && filterModel.sorteerOptie.Equals("Prijs Hoog/Laag"))
+            if (filterModel.sorteerOptie != null)
             {
-                filteredJurken = filteredJurken.OrderByDescending(j => j.Prijs);
-            }
-            if (filterModel.sorteerOptie != null && filterModel.sorteerOptie.Equals("Prijs Laag/Hoog"))
-            {
-                filteredJurken = filteredJurken.OrderBy(j => j.Prijs);
-            }
+                string caseSwitch = filterModel.sorteerOptie;
+                switch (caseSwitch)
+                {
+                    case "Prijs Hoog/Laag":
+                        filteredJurken = filteredJurken.OrderByDescending(j => j.Prijs);
+                        break;
+                    case "Prijs Laag/Hoog":
+                        filteredJurken = filteredJurken.OrderBy(j => j.Prijs);
+                        break;
+                    case "Merk A-Z":
+                        filteredJurken = filteredJurken.OrderBy(j => j.Merk.MerkNaam);
+                        break;
+                    case "Merk Z-A":
+                        filteredJurken = filteredJurken.OrderByDescending(j => j.Merk.MerkNaam);
+                        break;
+                    default:
+                        break;
+                }
 
-            if (filterModel.sorteerOptie != null && filterModel.sorteerOptie.Equals("Merk A-Z"))
-            {
-                filteredJurken = filteredJurken.OrderBy(j => j.Merk.MerkNaam);
             }
-            if (filterModel.sorteerOptie != null && filterModel.sorteerOptie.Equals("Merk Z-A"))
-            {
-                filteredJurken = filteredJurken.OrderByDescending(j => j.Merk.MerkNaam);
-            }
-            filterModel.alleMerken = _context.Merken.ToList();
-            filterModel.alleStijlen = _context.Stijlen.ToList();
-            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
-            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
-            filterModel.alleKleuren = _context.Kleuren.ToList();
-
 
             filterModel.filteredJurken = await filteredJurken.ToListAsync();
             return View(filterModel);
