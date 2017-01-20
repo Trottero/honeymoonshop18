@@ -238,24 +238,24 @@
 
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
 
-                        <div class="form-group cat-searchbarright">
-                            <label class="">Sorteer op: </label>
+                        <div class="form-group cat-searchbarright nexa_bold">
                             <form asp-controller="Catalogus" asp-action="Collection" method="post">
+                                <label>Sorteer op: </label>
                                 @Html.HiddenFor(m => m.alleMerken)
                                 @Html.HiddenFor(m => m.alleStijlen)
                                 @Html.HiddenFor(m => m.alleNeklijnen)
                                 @Html.HiddenFor(m => m.alleSilhouetten)
                                 @Html.HiddenFor(m => m.alleKleuren)
-                                <select asp-for="sorteerOptie">
+                                <select asp-for="sorteerOptie" class="Selection" style="width:200px;">
                                     <option>Prijs Hoog/Laag</option>
                                     <option>Prijs Laag/Hoog</option>
                                     <option>Merk A-Z</option>
                                     <option>Merk Z-A</option>
                                 </select>
-                                <input type="submit" value="Sorteer" />
+                                <input type="submit" value="Sorteer" class="btn btn-default specialbutton" style="display:inline; margin-top: 0px; margin-left: 10px;" />
                             </form>
                         </div>
 
@@ -287,7 +287,7 @@
                 <!--Page selection-->
                 <div class="row">
                     <div class="paginationBar">
-                        <div class="col-md-4">
+                        <div class="col-md-7">
                             <form class="ItemsPerPageForm nexa_bold">
                                 <label>Aantal tonen: </label>
                                 <select class="itemsPerPageSelect Selection">
@@ -297,8 +297,10 @@
                                 </select>
                             </form>
                         </div>
-                        <div class="col-md-5">
-                            <div class="holder"></div>
+                        <div class="col-md-2">
+                            <span class="arrowPrev"></span>
+                            <div class="holder nexa_bold" style="margin-left: 15px;"></div>
+                            <span class="arrowNext"></span>
                         </div>
                     </div>
                 </div>

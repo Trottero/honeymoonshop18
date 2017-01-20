@@ -23,6 +23,6 @@ namespace HoneymoonShop.Models
 
         public List<Jurk> filteredJurken { get; set; }
 
-        public String sorteerOptie { get; set; }
+        public string sorteerOptie { get; set; }
     }
 }

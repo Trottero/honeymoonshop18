@@ -108,6 +108,11 @@ namespace HoneymoonShop.Controllers
                 filteredJurken = filteredJurken.OrderByDescending(j => j.Merk.MerkNaam);
             }
 
+            filterModel.alleMerken = _context.Merken.ToList();
+            filterModel.alleStijlen = _context.Stijlen.ToList();
+            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
+            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
+            filterModel.alleKleuren = _context.Kleuren.ToList();
 
             filterModel.filteredJurken = await filteredJurken.ToListAsync();
             return View(filterModel);
