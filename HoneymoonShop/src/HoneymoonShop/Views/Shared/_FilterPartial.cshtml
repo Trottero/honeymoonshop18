@@ -23,6 +23,7 @@
             </a>
         </div>
         <form asp-controller="CatalogusFilter" asp-action="Index" method="post">
+            
             <h5 class="titleFilter sans-serif-thin" style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
             <div class="panel-group sans-serif-thin" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
@@ -42,11 +43,11 @@
                                 @Html.HiddenFor(m => m.alleMerken[i].MerkNaam)
 
                                 <li class="filterListItem">
-                                    <div id="Merk_@i" class="checkbox">
+                                    <div id="Merk_@Model.alleMerken[i].MerkID" class="checkbox">
                                         <div class="checkboxDot"></div>
                                         <label class="filterItemText">@Model.alleMerken[i].MerkNaam</label>
                                     </div>
-                                    <input type="hidden" id="inputMerk_@i" name="alleMerken[@i].Status" />
+                                    <input type="hidden" id="inputMerk_@Model.alleMerken[i].MerkID" name="alleMerken[@i].Status" />
                                 </li>
 
                             }
@@ -70,11 +71,11 @@
                                 @Html.HiddenFor(m => m.alleStijlen[i].StijlNaam)
 
                                 <li class="filterListItem">
-                                    <div id="Stijl_@i" class="checkbox">
+                                    <div id="Stijl_@Model.alleStijlen[i].StijlID" class="checkbox">
                                         <div class="checkboxDot"></div>
                                         <label class="filterItemText">@Model.alleStijlen[i].StijlNaam</label>
                                     </div>
-                                    <input type="hidden" id="inputStijl_@i" name="alleStijlen[@i].Status" />
+                                    <input type="hidden" id="inputStijl_@Model.alleStijlen[i].StijlID" name="alleStijlen[@i].Status" />
                                 </li>
                             }
                         </ul>
@@ -117,11 +118,11 @@
                                 @Html.HiddenFor(m => m.alleNeklijnen[i].NeklijnNaam)
 
                                 <li class="filterListItem">
-                                    <div id="Neklijn_@i" class="checkbox">
+                                    <div id="Neklijn_@Model.alleNeklijnen[i].NeklijnID" class="checkbox">
                                         <div class="checkboxDot"></div>
                                         <label class="filterItemText">@Model.alleNeklijnen[i].NeklijnNaam</label>
                                     </div>
-                                    <input type="hidden" id="inputNeklijn_@i" name="alleNeklijnen[@i].Status" />
+                                    <input type="hidden" id="inputNeklijn_@Model.alleNeklijnen[i].NeklijnID" name="alleNeklijnen[@i].Status" />
                                 </li>
                             }
                         </ul>
@@ -144,11 +145,11 @@
                                 @Html.HiddenFor(m => m.alleSilhouetten[i].SilhouetteNaam)
 
                                 <li class="filterListItem">
-                                    <div id="Silhouette_@i" class="checkbox">
+                                    <div id="Silhouette_@Model.alleSilhouetten[i].SilhouetteID" class="checkbox">
                                         <div class="checkboxDot"></div>
                                         <label class="filterItemText">@Model.alleSilhouetten[i].SilhouetteNaam</label>
                                     </div>
-                                    <input type="hidden" id="inputSilhouette_@i" name="alleSilhouetten[@i].Status" />
+                                    <input type="hidden" id="inputSilhouette_@Model.alleSilhouetten[i].SilhouetteID" name="alleSilhouetten[@i].Status" />
                                 </li>
                             }
                         </ul>
@@ -171,11 +172,11 @@
                                 @Html.HiddenFor(m => m.alleKleuren[i].KleurNaam)
 
                                 <li class="filterListItem">
-                                    <div id="Kleur_@i" class="checkbox">
+                                    <div id="Kleur_@Model.alleKleuren[i].KleurID" class="checkbox">
                                         <div class="checkboxDot"></div>
                                         <label class="filterItemText">@Model.alleKleuren[i].KleurNaam</label>
                                     </div>
-                                    <input type="hidden" id="inputKleur_@i" name="alleKleuren[@i].Status" />
+                                    <input type="hidden" id="inputKleur_@Model.alleKleuren[i].KleurID" name="alleKleuren[@i].Status" />
                                 </li>
                             }
                         </ul>
@@ -184,7 +185,22 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Filter" />
+            <!--JavaScript to keep selected filter input-->
+            <script type="text/javascript">
+                var selectedMerken = @Html.Raw(Json.Serialize(Model.selectedMerken));
+                keepMerken(selectedMerken);
+                var selectedStijlen = @Html.Raw(Json.Serialize(Model.selectedStijlen));
+                keepStijlen(selectedStijlen);
+                var selectedNeklijnen = @Html.Raw(Json.Serialize(Model.selectedNeklijnen));
+                keepNeklijnen(selectedNeklijnen);
+                var selectedSilhouetten = @Html.Raw(Json.Serialize(Model.selectedSilhouetten));
+                keepSilhouetten(selectedSilhouetten);
+                var selectedKleuren = @Html.Raw(Json.Serialize(Model.selectedKleuren));
+                keepKleuren(selectedKleuren);
+                var selectedPrijsRange = @Html.Raw(Json.Serialize(Model.PrijsRange));
+                keepPrijs(selectedPrijsRange);
+            </script>
+            <input type="submit" value="Filter" class="btn btn-default specialbutton" />
         </form>
     </div>
 </div>

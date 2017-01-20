@@ -21,7 +21,14 @@ namespace HoneymoonShop.Models
 
 
         public List<Jurk> filteredJurken { get; set; }
-
         public string sorteerOptie { get; set; }
+
+
+        //Lists to save filter input from user;
+        public List<Int32> selectedMerken { get; set; }
+        public List<Int32> selectedStijlen { get; set; }
+        public List<Int32> selectedNeklijnen{ get; set; }
+        public List<Int32> selectedSilhouetten{ get; set; }
+        public List<Int32> selectedKleuren { get; set; }
     }
 }

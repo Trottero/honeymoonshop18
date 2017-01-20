@@ -47,22 +47,35 @@ namespace HoneymoonShop.Controllers
             var selectedMerkIDs = (from merk in filterModel.alleMerken
                                    where merk.Status == "checked"
                                    select merk.MerkID).ToList();
+            //Pass user input to view model
+            filterModel.selectedMerken = selectedMerkIDs;
 
             var selectedStijlIDs = (from stijl in filterModel.alleStijlen
                                     where stijl.Status == "checked"
                                     select stijl.StijlID).ToList();
+            //Pass user input to view model
+            filterModel.selectedStijlen = selectedStijlIDs;
 
             var selectedNeklijnIDs = (from neklijn in filterModel.alleNeklijnen
                                       where neklijn.Status == "checked"
                                       select neklijn.NeklijnID).ToList();
+            //Pass user input to view model
+            filterModel.selectedNeklijnen = selectedNeklijnIDs;
 
             var selectedSilhouetteIDs = (from silhouette in filterModel.alleSilhouetten
                                          where silhouette.Status == "checked"
                                          select silhouette.SilhouetteID).ToList();
+            
+            
+            //Pass user input to view model
+            filterModel.selectedSilhouetten = selectedSilhouetteIDs;
+
 
             var selectedKleurIDs = (from kleur in filterModel.alleKleuren
                                     where kleur.Status == "checked"
                                     select kleur.KleurID).ToList();
+            //Pass user input to view model
+            filterModel.selectedKleuren = selectedKleurIDs;
 
             int minPrijs = 0;
             int maxPrijs = 10000;
