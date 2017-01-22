@@ -16,12 +16,12 @@
         <div class="row">
             <!--sorteer functionaliteit-->
 
-            @Html.Partial("_FilterPartial", Model);
+            @Html.Partial("_FilterPartial", Model)
 
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-7">
 
                         <div class="form-group cat-searchbarright nexa_bold">
                             <form asp-controller="Catalogus" asp-action="Collection" method="post">
@@ -59,7 +59,7 @@
                                 @Html.HiddenFor(m => m.PrijsRange)
 
                                 <!--Get input for sorteer functie-->
-                                <select asp-for="sorteerOptie">
+                                <select asp-for="sorteerOptie" class="Selection" style="width: 200px;   ">
                                     <option>Prijs Hoog/Laag</option>
                                     <option>Prijs Laag/Hoog</option>
                                     <option>Merk A-Z</option>
