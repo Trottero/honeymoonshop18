@@ -30,5 +30,6 @@ namespace HoneymoonShop.Models
         public List<Int32> selectedNeklijnen{ get; set; }
         public List<Int32> selectedSilhouetten{ get; set; }
         public List<Int32> selectedKleuren { get; set; }
+
     }
 }

@@ -87,5 +87,24 @@ function keepKleuren(selectedKleuren) {
 
 //TO DO
 function keepPrijs(selectedPrijsRange) {
+    var split = selectedPrijsRange.split(',');
+    var minPrijs = split[0];
+   
+    var maxPrijs = split[1];
+
+    var slider = document.getElementById('ex12c');
+    var value = slider.getAttribute('value');
+    var valueStr = '[' + minPrijs + ', ' + maxPrijs + ']'
+    window.alert(valueStr);
+    
+    slider.setAttribute('value', valueStr);
+
+    /*$('#ex12c').slider({
+        id: "slider12c", min: 0, max: 10000, range: true, value: [1000, 9000],
+        tooltip: 'always', tooltip_split: true, tooltip_position: 'bottom',
+        formatter: function (value) {
+            return value;
+        }
+    });*/
 
 }
