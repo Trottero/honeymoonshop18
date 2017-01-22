@@ -85,7 +85,7 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategorieID,CategorieNaam")] Categorie categorie)
+        public IActionResult Edit(int id, [Bind("CategorieID,CategorieNaam")] Categorie categorie)
         {
             if (id != categorie.CategorieID)
             {
@@ -97,7 +97,7 @@ namespace HoneymoonShop.Controllers
                 try
                 {
                     _context.Update(categorie);
-                    await _context.SaveChangesAsync();
+                    _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -116,14 +116,14 @@ namespace HoneymoonShop.Controllers
         }
 
         // GET: Categorien/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
+            var categorie = _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
             if (categorie == null)
             {
                 return NotFound();
@@ -135,11 +135,11 @@ namespace HoneymoonShop.Controllers
         // POST: Categorien/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var categorie = await _context.Categorien.SingleOrDefaultAsync(m => m.CategorieID == id);
+            var categorie = _context.Categorien.SingleOrDefault(m => m.CategorieID == id);
             _context.Categorien.Remove(categorie);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
