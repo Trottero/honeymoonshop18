@@ -319,6 +319,7 @@ h5 {
     margin-right: 25px;
     width: 300px;
     height: 600px;
+    image-resolution:from-image;
 }
 
 .BDSbtn {
@@ -533,24 +534,24 @@ hr {
     width: 100%;
 }
 
-.row1 {
+.Hrow1 {
     display: flex;
     flex-flow: column wrap;
 }
 
-    .row1 > :nth-child(3n + 1) {
+    .Hrow1 > :nth-child(3n + 1) {
         order: 1;
     }
     /* 1st column */
-    .row1 > :nth-child(3n + 2) {
+    .Hrow1 > :nth-child(3n + 2) {
         order: 2;
     }
     /* 2nd column */
-    .row1 > :nth-child(3n + 3) {
+    .Hrow1 > :nth-child(3n + 3) {
         order: 3;
     }
     /* 3rd column */
-    .row1 > :nth-child(-n + 3) {
+    .Hrow1 > :nth-child(-n + 3) {
         page-break-before: always; /* CSS 2.1 syntax */
         break-before: always; /* New syntax */
     }
@@ -1443,6 +1444,7 @@ hr {
 .footer {
     background-color: #fce8e7;
     padding-bottom: 50px;
+   
 }
 
 /*-- Top row--*/
