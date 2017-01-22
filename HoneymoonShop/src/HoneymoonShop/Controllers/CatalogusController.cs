@@ -102,7 +102,7 @@ namespace HoneymoonShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CatalogusFilterModel filterModel)
+        public async Task<IActionResult> Collection(CatalogusFilterModel filterModel)
         {
             ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
 
