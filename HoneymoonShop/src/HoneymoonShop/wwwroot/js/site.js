@@ -33,8 +33,7 @@
 
 
 //Functions to set value of selected user input to checked
-function keepMerken(selectedMerken) {
-    window.alert(selectedMerken.length);
+function keepMerken(selectedMerken) {   
     for (var i = 0; i < selectedMerken.length; i++) {
         var idStrCheckbox = 'Merk_' + selectedMerken[i];
         var checkbox = document.getElementById(idStrCheckbox);
