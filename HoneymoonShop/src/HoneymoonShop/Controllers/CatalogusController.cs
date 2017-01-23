@@ -23,31 +23,37 @@ namespace HoneymoonShop.Controllers
         public IActionResult Index()
         {
 
-            ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
-
-            CatalogusFilterModel filterModel = new CatalogusFilterModel();            
-
-            filterModel.alleMerken = _context.Merken.ToList();
-            filterModel.alleStijlen = _context.Stijlen.ToList();
-            filterModel.alleNeklijnen = _context.Neklijnen.ToList();
-            filterModel.alleSilhouetten = _context.Silhouetten.ToList();
-            filterModel.alleKleuren = _context.Kleuren.ToList();
-            filterModel.filteredJurken = _context.Jurken.ToList();
-            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
-                         select j;
-            jurken = jurken.Where(j => j.Categorie.CategorieNaam == "Nieuwe Collectie");
-            List<Jurk> list = new List<Jurk>();
-            int count = 0;
-            foreach (var item in jurken)
+            try
             {
-                if (count < 6)
+                ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam");
+
+                CatalogusFilterModel filterModel = new CatalogusFilterModel();
+
+                filterModel.alleMerken = _context.Merken.ToList();
+                filterModel.alleStijlen = _context.Stijlen.ToList();
+                filterModel.alleNeklijnen = _context.Neklijnen.ToList();
+                filterModel.alleSilhouetten = _context.Silhouetten.ToList();
+                filterModel.alleKleuren = _context.Kleuren.ToList();
+                filterModel.filteredJurken = _context.Jurken.ToList();
+                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                             select j;
+                jurken = jurken.Where(j => j.Categorie.CategorieNaam == "Nieuwe Collectie");
+                List<Jurk> list = new List<Jurk>();
+                int count = 0;
+                foreach (var item in jurken)
                 {
-                    list.Add(item);
+                    if (count < 6)
+                    {
+                        list.Add(item);
+                    }
+                    count++;
                 }
-                count++;
+                filterModel.filteredJurken = list;
+                return View(filterModel);
+            } catch (Exception e)
+            {
+                return Json(e);
             }
-            filterModel.filteredJurken = list;
-            return View(filterModel);
         }
 
         public async Task<IActionResult> Details(int? id)
