@@ -2,6 +2,8 @@
 
 <div class="col-md-3Filter col-md-3">
     <div align="left">
+        
+
         <h4 class="nexa_bold" style="text-transform:uppercase; letter-spacing:2px; font-size:19px;"><b>Categoriën:</b></h4>
         <div class="sans-serif-thin">
             @foreach (var categorie in ViewBag.CategorieID)
@@ -22,7 +24,7 @@
                 </div>
             </a>
         </div>
-        <form asp-controller="Catalogus" asp-action="Collection" method="post">
+        <form asp-controller="Catalogus" asp-action="collection" method="post">
             
             <h5 class="titleFilter sans-serif-thin" style="margin-top: 30px; font-weight: bold"><b>Filter op:</b></h5>
             <div class="panel-group sans-serif-thin" id="accordion" role="tablist" aria-multiselectable="true">
@@ -187,7 +189,8 @@
             </div>
             <!--JavaScript to keep selected filter input-->
             <script type="text/javascript">
-                var selectedMerken = @Html.Raw(Json.Serialize(Model.selectedMerken));
+                
+                var selectedMerken = @Html.Raw(Json.Serialize(Model.selectedMerken));                
                 keepMerken(selectedMerken);
                 var selectedStijlen = @Html.Raw(Json.Serialize(Model.selectedStijlen));
                 keepStijlen(selectedStijlen);
@@ -197,8 +200,6 @@
                 keepSilhouetten(selectedSilhouetten);
                 var selectedKleuren = @Html.Raw(Json.Serialize(Model.selectedKleuren));
                 keepKleuren(selectedKleuren);
-                var selectedPrijsRange = @Html.Raw(Json.Serialize(Model.PrijsRange));
-                keepPrijs(selectedPrijsRange);
             </script>
             <input type="submit" value="Filter" class="btn btn-default specialbutton" />
         </form>

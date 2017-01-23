@@ -93,8 +93,9 @@ namespace HoneymoonShop.Controllers
 
             var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                          select j;
-            if (id == null || id.Equals(""))
+            if (string.IsNullOrEmpty(id))
             {
+                filterModel.Categorie = "";
                 return View(filterModel);
             }
             id = Uri.UnescapeDataString(id);
@@ -104,6 +105,7 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
             filterModel.filteredJurken = await jurken.ToListAsync();
+            filterModel.Categorie = id;
             return View(filterModel);
         }
 
@@ -116,22 +118,35 @@ namespace HoneymoonShop.Controllers
             var selectedMerkIDs = (from merk in filterModel.alleMerken
                                    where merk.Status == "checked"
                                    select merk.MerkID).ToList();
+            //Pass user input to view model
+            filterModel.selectedMerken = selectedMerkIDs;
 
             var selectedStijlIDs = (from stijl in filterModel.alleStijlen
                                     where stijl.Status == "checked"
                                     select stijl.StijlID).ToList();
+            //Pass user input to view model
+            filterModel.selectedStijlen = selectedStijlIDs;
 
             var selectedNeklijnIDs = (from neklijn in filterModel.alleNeklijnen
                                       where neklijn.Status == "checked"
                                       select neklijn.NeklijnID).ToList();
+            //Pass user input to view model
+            filterModel.selectedNeklijnen = selectedNeklijnIDs;
 
             var selectedSilhouetteIDs = (from silhouette in filterModel.alleSilhouetten
                                          where silhouette.Status == "checked"
                                          select silhouette.SilhouetteID).ToList();
 
+
+            //Pass user input to view model
+            filterModel.selectedSilhouetten = selectedSilhouetteIDs;
+
+
             var selectedKleurIDs = (from kleur in filterModel.alleKleuren
                                     where kleur.Status == "checked"
                                     select kleur.KleurID).ToList();
+            //Pass user input to view model
+            filterModel.selectedKleuren = selectedKleurIDs;
 
             int minPrijs = 0;
             int maxPrijs = 10000;
