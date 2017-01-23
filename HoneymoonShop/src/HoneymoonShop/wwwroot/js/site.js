@@ -34,6 +34,7 @@
 
 //Functions to set value of selected user input to checked
 function keepMerken(selectedMerken) {
+    window.alert(selectedMerken.length);
     for (var i = 0; i < selectedMerken.length; i++) {
         var idStrCheckbox = 'Merk_' + selectedMerken[i];
         var checkbox = document.getElementById(idStrCheckbox);
@@ -82,29 +83,4 @@ function keepKleuren(selectedKleuren) {
         var input = document.getElementById(idStrInput);
         input.setAttribute('value', 'checked');
     }
-}
-
-
-//TO DO
-function keepPrijs(selectedPrijsRange) {
-    var split = selectedPrijsRange.split(',');
-    var minPrijs = split[0];
-   
-    var maxPrijs = split[1];
-
-    var slider = document.getElementById('ex12c');
-    var value = slider.getAttribute('value');
-    var valueStr = '[' + minPrijs + ', ' + maxPrijs + ']'
-    window.alert(valueStr);
-    
-    slider.setAttribute('value', valueStr);
-
-    /*$('#ex12c').slider({
-        id: "slider12c", min: 0, max: 10000, range: true, value: [1000, 9000],
-        tooltip: 'always', tooltip_split: true, tooltip_position: 'bottom',
-        formatter: function (value) {
-            return value;
-        }
-    });*/
-
 }
