@@ -97,7 +97,13 @@ namespace HoneymoonShop
                     );*/
             });
 
-            SeedData.Initialize(app.ApplicationServices);
+            try
+            {
+                //SeedData.Initialize(app.ApplicationServices);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

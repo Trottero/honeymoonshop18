@@ -14,8 +14,10 @@ namespace HoneymoonShop.Models
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
-            {   
-                clearAll(context); //Verwijder alle entries in database
+            {
+                //clearAll(context); //Verwijder alle entries in database
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
 
                 //Seed merken
                 IList<string> merkenSeedList = new List<string>() { "Ladybird", "Diane Legrand", "Pronovias", "Maggie Sottero", "Badgley & Mischka",
