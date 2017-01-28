@@ -19,6 +19,10 @@ namespace Models
         [Required]
         public int ArtikelNr { get; set; }
 
+        //Foreign key for Review
+        public virtual List<Review> Reviews { get; set; }
+
+
         //Foreign key for Merk
         [Display(Name = "Merk")]
         [Required]

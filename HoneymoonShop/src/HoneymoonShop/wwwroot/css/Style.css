@@ -319,7 +319,7 @@ h5 {
     margin-right: 25px;
     width: 300px;
     height: 600px;
-    image-resolution:from-image;
+    image-resolution: from-image;
 }
 
 .BDSbtn {
@@ -1337,6 +1337,27 @@ hr {
     width: 100%;
 }
 
+/*-----------------------Details styles-----------------*/
+.rev-btn {
+    margin-top: 20px;
+    border: 5px solid #f0597c;
+    border-radius: 0;
+    background-color: #f0597c;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+
+    .rev-btn:hover, .BDSbtn:active, .BDSbtn:link {
+        background-color: #f0597c;
+        border: 5px solid #f0597c;
+        color: white;
+    }
+
 /*------------------------------------------------catalogus styles------------------------------------------------*/
 .cat-col-md-12-1 {
     height: 600px;
@@ -1399,6 +1420,12 @@ hr {
     font-size: 15px;
 }
 
+    .sidetext > div > button:hover, .BDSbtn:active, .BDSbtn:link {
+        background-color: #f0597c;
+        border: 5px solid #f0597c;
+        color: white;
+    }
+
 .specialbutton, .specialbutton:hover, .specialbutton:active, .specialbutton:focus {
     margin-top: 20px;
     border: 5px solid #f0597c;
@@ -1444,7 +1471,6 @@ hr {
 .footer {
     background-color: #fce8e7;
     padding-bottom: 50px;
-   
 }
 
 /*-- Top row--*/
@@ -1677,14 +1703,13 @@ a {
 
 /* Filter CSS*/
 .filterList {
-    margin-left: 10px;    
+    margin-left: 10px;
     overflow: auto;
     max-height: 150px;
-
 }
 
 .filterListItem {
-    height: 20px;    
+    height: 20px;
     margin-bottom: 10px;
 }
 
@@ -1692,48 +1717,48 @@ a {
     font-size: 15px;
     font-family: "Josefin Sans",sans-serif;
     vertical-align: middle;
-    margin-left: -15px;   
+    margin-left: -15px;
 }
 
 .checkbox {
-  background-color: transparent;
-  
-  height: 20px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  
-}
-.checkbox input {
-  outline: none;
-  border: 0;
-  background-color: transparent;
-  display: inline-block;
-  vertical-align: middle;
+    background-color: transparent;
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.checkbox .checkboxDot {
-  background-color: transparent;
-  border: 1px solid #F9C8C3;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  -o-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-.checkbox .checkboxDotActive {
-  background-color: #F9C8C3;
-  border: 1px solid transparent;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  -o-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
+    .checkbox input {
+        outline: none;
+        border: 0;
+        background-color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .checkbox .checkboxDot {
+        background-color: transparent;
+        border: 1px solid #F9C8C3;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        -o-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+    }
+
+    .checkbox .checkboxDotActive {
+        background-color: #F9C8C3;
+        border: 1px solid transparent;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        -o-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+    }
