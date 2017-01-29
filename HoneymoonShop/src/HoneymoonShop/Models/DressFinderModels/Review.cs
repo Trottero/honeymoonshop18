@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HoneymoonShop.Models.DressFinderModels
+namespace Models
 {
     public class Review
     {
@@ -18,9 +18,6 @@ namespace HoneymoonShop.Models.DressFinderModels
 
 
 
-        public Review()
-        {
-
-        }
+        
     }
 }

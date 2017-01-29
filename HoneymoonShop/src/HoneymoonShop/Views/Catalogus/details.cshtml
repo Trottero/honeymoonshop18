@@ -1,4 +1,6 @@
 ﻿@model Models.Jurk
+
+
 @{
     ///List < BruidsJurk > list = (List<BruidsJurk>) Model;
     ViewData["Title"] = "Catalogus Page";
@@ -41,7 +43,7 @@
             <div style="font-size: 24px;" class="nexa_bold">
                 <!--HtmlDisplayFor(modelItem => item.Merk.Merknaam)-->
                 <!--ViewData["merknaam"]-->
-                @Model.Merk.MerkNaam
+                @Model.Merk.MerkNaam  
             </div>
             <div style="letter-spacing: 1px;">
                 artikel nr. @Model.ArtikelNr
@@ -72,6 +74,7 @@
             </div>
 
             <div class="det-desclist">
+
                 Beschikbare kleuren: @Model.Kleur.KleurNaam
             </div>
             <br>
@@ -83,9 +86,8 @@
                 <button type="button" class="btn btn-default">PASAFSPRAAK MAKEN</button>
             </div>
             <div>
-                <a class="btn btn-default rev-btn" href="~/Catalogus/review">SCHRIJF EEN REVIEW</a>
-                
-                @*<button type="button" class="btn btn-default">SCHRIJF EEN REVIEW</button>*@
+                <a class="btn btn-default rev-btn" href="~/Reviews/Create">SCHRIJF EEN REVIEW</a>
+
             </div>
             <div><a href="#Review" style="color:#f0597c">----------Toon reviews----------</a></div>
         </div>
@@ -120,14 +122,14 @@
         </div>
         <div class="col-md-1"></div>
     </div>
-   <div class="row">
-       <div class="col-md-12" style="margin-top: 20px;">
-           <center>
-               <button type="button" class="btn btn-default specialbutton">BEZOEK DE WEBSHOP</button>
-           </center>
-       </div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 20px;">
+            <center>
+                <button type="button" class="btn btn-default specialbutton">BEZOEK DE WEBSHOP</button>
+            </center>
+        </div>
 
-       </div>
+    </div>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10" style="margin-top: 55px; margin-bottom: 30px;">
@@ -159,10 +161,54 @@
     </div>
     <div class="row" style="margin-top: 120px">
     </div>
-    <hr style="background-color:#f0597c"/>
+    <hr style="background-color:#f0597c" />
     <div class="row">
-        <div id="Review"class="col-md-12">
+        <div id="Review" class="col-md-12">
             <h3>Reviews</h3>
+          
+
+            @*<table class="table">*@
+                    @*<thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Reviews)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Beoordeling)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.klantReview)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>*@
+                    @*<tbody>
+                        @foreach (var item in Model.Reviews)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ReviewID.Equals(item.JurkID))
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Naam)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Beoordeling)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.klantReview)
+                                </td>
+                                <td>
+                                <a asp-action="Edit" asp-route-id="@item.ReviewID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ReviewID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ReviewID">Delete</a>
+                            </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>*@
         </div>
     </div>
 </div>

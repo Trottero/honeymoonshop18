@@ -71,17 +71,7 @@ namespace HoneymoonShop.Controllers
 
             return View(jurk);
         }
-        public async Task<IActionResult> review(int?id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var jurk = await _context.Jurken.Include(j => j.Merk)
-                .SingleOrDefaultAsync(m => m.JurkID == id);
-            
-            return View(jurk);
-        }
+    
 
         public async Task<IActionResult> Collection(String id)
             //id = collection name

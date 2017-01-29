@@ -1,0 +1,91 @@
+@model Models.Review
+
+@{
+    ViewData["Title"] = "Create";
+}
+<style type="text/css">
+    .navbarbackground {
+        background-color: transparent;
+    }
+
+    header {
+        background-image: url(https://www.preownedweddingdresses.com/img/content/header-bg-dress-cleaning.jpg?1442840981);
+        height: 400px;
+        background-position: center;
+        text-align: center;
+        background-size: 100% 100%;
+    }
+
+    .navbar-pink > li > a {
+        color: white;
+    }
+</style>
+
+<div class="container create">
+   
+
+    <form asp-action="Create">
+        <div class="col-md-12 form-horizontal">
+           
+            <h4 style="color:#f0597c">Jouw gegevens</h4>
+            <hr style="background-color:#f0597c" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Naam" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Naam" class="form-control" />
+                    <span asp-validation-for="Naam" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beoordeling" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    @*<input asp-for="Beoordeling" class="form-control" />*@
+
+                    <span asp-validation-for="Beoordeling" class="text-danger" />
+
+                    <select name="Beoordeling" asp-for="Beoordeling" class="form-control">
+                        <option>selecteer</option>
+                        <option>Zeer mooi</option>
+                        <option>Mooi</option>
+                        <option>Niet mooi & Niet Lelijk</option>
+                        <option>lelijk</option>
+                        <option>Zeer lelijk</option>
+                    </select>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.JurkID" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="JurkID" class="form-control" asp-items="ViewBag.JurkID"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="klantReview" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    @*<input asp-for="klantReview" class="form-control" />*@
+                    <textarea ${readonly} asp-for="klantReview" class="form-control" name="klantReview" style="width : 400px;" rows="10"></textarea>
+                    <span asp-validation-for="klantReview" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Versturen" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        
+        
+        @*<button onclick="history.go(-1)">Back to Details</button>*@
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>
