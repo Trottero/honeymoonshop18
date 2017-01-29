@@ -33,7 +33,7 @@
 
 
 //Functions to set value of selected user input to checked
-function keepMerken(selectedMerken) {
+function keepMerken(selectedMerken) {   
     for (var i = 0; i < selectedMerken.length; i++) {
         var idStrCheckbox = 'Merk_' + selectedMerken[i];
         var checkbox = document.getElementById(idStrCheckbox);
@@ -82,10 +82,4 @@ function keepKleuren(selectedKleuren) {
         var input = document.getElementById(idStrInput);
         input.setAttribute('value', 'checked');
     }
-}
-
-
-//TO DO
-function keepPrijs(selectedPrijsRange) {
-
 }
