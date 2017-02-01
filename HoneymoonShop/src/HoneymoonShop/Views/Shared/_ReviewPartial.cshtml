@@ -1,0 +1,39 @@
+﻿@model Models.Jurk
+
+<table class="table">
+    <thead>
+        <tr>            
+            <th>
+                Klant Naam 
+            </th>
+            <th>
+                Klant Beoordeling
+            </th>
+
+            <th>
+                Klant Review
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reviews)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beoordeling)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.klantReview)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+    
+</table>

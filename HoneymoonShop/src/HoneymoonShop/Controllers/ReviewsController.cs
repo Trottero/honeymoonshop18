@@ -22,7 +22,9 @@ namespace HoneymoonShop.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
+
             var applicationDbContext = _context.Reviews.Include(r => r.Jurk);
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,6 +37,7 @@ namespace HoneymoonShop.Controllers
             }
 
             var review = await _context.Reviews.SingleOrDefaultAsync(m => m.ReviewID == id);
+            
             if (review == null)
             {
                 return NotFound();
@@ -44,10 +47,14 @@ namespace HoneymoonShop.Controllers
         }
 
         // GET: Reviews/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            ViewData["JurkID"] = new SelectList(_context.Jurken, "JurkID", "Omschrijving");
-            return View();
+            //ViewData["JurkID"] = new SelectList(_context.Jurken, "JurkID", "Omschrijving");
+            //ViewData["JurkID"] = _context.Jurken.Where(s => s.JurkID == id);
+            Review review = new Review();
+            review.JurkID = id;
+            
+            return View(review);
         }
 
         // POST: Reviews/Create
@@ -61,7 +68,8 @@ namespace HoneymoonShop.Controllers
             {
                 _context.Add(review);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction( "Details","Catalogus", new { id = review.JurkID });
+
             }
             ViewData["JurkID"] = new SelectList(_context.Jurken, "JurkID", "Omschrijving", review.JurkID);
             return View(review);
