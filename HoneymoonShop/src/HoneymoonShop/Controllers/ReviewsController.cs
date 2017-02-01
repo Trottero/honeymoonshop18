@@ -22,7 +22,7 @@ namespace HoneymoonShop.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
-
+           
             var applicationDbContext = _context.Reviews.Include(r => r.Jurk);
 
             return View(await applicationDbContext.ToListAsync());
@@ -53,6 +53,7 @@ namespace HoneymoonShop.Controllers
             //ViewData["JurkID"] = _context.Jurken.Where(s => s.JurkID == id);
             Review review = new Review();
             review.JurkID = id;
+           
             
             return View(review);
         }

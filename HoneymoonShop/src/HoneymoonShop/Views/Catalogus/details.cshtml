@@ -15,6 +15,7 @@
         document.getElementById('large-pic').src = s;
     }
 </script>
+
 <div class="container cat-background">
     <!--Back row-->
     <div class="row" style="margin-bottom: 30px; margin-top: 50px;  ">
@@ -94,9 +95,7 @@
         <div class="col-md-1">
         </div>
     </div>
-    <hr style="background-color:#f0597c" />
-    @Html.Partial("_ReviewPartial", Model)
-
+   
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10" style="margin-top: 55px; margin-bottom: 30px;">
@@ -164,6 +163,9 @@
     <div class="row" style="margin-top: 120px">
     </div>
     
-    
+    <p id="Review" class="Review">
+        <hr style="background-color:#f0597c" />
+        @Html.Partial("_ReviewPartial", Model)
+    </p>
    
 </div>
