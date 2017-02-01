@@ -54,6 +54,7 @@ namespace HoneymoonShop.Models
 
         private static void clearAll(ApplicationDbContext context)
         {
+           
             context.Database.ExecuteSqlCommand("delete from Jurken");
             context.Database.ExecuteSqlCommand("delete from Merken");
             context.Database.ExecuteSqlCommand("delete from Kleuren");
