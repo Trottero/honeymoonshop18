@@ -19,6 +19,8 @@ namespace HoneymoonShop.Controllers
         {
             _context = context;
         }
+       
+
 
         public IActionResult Index()
         {
@@ -62,20 +64,25 @@ namespace HoneymoonShop.Controllers
             {
                 return NotFound();
             }
-
-            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
-                .SingleOrDefaultAsync(m => m.JurkID == id);
-            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
-                         select j;
-            ViewData["Jurken"] = jurken;
-            if (jurk == null)
+            else
             {
-                return NotFound();
-            }
+                var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                    .SingleOrDefaultAsync(m => m.JurkID == id);
+                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                             select j;
+                ViewData["Jurken"] = jurken;
+                if (jurk == null)
+                {
+                    return NotFound();
+                }
 
-            return View(jurk);
+                jurk.Reviews = _context.Reviews.Where(r => r.JurkID == id).ToList();
+
+                return View(jurk);
+            }
         }
-        
+    
+
         public async Task<IActionResult> Collection(String id)
             //id = collection name
         {
