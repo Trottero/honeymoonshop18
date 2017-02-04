@@ -37,8 +37,17 @@ namespace HoneymoonShop.Controllers
                 filterModel.alleSilhouetten = _context.Silhouetten.ToList();
                 filterModel.alleKleuren = _context.Kleuren.ToList();
                 filterModel.filteredJurken = _context.Jurken.ToList();
-                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                              select j;
+                foreach (var jurk in jurken)
+                {
+                    foreach (var jurkkleur in jurk.JurkKleuren)
+                    {
+                        jurkkleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                                .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                        jurkkleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+                    }
+                }
                 jurken = jurken.Where(j => j.Categorie.CategorieNaam == "Nieuwe Collectie");
                 List<Jurk> list = new List<Jurk>();
                 int count = 0;
@@ -66,9 +75,17 @@ namespace HoneymoonShop.Controllers
             }
             else
             {
-                var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                     .SingleOrDefaultAsync(m => m.JurkID == id);
-                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                
+                foreach (var jurkkleur in jurk.JurkKleuren)
+                {
+                    jurkkleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                            .SingleOrDefault(m => m.JurkID == id);
+                    jurkkleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+                }
+                
+                var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                              select j;
                 ViewData["Jurken"] = jurken;
                 if (jurk == null)
@@ -98,7 +115,7 @@ namespace HoneymoonShop.Controllers
             filterModel.filteredJurken = _context.Jurken.ToList();
 
 
-            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+            var jurken = from j in _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                          select j;
             if (string.IsNullOrEmpty(id))
             {
@@ -166,12 +183,12 @@ namespace HoneymoonShop.Controllers
             }
 
             //FILTER INPUT            
-            var filteredJurken = from jurk in _context.Jurken.Include(j => j.Merk).Include(j => j.Stijl).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Kleur)
+            var filteredJurken = from jurk in _context.Jurken.Include(j => j.Merk).Include(j => j.Stijl).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.JurkKleuren)
                                  where (selectedMerkIDs == null || selectedMerkIDs.Count == 0 || selectedMerkIDs.Contains(jurk.MerkID))
                                  && (selectedStijlIDs == null || selectedStijlIDs.Count == 0 || selectedStijlIDs.Contains(jurk.StijlID))
                                  && (selectedNeklijnIDs == null || selectedNeklijnIDs.Count == 0 || selectedNeklijnIDs.Contains(jurk.NeklijnID))
                                  && (selectedSilhouetteIDs == null || selectedSilhouetteIDs.Count == 0 || selectedSilhouetteIDs.Contains(jurk.SilhouetteID))
-                                 && (selectedKleurIDs == null || selectedKleurIDs.Count == 0 || selectedKleurIDs.Contains(jurk.KleurID))
+                                 //&& (selectedKleurIDs == null || selectedKleurIDs.Count == 0 || selectedKleurIDs.Contains(jurk.KleurID))
                                  && jurk.Prijs > minPrijs
                                  && jurk.Prijs < maxPrijs
                                  select jurk;

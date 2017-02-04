@@ -56,10 +56,13 @@
                 @Html.DisplayFor(model => model.Silhouette.SilhouetteNaam)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Kleur.KleurNaam)
+                @Html.DisplayNameFor(model => model.JurkKleuren)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Kleur.KleurNaam)
+                @foreach (var jurkkleur in Model.JurkKleuren)
+                {
+                    <a>@jurkkleur.Kleur.KleurNaam, </a>
+                }
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Omschrijving)

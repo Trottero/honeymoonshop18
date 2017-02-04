@@ -1,4 +1,4 @@
-@model IEnumerable<Models.Jurk>
+    @model IEnumerable<Models.Jurk>
 
 @{
     ViewData["Title"] = "Index";
@@ -36,7 +36,7 @@
                     @Html.DisplayNameFor(model => model.Silhouette.SilhouetteNaam)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Kleur.KleurNaam)
+                    @Html.DisplayNameFor(model => model.JurkKleuren)
                 </th>    
                 <th>
                     @Html.DisplayNameFor(model => model.Omschrijving)
@@ -82,7 +82,12 @@
                         @Html.DisplayFor(modelItem => item.Silhouette.SilhouetteNaam)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Kleur.KleurNaam)
+                        @foreach (var kleur in item.JurkKleuren)
+                        {
+                            <p>@kleur.Kleur.KleurNaam</p>
+                                               
+                        }
+                           
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Omschrijving)

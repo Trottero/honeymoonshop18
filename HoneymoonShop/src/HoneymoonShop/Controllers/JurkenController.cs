@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Hosting;
+using HoneymoonShop.Models.DressFinderModels;
 
 namespace HoneymoonShop.Controllers
 {
@@ -28,7 +29,17 @@ namespace HoneymoonShop.Controllers
         // GET: Jurken
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl);
+            var applicationDbContext = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl);
+            foreach(var jurk in applicationDbContext)
+            {
+                foreach(var jurkkleur in jurk.JurkKleuren)
+                {
+                    jurkkleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                            .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                    jurkkleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+                }
+            }
+            
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -40,11 +51,18 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                 .SingleOrDefaultAsync(m => m.JurkID == id);
             if (jurk == null)
             {
                 return NotFound();
+            }
+
+            foreach (var jurkkleur in jurk.JurkKleuren)
+            {
+                jurkkleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                        .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                jurkkleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
             }
 
             return View(jurk);
@@ -59,7 +77,11 @@ namespace HoneymoonShop.Controllers
             ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam");
             ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam");
             ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam");
-            return View();
+
+            Jurk jurk = new Jurk();
+            jurk.JurkKleuren = new List<JurkKleur>() { new JurkKleur(), new JurkKleur(), new JurkKleur()};
+
+            return View(jurk);
         }
 
         // POST: Jurken/Create
@@ -67,8 +89,8 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JurkID,AfbeeldingNaam1,AfbeeldingNaam2,AfbeeldingNaam3,AfbeeldingNaam4,ArtikelNr,CategorieID,KleurID,MerkID,NeklijnID,Omschrijving,Prijs,SilhouetteID,StijlID")] Jurk jurk, 
-            IFormFile afbeelding1, IFormFile afbeelding2, IFormFile afbeelding3, IFormFile afbeelding4)
+        public async Task<IActionResult> Create(Jurk jurk, IFormFile afbeelding1, IFormFile afbeelding2, IFormFile afbeelding3, IFormFile afbeelding4)
+
         {
             if (ModelState.IsValid)
             {
@@ -101,14 +123,27 @@ namespace HoneymoonShop.Controllers
                     index++;
                 }
 
+                List<JurkKleur> JurkKleuren = new List<JurkKleur>();
+                foreach(var jurkkleur in jurk.JurkKleuren)
+                {
+                    if(jurkkleur.selected)
+                    {
+                        JurkKleur JurkKleur = new JurkKleur();
+                        JurkKleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                            .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                        JurkKleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+                        JurkKleuren.Add(JurkKleur);
+                    }
+                }
                 //Add jurk to DbContext
+                jurk.JurkKleuren = JurkKleuren;
                 _context.Add(jurk);
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
             ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.JurkKleuren);
             ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
             ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam", jurk.NeklijnID);
             ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
@@ -124,18 +159,20 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl).
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl).
                 SingleOrDefaultAsync(m => m.JurkID == id);
             if (jurk == null)
             {
                 return NotFound();
             }
             ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.JurkKleuren);
             ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
             ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam", jurk.NeklijnID);
             ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
             ViewData["StijlID"] = new SelectList(_context.Stijlen, "StijlID", "StijlNaam", jurk.StijlID);
+
+            jurk.JurkKleuren = new List<JurkKleur>() { new JurkKleur(), new JurkKleur(), new JurkKleur() };
             return View(jurk);
         }
 
@@ -144,14 +181,14 @@ namespace HoneymoonShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JurkID,AfbeeldingNaam1,AfbeeldingNaam2,AfbeeldingNaam3,AfbeeldingNaam4,ArtikelNr,CategorieID,KleurID,MerkID,NeklijnID,Omschrijving,Prijs,SilhouetteID,StijlID")] Jurk jurk,
+        public async Task<IActionResult> Edit(int id, Jurk jurk,
             IFormFile afbeelding1, IFormFile afbeelding2, IFormFile afbeelding3, IFormFile afbeelding4)
         {
             if (id != jurk.JurkID)
             {
                 return NotFound();
             }
-
+            
             if (ModelState.IsValid)
             {
                 try
@@ -183,9 +220,27 @@ namespace HoneymoonShop.Controllers
                         else if (index == 4) { jurk.AfbeeldingNaam4 = image.FileName; }
                         index++;
                     }
-
-                    //Update jurk to DbContext
-                    _context.Update(jurk);
+                    List<JurkKleur> JurkKleuren = new List<JurkKleur>();
+                    foreach (var jurkkleur in jurk.JurkKleuren)
+                    {
+                        if (jurkkleur.selected)
+                        {
+                            JurkKleur JurkKleur = new JurkKleur();
+                            JurkKleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                                .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                            JurkKleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+                            JurkKleuren.Add(JurkKleur);
+                        }
+                    }
+                    
+                    //Add jurk to DbContext
+                    jurk.JurkKleuren = JurkKleuren;
+                    string sqlComm = "delete from JurkKleur where JurkID = " + jurk.JurkID;
+                    string sqlComm2 = "delete from Jurken where JurkID = " + jurk.JurkID;
+                    _context.Database.ExecuteSqlCommand(sqlComm);
+                    _context.Database.ExecuteSqlCommand(sqlComm2);
+                    _context.SaveChanges();
+                    _context.Add(jurk);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -202,7 +257,7 @@ namespace HoneymoonShop.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["CategorieID"] = new SelectList(_context.Categorien, "CategorieID", "CategorieNaam", jurk.CategorieID);
-            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.KleurID);
+            ViewData["KleurID"] = new SelectList(_context.Kleuren, "KleurID", "KleurNaam", jurk.JurkKleuren);
             ViewData["MerkID"] = new SelectList(_context.Merken, "MerkID", "MerkNaam", jurk.MerkID);
             ViewData["NeklijnID"] = new SelectList(_context.Neklijnen, "NeklijnID", "NeklijnNaam", jurk.NeklijnID);
             ViewData["SilhouetteID"] = new SelectList(_context.Silhouetten, "SilhouetteID", "SilhouetteNaam", jurk.SilhouetteID);
@@ -218,8 +273,14 @@ namespace HoneymoonShop.Controllers
                 return NotFound();
             }
 
-            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.Kleur).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+            var jurk = await _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
                 .SingleOrDefaultAsync(m => m.JurkID == id);
+            foreach (var jurkkleur in jurk.JurkKleuren)
+            {
+                jurkkleur.Jurk = _context.Jurken.Include(j => j.Categorie).Include(j => j.JurkKleuren).Include(j => j.Merk).Include(j => j.Neklijn).Include(j => j.Silhouette).Include(j => j.Stijl)
+                                        .SingleOrDefault(m => m.JurkID == jurkkleur.JurkID);
+                jurkkleur.Kleur = _context.Kleuren.Include(j => j.JurkKleuren).SingleOrDefault(m => m.KleurID == jurkkleur.KleurID);
+            }
             if (jurk == null)
             {
                 return NotFound();

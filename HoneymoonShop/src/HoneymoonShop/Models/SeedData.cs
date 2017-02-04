@@ -1,4 +1,5 @@
 ﻿using HoneymoonShop.Data;
+using HoneymoonShop.Models.DressFinderModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
@@ -15,9 +16,9 @@ namespace HoneymoonShop.Models
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                //clearAll(context); //Verwijder alle entries in database
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
+                clearAll(context); //Verwijder alle entries in database
+                /*context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();*/
 
                 //Seed merken
                 IList<string> merkenSeedList = new List<string>() { "Ladybird", "Diane Legrand", "Pronovias", "Maggie Sottero", "Badgley & Mischka",
@@ -48,7 +49,9 @@ namespace HoneymoonShop.Models
 
                 //Seed jurken
                 SeedJurken(context, 100);
-               
+                context.SaveChanges();
+
+
             }
         }
 
@@ -174,7 +177,8 @@ namespace HoneymoonShop.Models
                     //For each property get a random existing value
                     ArtikelNr = i +1,
                     Categorie = categorien[rand.Next(categorien.Count)],
-                    Kleur = kleuren[rand.Next(kleuren.Count)],
+                    JurkKleuren = new List<JurkKleur>() { new JurkKleur() { JurkID = i, KleurID = rand.Next(0, 3) },
+                                                          new JurkKleur() { JurkID = i, KleurID = rand.Next(0, 3) }, },
                     Neklijn = neklijnen[rand.Next(neklijnen.Count)],
                     Merk = merken[rand.Next(merken.Count)],
                     Silhouette = silhouetten[rand.Next(silhouetten.Count)],
@@ -186,8 +190,8 @@ namespace HoneymoonShop.Models
                     AfbeeldingNaam4 = jurken[rand.Next(jurken.Count)],
                     Omschrijving = omschrijvingen[rand.Next(omschrijvingen.Count)]
                 };
-                context.Jurken.Add(jurk);
-                context.SaveChanges();
+                context.Add(jurk);
+               
             }
         }
     }

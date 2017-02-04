@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using HoneymoonShop.Models;
 using Models;
+using HoneymoonShop.Models.DressFinderModels;
 
 namespace HoneymoonShop.Data
 {
@@ -24,12 +25,22 @@ namespace HoneymoonShop.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-          
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+
+            builder.Entity<JurkKleur>()
+                .HasKey(t => new { t.JurkID, t.KleurID });
+
+            builder.Entity<JurkKleur>()
+                .HasOne(pt => pt.Jurk)
+                .WithMany(p => p.JurkKleuren)
+                .HasForeignKey(pt => pt.JurkID);
+
+            builder.Entity<JurkKleur>()
+                .HasOne(pt => pt.Kleur)
+                .WithMany(t => t.JurkKleuren)
+                .HasForeignKey(pt => pt.KleurID);
         }
+    
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Jurk> Jurken { get; set; }

@@ -58,9 +58,19 @@
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="KleurID" class="col-md-2 control-label"></label>
+                <label asp-for="JurkKleuren" class="col-md-2 control-label"></label>
                 <div class="col-md-10">
-                    <select asp-for="KleurID" class="form-control" asp-items="ViewBag.KleurID"></select>
+                    @{int i = 0; }
+                    @foreach (var kleur in ViewBag.KleurID)
+                    {
+
+                        <input type="hidden" name="JurkKleuren[@i].KleurID" value="@kleur.Value" />
+                        @Html.CheckBoxFor(m => m.JurkKleuren[@i].selected, false)
+
+                        <a>@kleur.Text</a>
+                        { i++; }
+
+                    }
                 </div>
             </div>
             <div class="form-group">

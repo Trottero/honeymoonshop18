@@ -99,7 +99,7 @@ namespace HoneymoonShop
 
             try
             {
-                //SeedData.Initialize(app.ApplicationServices);
+                SeedData.Initialize(app.ApplicationServices);
             } catch (Exception e)
             {
                 Console.WriteLine(e.Message);

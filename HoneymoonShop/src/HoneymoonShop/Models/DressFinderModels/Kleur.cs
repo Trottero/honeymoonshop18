@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HoneymoonShop.Models.DressFinderModels;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,7 +14,7 @@ namespace Models
         [Display(Name = "Kleur")]
         public string KleurNaam { get; set; }
 
-        public virtual IList<Jurk> Jurken { get; set; }
+        public virtual List<JurkKleur> JurkKleuren { get; set; }
 
         [NotMapped]
         public string Status { get; set; }
