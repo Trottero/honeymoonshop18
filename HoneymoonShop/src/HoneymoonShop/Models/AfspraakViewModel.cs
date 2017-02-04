@@ -14,7 +14,7 @@ namespace HoneymoonShop.Models
         public DateTime datum { get; set; }
 
         [Display(Name = "Afpstraak tijd")]
-        public String tijd { get; set; }
+        public int tijd { get; set; }
 
         [Display(Name = "Voor- en achternaam")]
         public String naam { get; set; }
