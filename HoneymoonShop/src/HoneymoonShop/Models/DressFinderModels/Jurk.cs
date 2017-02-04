@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using HoneymoonShop.Models.DressFinderModels;
 
 namespace Models
 {
@@ -63,11 +64,9 @@ namespace Models
         public virtual Silhouette Silhouette { get; set; }
 
         //Foreign key for Kleur
-        [Display(Name = "Kleur")]
-        [Required]
-        public int KleurID { get; set; }
+        [Display(Name = "Kleuren")]
+        public virtual List<JurkKleur> JurkKleuren { get; set; }
 
-        public virtual Kleur Kleur { get; set; }
 
         [Required]
         public string Omschrijving { get; set; }
