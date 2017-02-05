@@ -55,8 +55,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label asp-for="tijd"></label>
-                            <input asp-for="tijd" class="form-control" />
+                            <label asp-for="tijd"></label><br/>
+                            <input asp-for="tijd"  type="radio" value="9.30" > 9:30<br>
+                            <input asp-for="tijd" type="radio"  value="12.30"> 12:30<br>
+                            <input asp-for="tijd" type="radio"  value="15.30"> 15:30<br/>
+                          
+                            @*<input asp-for="tijd" class="form-control" />*@
                         </div>
                     </div>
                 </div>

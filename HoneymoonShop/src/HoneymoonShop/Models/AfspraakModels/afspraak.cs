@@ -14,7 +14,7 @@ namespace Models
         public DateTime Datum { get; set; }
 
         [Display(Name = "Tijd")]
-        public int Tijd { get; set; }
+        public String Tijd { get; set; }
 
         //Foreign key for Klant ID
         [Display(Name = "Klant ID")]
