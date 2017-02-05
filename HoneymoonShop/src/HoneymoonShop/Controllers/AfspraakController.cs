@@ -117,14 +117,14 @@ namespace HoneymoonShop.Controllers
 
 
         // GET: Categorien/Delete/5
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var afspraak = _context.Afpsraken2.SingleOrDefaultAsync(m => m.ID == id);
+            var afspraak = await _context.Afpsraken2.SingleOrDefaultAsync(m => m.ID == id);
             if (afspraak == null)
             {
                 return NotFound();
