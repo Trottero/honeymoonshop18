@@ -23,6 +23,12 @@
                         Controleer alle gegevens voor je pasafspraak bij Honeymoon shop aan Korte Hoogstraat 4, te Rotterdam.
                     </div>
                     <form asp-controller="Afspraak" asp-action="success">
+                    @Html.HiddenFor(Model => Model.datum)
+                    @Html.HiddenFor(Model => Model.emailadres)
+                    @Html.HiddenFor(Model => Model.naam)
+                    @Html.HiddenFor(Model => Model.telefoon)
+                    @Html.HiddenFor(Model => Model.tijd)
+                    @Html.HiddenFor(Model => Model.trouwDatum)
                     <input type="submit" value="AFSPRAAK BEVESTIGEN" class="btn btn-default specialbutton" /></form>
                 </div>
             </div>
