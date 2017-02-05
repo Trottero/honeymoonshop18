@@ -2,6 +2,15 @@
 @{
     ViewData["Title"] = "Afspraak";
 }
+<script type="text/javascript">
+                                $('#datetimepicker1').datepicker({
+                                    format: 'mm/dd/yyyy',
+                                    startDate: '-3d'
+                                });
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+</script>
 <div class="container">
     <div class="row" style="margin-top: 20px;">
         <img src="https://i.gyazo.com/fcaca9babe2aac42ceb33ce00b9cd11d.png">
@@ -25,16 +34,27 @@
 
                         <div class="form-group">
                             <label asp-for="trouwDatum"></label>
-                            <input asp-for="trouwDatum" class="form-control" />
+                            <input asp-for="trouwDatum" id="datetimepicker1" class="form-control glyphicon glyphicon-calendar" type="date"/>
+                          
+                               
+                                    @*<div class='input-group date datepicker' id="datetimepicker1" >
+                                        <input  asp-for="trouwDatum" type="date"class="form-control"  />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>*@
+                                
+                            
+                            
                         </div>
 
                         <div class="form-group">
                             <label asp-for="telefoon"></label>
-                            <input asp-for="telefoon" class="form-control" />
+                            <input asp-for="telefoon" class="form-control" maxlength="10" />
                         </div>
                         <div class="form-group">
                             <label asp-for="emailadres"></label>
-                            <input asp-for="emailadres" class="form-control" />
+                            <input asp-for="emailadres" class="form-control"  type="email"/>
                         </div>
                         @Html.HiddenFor(datum => Model.datum)
                         @Html.HiddenFor(tijd => Model.tijd)

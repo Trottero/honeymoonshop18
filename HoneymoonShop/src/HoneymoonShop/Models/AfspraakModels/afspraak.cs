@@ -13,6 +13,7 @@ namespace Models
         [Display(Name = "Datum")]
         public DateTime Datum { get; set; }
 
+        
         [Display(Name = "Tijd")]
         public String Tijd { get; set; }
 

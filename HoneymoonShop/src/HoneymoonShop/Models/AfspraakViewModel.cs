@@ -23,7 +23,7 @@ namespace HoneymoonShop.Models
         public DateTime trouwDatum { get; set; }
 
         [Display(Name = "Telefoonnummer")]
-        public int telefoon { get; set; }
+        public String telefoon { get; set; }
 
         [Display(Name = "Email adres")]
         public string emailadres { get; set; }

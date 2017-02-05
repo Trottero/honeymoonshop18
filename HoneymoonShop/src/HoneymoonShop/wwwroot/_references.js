@@ -2,6 +2,7 @@
 /// <reference path="js/bootstrap-slider.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
+/// <reference path="lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" />
 /// <reference path="lib/datetimepicker/build/jquery.datetimepicker.full.min.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-mousewheel/jquery.mousewheel.js" />
