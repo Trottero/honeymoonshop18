@@ -1,0 +1,48 @@
+@model Models.Klant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Klant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KlantID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KlantID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Naam)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Naam)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefoonnummer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefoonnummer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trouwdatum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trouwdatum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Emailadres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Emailadres)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KlantID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

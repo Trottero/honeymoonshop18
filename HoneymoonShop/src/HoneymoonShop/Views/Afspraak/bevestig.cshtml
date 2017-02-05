@@ -1,6 +1,7 @@
 ﻿@model AfspraakViewModel
 @{
     ViewData["Title"] = "Afspraak";
+    ViewData["ViewModel"] = @Model;
 }
 
 <div class="container">
@@ -21,7 +22,8 @@
                     <div class="sans-serif-thin" style="margin-top: 25px; font-size:25px; width:400px;">
                         Controleer alle gegevens voor je pasafspraak bij Honeymoon shop aan Korte Hoogstraat 4, te Rotterdam.
                     </div>
-                    <form asp-controller="Afspraak" asp-action="success"><input type="submit" value="AFSPRAAK BEVESTIGEN" class="btn btn-default specialbutton"/></form>
+                    <form asp-controller="Afspraak" asp-action="success">
+                    <input type="submit" value="AFSPRAAK BEVESTIGEN" class="btn btn-default specialbutton" /></form>
                 </div>
             </div>
             <div class="col-md-5" style="background-color:#f0597c; color: white; height:510px;">

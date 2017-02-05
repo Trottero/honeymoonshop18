@@ -24,11 +24,12 @@ namespace HoneymoonShop.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-          
             base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+            builder.Entity<Klant>().ToTable("Klanten2");
+            builder.Entity<Afspraak>().ToTable("Afspraken2");
         }
         public DbSet<Review> Reviews { get; set; }
 
@@ -45,6 +46,9 @@ namespace HoneymoonShop.Data
         public DbSet<Neklijn> Neklijnen { get; set; }
 
         public DbSet<Silhouette> Silhouetten { get; set; }
+
+        public DbSet<Klant> Klanten2 { get; set; }
+        public DbSet<Afspraak> Afpsraken2 { get; set; }
 
 
 

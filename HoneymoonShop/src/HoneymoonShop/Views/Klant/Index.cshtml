@@ -1,0 +1,63 @@
+@model IEnumerable<Models.Klant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <hr />
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.KlantID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Naam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Trouwdatum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefoonnummer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emailadres)
+                </th>              
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KlantID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Naam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Trouwdatum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefoonnummer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Emailadres)
+                    </td>                                
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.KlantID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.KlantID">Delete</a> |
+                        <a asp-action="Edit" asp-route-id="@item.KlantID">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
