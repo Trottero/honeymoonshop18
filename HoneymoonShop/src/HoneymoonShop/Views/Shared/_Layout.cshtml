@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="~/css/jPages.css" media="screen" />
-        
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-datepicker3.css" media="screen"/>
 
     </environment>
     <environment names="Staging,Production">
@@ -32,10 +32,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="~/css/jPages.css" media="screen" />
-        <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" />
-        <link rel="stylesheet" href="~/lib/datetimepicker/jquery.datetimepicker.css" />
-        
-        
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap-datepicker3.css" media="screen" />        
 
     </environment>
 </head>
@@ -210,6 +207,7 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script type="text/javascript" src="~/js/bootstrap-slider.js"></script>
         <script type="text/javascript" src="~/lib/jPages.js"></script>
+        <script type="text/javascript" src="~/js/bootstrap-datepicker.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -227,11 +225,7 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script type="text/javascript" src="~/js/bootstrap-slider.js"></script>
         <script type="text/javascript" src="~/lib/jPages.js"></script>
-        <script type="text/javascript" src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-        <script type="text/javascript" src="~/lib/datetimepicker/jquery.datetimepicker.min.js"></script>
-        <script type="text/javascript" src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="~/lib/datetimepicker/jquery.datetimepicker.js"></script>
-        
+        <script type="text/javascript" src="~/js/bootstrap-datepicker.js"></script>        
 
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
@@ -249,6 +243,10 @@
                 formatter: function (value) {
                     return value;
                 }
+            });
+
+            $('.datepicker').datepicker({
+                language: "nl"
             });
 
             $(function () {

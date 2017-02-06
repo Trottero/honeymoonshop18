@@ -15,8 +15,7 @@ namespace Models
         public String Naam { get; set; }
             
         [Display(Name = "Trouwdatum")]
-        public DateTime Trouwdatum { get; set; }
-
+        public String Trouwdatum { get; set; }
        
         [Display(Name = "Telefoonnummer")]
         

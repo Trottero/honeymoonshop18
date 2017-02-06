@@ -11,8 +11,7 @@ namespace Models
         public int ID { get; set; }
 
         [Display(Name = "Datum")]
-        public DateTime Datum { get; set; }
-
+        public String Datum { get; set; }
         
         [Display(Name = "Tijd")]
         public String Tijd { get; set; }
