@@ -84,7 +84,8 @@
                 Kom deze jurk passen!
             </div>
             <div>
-                <button type="button" class="btn btn-default">PASAFSPRAAK MAKEN</button>
+                @*<button type="button" class="btn btn-default">PASAFSPRAAK MAKEN</button>*@
+                <a  class="btn btn-default rev-btn" asp-controller="afspraak" asp-action="datum">PASAFSPRAAK MAKEN</a>
             </div>
             <div>
                 <a class="btn btn-default rev-btn" href='~/Reviews/Create?id=@Model.JurkID'>SCHRIJF EEN REVIEW</a>
