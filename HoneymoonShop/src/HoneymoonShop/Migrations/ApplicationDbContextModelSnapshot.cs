@@ -261,7 +261,7 @@ namespace HoneymoonShop.Migrations
 
                     b.Property<string>("Naam");
 
-                    b.Property<int>("Telefoonnummer");
+                    b.Property<string>("Telefoonnummer");
 
                     b.Property<DateTime>("Trouwdatum");
 

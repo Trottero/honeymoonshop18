@@ -11,7 +11,7 @@ namespace HoneymoonShop.Models
     public class AfspraakViewModel
     {
         [Display(Name = "AfpstraakDatum")]
-        public DateTime datum { get; set; }
+        public String datum { get; set; }
 
         [Display(Name = "Afpstraak tijd")]
         public String tijd { get; set; }
@@ -20,10 +20,10 @@ namespace HoneymoonShop.Models
         public String naam { get; set; }
 
         [Display(Name = "Trouw datum")]
-        public DateTime trouwDatum { get; set; }
+        public String trouwDatum { get; set; }
 
         [Display(Name = "Telefoonnummer")]
-        public int telefoon { get; set; }
+        public String telefoon { get; set; }
 
         [Display(Name = "Email adres")]
         public string emailadres { get; set; }

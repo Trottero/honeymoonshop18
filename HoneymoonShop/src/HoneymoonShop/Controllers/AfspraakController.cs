@@ -148,9 +148,9 @@ namespace HoneymoonShop.Controllers
         //klant afspraak maken
         public IActionResult Datum()
         {
-                AfspraakViewModel viewModel = new AfspraakViewModel();
+            AfspraakViewModel viewModel = new AfspraakViewModel();
 
-                return View(viewModel);
+            return View(viewModel);
         }
         public IActionResult Gegevens(AfspraakViewModel viewModel)
         {
